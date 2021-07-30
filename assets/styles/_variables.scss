@@ -1,10 +1,13 @@
-$textColor: #fff;
+$textColor: rgb(99, 115, 129);
+$textColorActive: rgb(0, 171, 85);
 $primaryColor: rgb(33, 43, 54);
 $backgroundColor: #fff;
+$backgroundPrimaryColor: rgb(244, 246, 248);
 $fontSize: 1rem;
 $fontWeights: (
     "regular": 400,
     "medium": 500,
     "bold": 700,
 );
+$fontFamily: "Public Sans", sans-serif;
 $lineHeight: 1.5;
