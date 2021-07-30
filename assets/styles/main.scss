@@ -5,6 +5,11 @@
     @return map-get($fontWeights, $weight-name);
 }
 
+@mixin w-h-40 {
+    width: 40px;
+    height: 40px;
+}
+
 @mixin flexCenter {
     display: flex;
     align-items: center;
@@ -12,6 +17,17 @@
 
 @mixin positionAbsolute {
     position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1200;
+}
+
+@mixin positionFixed {
+    position: fixed;
     padding: 0;
     margin: 0;
     left: 0;
@@ -30,102 +46,242 @@ body {
     line-height: $lineHeight;
 }
 
+a {
+    color: $primaryColor;
+    text-decoration: none;
+}
+
 #app {
     width: 100%;
     height: 100%;
 }
 
-.simplebar {
-    border-right: 1px solid rgba(145, 158, 171, 0.24);
+.sidebar {
+    background: $backgroundColor;
+    border-right: 1px solid $borderColor;
     width: 280px;
-    @include positionAbsolute;
+    height: 100%;
+    @include positionFixed;
 
-    &-content {
-        height: 100%;
+    &__logo {
+        padding: 24px 20px;
 
-        &__logo {
-            padding: 24px 20px;
+        img {
+            @include w-h-40;
+        }
+    }
 
-            img {
-                width: 40px;
-                height: 40px;
+    &__user {
+        margin: 0 20px 40px;
+
+        .profile {
+            @include flexCenter;
+            background: $backgroundPrimaryColor;
+            border-radius: 12px;
+            padding: 16px 20px;
+
+            .avatar {
+                @include w-h-40;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            .name {
+                color: $primaryColor;
+                margin-left: 16px;
             }
         }
+    }
 
-        &__user {
-            margin: 0 20px 40px;
+    &__menu {
+        ul {
+            margin: 0;
+            padding: 0;
 
-            .profile {
+            li {
+                position: relative;
+                width: 100%;
+                height: 50px;
                 @include flexCenter;
-                background: $backgroundPrimaryColor;
-                border-radius: 12px;
-                padding: 16px 20px;
 
-                .avatar {
-                    width: 40px;
-                    height: 40px;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 50%;
-                    }
+                &:hover {
+                    background: $backgroundPrimaryColor;
                 }
 
-                .name {
-                    color: $primaryColor;
-                    margin-left: 16px;
-                }
-            }
-        }
-
-        &__tabs {
-            .nav {
-                margin: 0 !important;
-
-                .nav-link {
-                    @include flexCenter;
+                a {
                     color: $textColor;
-                    height: 48px;
                     font-size: 0.875rem;
                     text-transform: capitalize;
                     padding: 8px 20px 8px 40px;
                     position: relative;
+                    @include flexCenter;
 
-                    &:hover {
-                        background-color: $backgroundPrimaryColor;
+                    i {
+                        font-size: 1.2rem;
                     }
 
-                    &.active {
-                        border-radius: 0;
-                        background: $backgroundPrimaryColor;
-                        color: $textColorActive;
-                        font-weight: weight(medium);
-
-                        &::before {
-                            top: 0;
-                            right: 0;
-                            bottom: 0;
-                            width: 3px;
-                            content: "";
-                            position: absolute;
-                            border-top-left-radius: 4px;
-                            border-bottom-left-radius: 4px;
-                            background-color: $textColorActive;
-                        }
-                    }
-
-                    img {
-                        width: 20px;
-                        height: 20px;
-                        margin-right: 16px;
+                    span {
+                        margin-left: 16px;
                     }
                 }
+
+                &.active {
+                    border-radius: 0;
+                    background: $backgroundPrimaryColor;
+                    font-weight: weight(bold);
+
+                    a {
+                        color: $textColorActive;
+                    }
+
+                    &::before {
+                        @include positionAbsolute;
+                        background-color: $textColorActive;
+                        content: "";
+                        width: 3px;
+                        border-top-left-radius: 4px;
+                        border-bottom-left-radius: 4px;
+                        left: unset;
+                    }
+                }
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+                margin-right: 16px;
             }
         }
     }
 }
 
-.main {
-    padding-left: calc(280px + 16px);
+.main-content {
+    margin-left: calc(280px + 16px);
+
+    header {
+        @include flexCenter;
+        background: transparent;
+        justify-content: space-between;
+        padding: 0px 40px;
+
+        .search-wrapper {
+            @include flexCenter;
+            height: 88px;
+            cursor: pointer;
+
+            img {
+                width: 20px;
+            }
+        }
+
+        .user-wrapper {
+            position: relative;
+
+            &__avatar {
+                img {
+                    @include w-h-40;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+
+            &:hover .user-wrapper__menu {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(-40px);
+            }
+
+            &__menu {
+                position: absolute;
+                top: 100px;
+                right: 0;
+                background: $backgroundColor;
+                border-radius: 8px;
+                width: 260px;
+                transition: all 0.4s ease;
+                visibility: hidden;
+                opacity: 0;
+
+                &:hover {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .name {
+                    border-bottom: 1px solid $borderColor;
+                    display: inline-grid;
+                    padding: 12px 20px;
+
+                    p {
+                        color: $textColor;
+                        margin: 0;
+                        font-size: 0.9rem;
+                    }
+                }
+
+                .profile,
+                .settings {
+                    @include flexCenter;
+                    width: 100%;
+                    padding: 8px 20px;
+                    min-height: 48px;
+                    font-size: 0.9rem;
+
+                    i {
+                        font-size: 1.2rem;
+                    }
+
+                    span {
+                        margin-left: 16px;
+                    }
+
+                    &:hover {
+                        background: $backgroundPrimaryColor;
+
+                        i,
+                        span {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+
+                .logout {
+                    @include flexCenter;
+                    border: 1px solid $borderColor;
+                    border-radius: 8px;
+                    margin: 12px 16px 16px;
+                    justify-content: center;
+
+                    span {
+                        padding: 6px 10px;
+                        font-size: 0.9rem;
+                        font-weight: weight(bold);
+                    }
+
+                    &:hover {
+                        background: $backgroundPrimaryColor;
+
+                        span {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -40px;
+                    right: 3px;
+                    border-width: 28px 16px;
+                    border-style: solid;
+                    border-color: transparent transparent $backgroundColor
+                        transparent;
+                }
+            }
+        }
+    }
 }
