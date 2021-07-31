@@ -510,4 +510,94 @@ a {
   border-style: solid;
   border-color: transparent transparent #fff transparent;
 }
+
+.main-content main {
+  padding: 30px 40px;
+}
+
+.main-content main .cards .sales .card,
+.main-content main .cards .users .card,
+.main-content main .cards .orders .card,
+.main-content main .cards .reports .card {
+  border: none;
+  border-radius: 16px;
+  padding: 40px 0px;
+}
+
+.main-content main .cards .sales .card-body,
+.main-content main .cards .users .card-body,
+.main-content main .cards .orders .card-body,
+.main-content main .cards .reports .card-body {
+  padding: 0;
+}
+
+.main-content main .cards .sales .card-body .card-icon,
+.main-content main .cards .users .card-body .card-icon,
+.main-content main .cards .orders .card-body .card-icon,
+.main-content main .cards .reports .card-body .card-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: auto auto 24px;
+}
+
+.main-content main .cards .sales .card-body .card-icon i,
+.main-content main .cards .users .card-body .card-icon i,
+.main-content main .cards .orders .card-body .card-icon i,
+.main-content main .cards .reports .card-body .card-icon i {
+  font-size: 1.4rem;
+}
+
+.main-content main .cards .sales .card-body h3,
+.main-content main .cards .users .card-body h3,
+.main-content main .cards .orders .card-body h3,
+.main-content main .cards .reports .card-body h3 {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.main-content main .cards .sales .card {
+  background-color: #c8facd;
+  color: #005249;
+}
+
+.main-content main .cards .sales .card .card-icon {
+  background: linear-gradient(135deg, rgba(0, 123, 85, 0) 0%, rgba(0, 123, 85, 0.24) 100%);
+}
+
+.main-content main .cards .users .card {
+  color: #04297a;
+  background-color: #d0f2ff;
+}
+
+.main-content main .cards .users .card .card-icon {
+  background: linear-gradient(135deg, rgba(12, 83, 183, 0) 0%, rgba(12, 83, 183, 0.24) 100%);
+}
+
+.main-content main .cards .orders .card {
+  color: #7a4f01;
+  background-color: #fff7cd;
+}
+
+.main-content main .cards .orders .card .card-icon {
+  background: linear-gradient(135deg, rgba(183, 129, 3, 0) 0%, rgba(183, 129, 3, 0.24) 100%);
+}
+
+.main-content main .cards .reports .card {
+  color: #7a0c2e;
+  background-color: #ffe7d9;
+}
+
+.main-content main .cards .reports .card .card-icon {
+  background: linear-gradient(135deg, rgba(183, 33, 54, 0) 0%, rgba(183, 33, 54, 0.24) 100%);
+}
 /*# sourceMappingURL=main.css.map */
