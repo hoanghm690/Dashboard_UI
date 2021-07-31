@@ -37,6 +37,20 @@
     z-index: 1200;
 }
 
+@mixin overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 2;
+    cursor: pointer;
+}
+
 body {
     background: $backgroundColor;
     color: $primaryColor;
@@ -204,107 +218,224 @@ a {
         }
 
         .user-wrapper {
-            position: relative;
+            @include flexCenter;
 
-            &__avatar {
-                img {
-                    @include w-h-40;
-                    border-radius: 50%;
-                    cursor: pointer;
-                }
-            }
+            &__notification {
+                position: relative;
+                margin-right: 16px;
 
-            &:hover .user-wrapper__menu {
-                visibility: visible;
-                opacity: 1;
-                transform: translateY(-40px);
-            }
-
-            &__menu {
-                position: absolute;
-                top: 100px;
-                right: 0;
-                background: $backgroundColor;
-                border-radius: 8px;
-                width: 260px;
-                transition: all 0.4s ease;
-                visibility: hidden;
-                opacity: 0;
-
-                &:hover {
+                &:hover .user-wrapper__notification--menu {
                     visibility: visible;
                     opacity: 1;
+                    transform: translateY(-40px);
                 }
 
-                .name {
-                    border-bottom: 1px solid $borderColor;
-                    display: inline-grid;
-                    padding: 12px 20px;
-
-                    p {
-                        color: $textColor;
-                        margin: 0;
-                        font-size: 0.9rem;
-                    }
-                }
-
-                .profile,
-                .settings {
-                    @include flexCenter;
-                    width: 100%;
-                    padding: 8px 20px;
-                    min-height: 48px;
-                    font-size: 0.9rem;
+                button {
+                    @include w-h-40;
+                    border-radius: 50%;
+                    border: none;
+                    background: transparent;
+                    outline: none;
 
                     i {
+                        color: $textColor;
                         font-size: 1.2rem;
                     }
 
-                    span {
-                        margin-left: 16px;
-                    }
-
                     &:hover {
                         background: $backgroundPrimaryColor;
-
-                        i,
-                        span {
-                            color: $primaryColor;
-                        }
                     }
                 }
 
-                .logout {
-                    @include flexCenter;
-                    border: 1px solid $borderColor;
-                    border-radius: 8px;
-                    margin: 12px 16px 16px;
-                    justify-content: center;
-
-                    span {
-                        padding: 6px 10px;
-                        font-size: 0.9rem;
-                        font-weight: weight(bold);
-                    }
-
-                    &:hover {
-                        background: $backgroundPrimaryColor;
-
-                        span {
-                            color: $primaryColor;
-                        }
-                    }
-                }
-
-                &::before {
-                    content: "";
+                &--menu {
                     position: absolute;
-                    top: -40px;
-                    right: 3px;
-                    border-width: 28px 16px;
-                    border-style: solid;
-                    border-color: transparent transparent $backgroundColor
-                        transparent;
+                    top: 100px;
+                    right: 0;
+                    background: $backgroundColor;
+                    border-radius: 8px;
+                    width: 360px;
+                    transition: all 0.4s ease;
+                    visibility: hidden;
+                    opacity: 0;
+
+                    .header {
+                        @include flexCenter;
+                        border-bottom: 1px solid $borderColor;
+                        padding: 12px 20px;
+                        justify-content: space-between;
+
+                        span {
+                            font-weight: weight(medium);
+                        }
+
+                        p {
+                            color: $textColor;
+                            margin: 0;
+                            font-size: 0.9rem;
+                        }
+
+                        button {
+                            @include flexCenter;
+                            justify-content: center;
+
+                            i {
+                                color: $textColorActive;
+                            }
+                        }
+                    }
+
+                    .content {
+                        &-text {
+                            color: $textColor;
+                            font-size: 0.8rem;
+                            font-weight: weight(bold);
+                            padding: 12px 20px;
+                            text-transform: uppercase;
+                            letter-spacing: 1.1px;
+                        }
+
+                        &-noti {
+                            a {
+                                @include flexCenter;
+                                background: $backgroundPrimaryColor;
+                                padding: 8px 20px;
+                                margin: 1px 0px 0px;
+
+                                img {
+                                    @include w-h-40;
+                                    border-radius: 50%;
+                                    margin-right: 16px;
+                                }
+
+                                &:hover {
+                                    background: $backgroundHoverColor;
+                                }
+                            }
+
+                            &__text {
+                                p {
+                                    span {
+                                        color: $textColor;
+                                        text-transform: unset;
+                                        font-size: 0.9rem;
+                                        font-weight: weight(regular);
+                                    }
+                                }
+
+                                span {
+                                    color: $textColor;
+                                    font-size: 0.8rem;
+                                    font-weight: weight(regular);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__profile {
+                position: relative;
+
+                &:hover .user-wrapper__profile--menu {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(-40px);
+                }
+
+                &--avatar {
+                    img {
+                        @include w-h-40;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+                }
+
+                &--menu {
+                    position: absolute;
+                    top: 100px;
+                    right: 0;
+                    background: $backgroundColor;
+                    border-radius: 8px;
+                    width: 260px;
+                    transition: all 0.4s ease;
+                    visibility: hidden;
+                    opacity: 0;
+
+                    &:hover {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    .name {
+                        border-bottom: 1px solid $borderColor;
+                        display: inline-grid;
+                        padding: 12px 20px;
+
+                        p {
+                            color: $textColor;
+                            margin: 0;
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                    .profile,
+                    .settings {
+                        @include flexCenter;
+                        width: 100%;
+                        padding: 8px 20px;
+                        min-height: 48px;
+                        font-size: 0.9rem;
+
+                        i {
+                            font-size: 1.2rem;
+                        }
+
+                        span {
+                            margin-left: 16px;
+                        }
+
+                        &:hover {
+                            background: $backgroundPrimaryColor;
+
+                            i,
+                            span {
+                                color: $primaryColor;
+                            }
+                        }
+                    }
+
+                    .logout {
+                        @include flexCenter;
+                        border: 1px solid $borderColor;
+                        border-radius: 8px;
+                        margin: 12px 16px 16px;
+                        justify-content: center;
+
+                        span {
+                            padding: 6px 10px;
+                            font-size: 0.9rem;
+                            font-weight: weight(bold);
+                        }
+
+                        &:hover {
+                            background: $backgroundPrimaryColor;
+
+                            span {
+                                color: $primaryColor;
+                            }
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -40px;
+                        right: 3px;
+                        border-width: 28px 16px;
+                        border-style: solid;
+                        border-color: transparent transparent $backgroundColor
+                            transparent;
+                    }
                 }
             }
         }
