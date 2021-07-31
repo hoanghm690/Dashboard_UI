@@ -1,0 +1,84 @@
+.cards {
+    .sales .card,
+    .users .card,
+    .orders .card,
+    .reports .card {
+        border: none;
+        border-radius: 16px;
+        padding: 40px 0px;
+
+        &-body {
+            padding: 0;
+
+            .card-icon {
+                @include flexCenter;
+                justify-content: center;
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                margin: auto auto 24px;
+
+                i {
+                    font-size: 1.4rem;
+                }
+            }
+
+            h3 {
+                font-weight: weight(bold);
+                line-height: $lineHeight;
+            }
+        }
+    }
+
+    .sales .card {
+        background-color: rgb(200, 250, 205);
+        color: rgb(0, 82, 73);
+
+        .card-icon {
+            background: linear-gradient(
+                135deg,
+                rgba(0, 123, 85, 0) 0%,
+                rgba(0, 123, 85, 0.24) 100%
+            );
+        }
+    }
+
+    .users .card {
+        color: rgb(4, 41, 122);
+        background-color: rgb(208, 242, 255);
+
+        .card-icon {
+            background: linear-gradient(
+                135deg,
+                rgba(12, 83, 183, 0) 0%,
+                rgba(12, 83, 183, 0.24) 100%
+            );
+        }
+    }
+
+    .orders .card {
+        color: rgb(122, 79, 1);
+        background-color: rgb(255, 247, 205);
+
+        .card-icon {
+            background: linear-gradient(
+                135deg,
+                rgba(183, 129, 3, 0) 0%,
+                rgba(183, 129, 3, 0.24) 100%
+            );
+        }
+    }
+
+    .reports .card {
+        color: rgb(122, 12, 46);
+        background-color: rgb(255, 231, 217);
+
+        .card-icon {
+            background: linear-gradient(
+                135deg,
+                rgba(183, 33, 54, 0) 0%,
+                rgba(183, 33, 54, 0.24) 100%
+            );
+        }
+    }
+}

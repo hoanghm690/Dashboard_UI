@@ -3,6 +3,8 @@ const $$ = document.querySelectorAll.bind(document);
 
 const searchBtn = $(".search-wrapper");
 const toolbarWrapper = $(".toolbar-wrapper");
+const inputCheckboxAll = $(".input-checkboxAll");
+const inputCheckboxUsers = $$(".input-checkbox-user");
 const sidebarMenu = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
@@ -93,7 +95,7 @@ const app = {
             return `<tr data-id=${user.id}>
                         <td width="48">
                             <button>
-                                <input type="checkbox" class="form-check-input"/>
+                                <input type="checkbox" class="form-check-input input-checkbox-user"/>
                             </button>
                         </td>
                         <td>
@@ -151,6 +153,10 @@ const app = {
                 transform: "translateY(0)",
             });
         };
+
+        // inputCheckboxAll.onclick = function () {
+        //     inputCheckboxUsers.prop("checked", this.checked);
+        // };
     },
     start: function () {
         this.render();

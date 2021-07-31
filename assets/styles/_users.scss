@@ -1,0 +1,137 @@
+.users {
+    .card {
+        border: none;
+        border-radius: 16px;
+
+        &-body {
+            .search {
+                form {
+                    position: relative;
+
+                    input {
+                        width: 260px;
+                        border-radius: 8px;
+                        padding: 16.5px 14px 16.5px 40px;
+                        transition: all 0.3s ease;
+
+                        &:focus {
+                            width: 340px;
+                            border: 1px solid #ced4da;
+                            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                        }
+                    }
+
+                    i {
+                        @include positionAbsolute;
+                        color: $textColor;
+                        top: 22px;
+                        left: 14px;
+                        bottom: unset;
+                        right: unset;
+                    }
+                }
+            }
+
+            .table {
+                thead {
+                    tr {
+                        vertical-align: middle;
+
+                        th {
+                            button {
+                                @include w-h-40;
+                                border-radius: 50%;
+                                border: none;
+                                background: transparent;
+                                outline: none;
+
+                                &:hover {
+                                    background: rgba(0, 171, 85, 0.08);
+                                }
+
+                                input {
+                                    cursor: pointer;
+                                }
+                            }
+
+                            span i {
+                                color: $textColor;
+                                cursor: pointer;
+                                margin-left: 4px;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        vertical-align: middle;
+
+                        &:hover {
+                            background: $backgroundPrimaryColor;
+                        }
+
+                        td {
+                            font-size: 0.9rem;
+
+                            img {
+                                @include w-h-40;
+                                border-radius: 50%;
+                                margin-right: 10px;
+                            }
+
+                            i {
+                                color: $textColor;
+                            }
+
+                            button {
+                                @include w-h-40;
+                                border-radius: 50%;
+                                border: none;
+                                background: transparent;
+                                outline: none;
+
+                                &:hover {
+                                    background: rgba(0, 171, 85, 0.08);
+                                }
+
+                                input {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        .dropdown {
+                            text-align: right;
+
+                            button {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+
+                            &-menu {
+                                border: none;
+                                border-radius: 8px;
+                                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                            }
+
+                            &-item {
+                                color: $textColor;
+                                font-size: 0.9rem;
+
+                                i {
+                                    font-size: 1rem;
+                                    margin: 6px 20px 6px 10px;
+                                }
+
+                                &:active {
+                                    background: $backgroundPrimaryColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
