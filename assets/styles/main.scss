@@ -260,6 +260,17 @@ a {
                     opacity: 0;
                     z-index: 1200;
 
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -40px;
+                        right: 3px;
+                        border-width: 28px 16px;
+                        border-style: solid;
+                        border-color: transparent transparent $backgroundColor
+                            transparent;
+                    }
+
                     .header {
                         @include flexCenter;
                         border-bottom: 1px solid $borderColor;
@@ -563,6 +574,108 @@ a {
                                 left: 14px;
                                 bottom: unset;
                                 right: unset;
+                            }
+                        }
+                    }
+
+                    .table {
+                        thead {
+                            tr {
+                                vertical-align: middle;
+
+                                th {
+                                    button {
+                                        @include w-h-40;
+                                        border-radius: 50%;
+                                        border: none;
+                                        background: transparent;
+                                        outline: none;
+
+                                        &:hover {
+                                            background: rgba(0, 171, 85, 0.08);
+                                        }
+
+                                        input {
+                                            cursor: pointer;
+                                        }
+                                    }
+
+                                    span i {
+                                        color: $textColor;
+                                        cursor: pointer;
+                                        margin-left: 4px;
+                                    }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                vertical-align: middle;
+
+                                &:hover {
+                                    background: $backgroundPrimaryColor;
+                                }
+
+                                td {
+                                    font-size: 0.9rem;
+
+                                    img {
+                                        @include w-h-40;
+                                        border-radius: 50%;
+                                        margin-right: 10px;
+                                    }
+
+                                    i {
+                                        color: $textColor;
+                                    }
+
+                                    button {
+                                        @include w-h-40;
+                                        border-radius: 50%;
+                                        border: none;
+                                        background: transparent;
+                                        outline: none;
+
+                                        &:hover {
+                                            background: rgba(0, 171, 85, 0.08);
+                                        }
+
+                                        input {
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+
+                                .dropdown {
+                                    text-align: right;
+
+                                    button {
+                                        &::after {
+                                            display: none;
+                                        }
+                                    }
+
+                                    &-menu {
+                                        border: none;
+                                        border-radius: 8px;
+                                        box-shadow: 0 0.5rem 1rem
+                                            rgba(0, 0, 0, 0.15);
+                                    }
+
+                                    &-item {
+                                        color: $textColor;
+                                        font-size: 0.9rem;
+
+                                        i {
+                                            font-size: 1rem;
+                                            margin: 6px 20px 6px 10px;
+                                        }
+
+                                        &:active {
+                                            background: $backgroundPrimaryColor;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

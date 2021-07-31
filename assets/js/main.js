@@ -3,8 +3,24 @@ const $$ = document.querySelectorAll.bind(document);
 
 const searchBtn = $(".search-wrapper");
 const toolbarWrapper = $(".toolbar-wrapper");
+const sidebarMenu = $(".sidebar__menu ul");
 const cards = $(".cards");
+const users = $("#users-table tbody");
 const app = {
+    sidebarMenu: [
+        {
+            url: "/",
+            icon: '<i class="fas fa-chart-pie"></i>',
+            title: "Dashboard",
+            isActive: true,
+        },
+        {
+            url: "/",
+            icon: '<i class="fas fa-user-friends"></i>',
+            title: "User",
+            isActive: false,
+        },
+    ],
     cards: [
         {
             class: "sales",
@@ -31,8 +47,35 @@ const app = {
             title: "Bug Reports",
         },
     ],
-
-    reder: function () {
+    users: [
+        {
+            id: 1,
+            avatar: "./assets/img/giphy.gif",
+            name: "Ton Ton",
+            company: "Pollich, Zboncak and Bergstrom",
+            role: "Frontend Developer",
+            verified: true,
+            status: false,
+        },
+        {
+            id: 2,
+            avatar: "./assets/img/giphy.gif",
+            name: "Hoang Huynh",
+            company: "Rogahn Inc",
+            role: "Backend Developer",
+            verified: false,
+            status: true,
+        },
+    ],
+    render: function () {
+        const htmlSidebarMenu = this.sidebarMenu.map((sidebarMenu) => {
+            return `<li class="${sidebarMenu.isActive == true ? "active" : ""}">
+                        <a href="${sidebarMenu.url}">
+                            ${sidebarMenu.icon}
+                            <span>${sidebarMenu.title}</span>
+                        </a>
+                    </li>`;
+        });
         const htmlCards = this.cards.map((card) => {
             return `<div class="${card.class} col-md-3">
                         <div class="card">
@@ -46,7 +89,59 @@ const app = {
                         </div>
                     </div>`;
         });
+        const htmlUsers = this.users.map((user) => {
+            return `<tr data-id=${user.id}>
+                        <td width="48">
+                            <button>
+                                <input type="checkbox" class="form-check-input"/>
+                            </button>
+                        </td>
+                        <td>
+                            <img src="${user.avatar}"/>
+                            <span>${user.name}</span>
+                        </td>
+                        <td>${user.company}</td>
+                        <td>${user.role}</td>
+                        <td>${user.verified == true ? "Yes" : "No"}</td>
+                        <td>
+                            ${
+                                user.status == true
+                                    ? '<span class="badge rounded-pill bg-success">Active</span>'
+                                    : '<span class="badge rounded-pill bg-danger">Banned</span>'
+                            }
+                            
+                        </td>
+                        <td class="dropdown">
+                            <button
+                                type="button"
+                                class="dropdown-toggle"
+                                id="dropdownMenuLink"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-pen"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="far fa-trash-alt"></i>
+                                        Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    `;
+        });
+        sidebarMenu.innerHTML = htmlSidebarMenu.join("");
         cards.innerHTML = htmlCards.join("");
+        users.innerHTML = htmlUsers.join("");
     },
     handleEvents: function () {
         searchBtn.onclick = function () {
@@ -58,7 +153,7 @@ const app = {
         };
     },
     start: function () {
-        this.reder();
+        this.render();
         this.handleEvents();
     },
 };

@@ -303,6 +303,16 @@ a {
   z-index: 1200;
 }
 
+.main-content header .user-wrapper__notification--menu::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: 3px;
+  border-width: 28px 16px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
 .main-content header .user-wrapper__notification--menu .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -641,5 +651,101 @@ a {
   left: 14px;
   bottom: unset;
   right: unset;
+}
+
+.main-content main .users .card-body .table thead tr {
+  vertical-align: middle;
+}
+
+.main-content main .users .card-body .table thead tr th button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.main-content main .users .card-body .table thead tr th button:hover {
+  background: rgba(0, 171, 85, 0.08);
+}
+
+.main-content main .users .card-body .table thead tr th button input {
+  cursor: pointer;
+}
+
+.main-content main .users .card-body .table thead tr th span i {
+  color: #637381;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.main-content main .users .card-body .table tbody tr {
+  vertical-align: middle;
+}
+
+.main-content main .users .card-body .table tbody tr:hover {
+  background: #f4f6f8;
+}
+
+.main-content main .users .card-body .table tbody tr td {
+  font-size: 0.9rem;
+}
+
+.main-content main .users .card-body .table tbody tr td img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.main-content main .users .card-body .table tbody tr td i {
+  color: #637381;
+}
+
+.main-content main .users .card-body .table tbody tr td button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.main-content main .users .card-body .table tbody tr td button:hover {
+  background: rgba(0, 171, 85, 0.08);
+}
+
+.main-content main .users .card-body .table tbody tr td button input {
+  cursor: pointer;
+}
+
+.main-content main .users .card-body .table tbody tr .dropdown {
+  text-align: right;
+}
+
+.main-content main .users .card-body .table tbody tr .dropdown button::after {
+  display: none;
+}
+
+.main-content main .users .card-body .table tbody tr .dropdown-menu {
+  border: none;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.main-content main .users .card-body .table tbody tr .dropdown-item {
+  color: #637381;
+  font-size: 0.9rem;
+}
+
+.main-content main .users .card-body .table tbody tr .dropdown-item i {
+  font-size: 1rem;
+  margin: 6px 20px 6px 10px;
+}
+
+.main-content main .users .card-body .table tbody tr .dropdown-item:active {
+  background: #f4f6f8;
 }
 /*# sourceMappingURL=main.css.map */

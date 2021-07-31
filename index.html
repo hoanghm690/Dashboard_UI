@@ -45,20 +45,7 @@
                     </a>
                 </div>
                 <div class="sidebar__menu">
-                    <ul>
-                        <li class="active">
-                            <a href="">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <i class="fas fa-user-friends"></i>
-                                <span>User</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <ul></ul>
                 </div>
             </div>
             <div class="main-content">
@@ -214,10 +201,28 @@
                                         />
                                     </form>
                                 </div>
-                                <table class="table">
+                                <table class="table mt-4" id="users-table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Name</th>
+                                            <th
+                                                scope="col"
+                                                class="input-checkboxAll"
+                                            >
+                                                <button>
+                                                    <input
+                                                        type="checkbox"
+                                                        class="form-check-input"
+                                                    />
+                                                </button>
+                                            </th>
+                                            <th scope="col">
+                                                Name
+                                                <span>
+                                                    <i
+                                                        class="fas fa-arrow-up"
+                                                    ></i>
+                                                </span>
+                                            </th>
                                             <th scope="col">Company</th>
                                             <th scope="col">Role</th>
                                             <th scope="col">Verified</th>
@@ -225,24 +230,7 @@
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <img
-                                                    src="./assets/img/giphy.gif"
-                                                    width="40"
-                                                />
-                                                <span>Ton Ton</span>
-                                            </td>
-                                            <td>
-                                                Pollich, Zboncak and Bergstrom
-                                            </td>
-                                            <td>Frontend Developer</td>
-                                            <td>Yes</td>
-                                            <td>Active</td>
-                                            <td>---</td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody></tbody>
                                 </table>
                             </div>
                         </div>
