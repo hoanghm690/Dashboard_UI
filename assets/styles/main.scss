@@ -178,6 +178,7 @@ a {
 
     header {
         @include flexCenter;
+        // @include positionFixed;
         background: transparent;
         justify-content: space-between;
         padding: 0px 40px;
@@ -257,6 +258,7 @@ a {
                     transition: all 0.4s ease;
                     visibility: hidden;
                     opacity: 0;
+                    z-index: 1200;
 
                     .header {
                         @include flexCenter;
@@ -360,6 +362,7 @@ a {
                     transition: all 0.4s ease;
                     visibility: hidden;
                     opacity: 0;
+                    z-index: 1200;
 
                     &:hover {
                         visibility: visible;
@@ -525,6 +528,44 @@ a {
                         rgba(183, 33, 54, 0) 0%,
                         rgba(183, 33, 54, 0.24) 100%
                     );
+                }
+            }
+        }
+
+        .users {
+            .card {
+                border: none;
+                border-radius: 16px;
+
+                &-body {
+                    .search {
+                        form {
+                            position: relative;
+
+                            input {
+                                width: 260px;
+                                border-radius: 8px;
+                                padding: 16.5px 14px 16.5px 40px;
+                                transition: all 0.3s ease;
+
+                                &:focus {
+                                    width: 340px;
+                                    border: 1px solid #ced4da;
+                                    box-shadow: 0 0.5rem 1rem
+                                        rgba(0, 0, 0, 0.15);
+                                }
+                            }
+
+                            i {
+                                @include positionAbsolute;
+                                color: $textColor;
+                                top: 22px;
+                                left: 14px;
+                                bottom: unset;
+                                right: unset;
+                            }
+                        }
+                    }
                 }
             }
         }

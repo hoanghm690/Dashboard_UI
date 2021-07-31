@@ -300,6 +300,7 @@ a {
   transition: all 0.4s ease;
   visibility: hidden;
   opacity: 0;
+  z-index: 1200;
 }
 
 .main-content header .user-wrapper__notification--menu .header {
@@ -416,6 +417,7 @@ a {
   transition: all 0.4s ease;
   visibility: hidden;
   opacity: 0;
+  z-index: 1200;
 }
 
 .main-content header .user-wrapper__profile--menu:hover {
@@ -599,5 +601,45 @@ a {
 
 .main-content main .cards .reports .card .card-icon {
   background: linear-gradient(135deg, rgba(183, 33, 54, 0) 0%, rgba(183, 33, 54, 0.24) 100%);
+}
+
+.main-content main .users .card {
+  border: none;
+  border-radius: 16px;
+}
+
+.main-content main .users .card-body .search form {
+  position: relative;
+}
+
+.main-content main .users .card-body .search form input {
+  width: 260px;
+  border-radius: 8px;
+  padding: 16.5px 14px 16.5px 40px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.main-content main .users .card-body .search form input:focus {
+  width: 340px;
+  border: 1px solid #ced4da;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.main-content main .users .card-body .search form i {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1200;
+  color: #637381;
+  top: 22px;
+  left: 14px;
+  bottom: unset;
+  right: unset;
 }
 /*# sourceMappingURL=main.css.map */
