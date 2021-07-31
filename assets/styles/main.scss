@@ -160,21 +160,46 @@ a {
 }
 
 .main-content {
-    margin-left: calc(280px + 16px);
+    margin-left: 280px;
 
     header {
         @include flexCenter;
         background: transparent;
         justify-content: space-between;
         padding: 0px 40px;
+        position: relative;
+        height: 88px;
 
         .search-wrapper {
             @include flexCenter;
-            height: 88px;
+            @include w-h-40;
+            border-radius: 50%;
             cursor: pointer;
+            justify-content: center;
 
-            img {
-                width: 20px;
+            &:hover {
+                background: $backgroundPrimaryColor;
+            }
+
+            .toolbar-wrapper {
+                @include positionAbsolute;
+                @include flexCenter;
+                background: $backgroundColor;
+                justify-content: space-between;
+                height: 88px;
+                padding: 0px 40px;
+                transform: translateY(-100px);
+                transition: all 0.4s ease;
+                visibility: hidden;
+                opacity: 0;
+
+                input {
+                    background: $backgroundColor;
+                    border: none;
+                    width: 100%;
+                    outline: none;
+                    padding: 0 10px;
+                }
             }
         }
 
