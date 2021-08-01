@@ -4,7 +4,11 @@
         border-radius: 16px;
 
         &-body {
+            padding: 0;
+
             .search {
+                padding: 1rem 1rem 0 1rem;
+
                 form {
                     position: relative;
 
@@ -29,6 +33,39 @@
                         bottom: unset;
                         right: unset;
                     }
+                }
+            }
+
+            .selected-action {
+                @include positionAbsolute;
+                @include flexCenter;
+                justify-content: space-between;
+                padding: 0 30px;
+                height: 96px;
+                color: rgb(0, 171, 85);
+                background-color: rgb(200, 250, 205);
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+                transition: all 0.3s ease;
+                visibility: hidden;
+                opacity: 0;
+
+                button {
+                    @include w-h-40;
+                    border-radius: 50%;
+                    background: transparent;
+                    border: none;
+                    color: $textColor;
+                    outline: none;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        background: $backgroundPrimaryColor;
+                    }
+                }
+
+                span {
+                    font-weight: weight(bold);
                 }
             }
 

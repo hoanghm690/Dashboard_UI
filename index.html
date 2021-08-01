@@ -208,17 +208,27 @@
                                         />
                                     </form>
                                 </div>
-                                <table class="table mt-4" id="users-table">
+                                <div class="selected-action">
+                                    <span></span>
+                                    <button
+                                        type="button"
+                                        class="btn check-all-submit-btn"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom"
+                                        title="Delete"
+                                    >
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <table class="table mt-5" id="users-table">
                                     <thead>
                                         <tr>
                                             <th scope="col">
                                                 <button>
                                                     <input
                                                         type="checkbox"
-                                                        class="
-                                                            form-check-input
-                                                            input-checkboxAll
-                                                        "
+                                                        class="form-check-input"
+                                                        id="input-checkboxAll"
                                                     />
                                                 </button>
                                             </th>

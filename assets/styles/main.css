@@ -618,6 +618,14 @@ a {
   border-radius: 16px;
 }
 
+.main-content main .users .card-body {
+  padding: 0;
+}
+
+.main-content main .users .card-body .search {
+  padding: 1rem 1rem 0 1rem;
+}
+
 .main-content main .users .card-body .search form {
   position: relative;
 }
@@ -651,6 +659,55 @@ a {
   left: 14px;
   bottom: unset;
   right: unset;
+}
+
+.main-content main .users .card-body .selected-action {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1200;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px;
+  height: 96px;
+  color: #00ab55;
+  background-color: #c8facd;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main-content main .users .card-body .selected-action button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #637381;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.main-content main .users .card-body .selected-action button:hover {
+  background: #f4f6f8;
+}
+
+.main-content main .users .card-body .selected-action span {
+  font-weight: 700;
 }
 
 .main-content main .users .card-body .table thead tr {

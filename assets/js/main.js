@@ -3,8 +3,6 @@ const $$ = document.querySelectorAll.bind(document);
 
 const searchBtn = $(".search-wrapper");
 const toolbarWrapper = $(".toolbar-wrapper");
-const inputCheckboxAll = $(".input-checkboxAll");
-const inputCheckboxUsers = $$(".input-checkbox-user");
 const sidebarMenu = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
@@ -69,6 +67,7 @@ const app = {
             status: true,
         },
     ],
+    // render data
     render: function () {
         const htmlSidebarMenu = this.sidebarMenu.map((sidebarMenu) => {
             return `<li class="${sidebarMenu.isActive == true ? "active" : ""}">
@@ -95,7 +94,10 @@ const app = {
             return `<tr data-id=${user.id}>
                         <td width="48">
                             <button>
-                                <input type="checkbox" class="form-check-input input-checkbox-user"/>
+                                <input type="checkbox" 
+                                       class="form-check-input input-checkbox-user"
+                                       name="userIds[]"
+                                       value="${user.id}" />
                             </button>
                         </td>
                         <td>
@@ -145,7 +147,9 @@ const app = {
         cards.innerHTML = htmlCards.join("");
         users.innerHTML = htmlUsers.join("");
     },
+    //Handle Events
     handleEvents: function () {
+        //Search clicked
         searchBtn.onclick = function () {
             Object.assign(toolbarWrapper.style, {
                 visibility: "visible",
@@ -154,9 +158,45 @@ const app = {
             });
         };
 
-        // inputCheckboxAll.onclick = function () {
-        //     inputCheckboxUsers.prop("checked", this.checked);
-        // };
+        //Checkbox all changed
+        var checkboxAll = $("#input-checkboxAll");
+        var userItemCheckbox = $$('input[name="userIds[]"]');
+        const _this = this;
+
+        //checkbox all changed
+        checkboxAll.onchange = function () {
+            for (i = 0; i < userItemCheckbox.length; i++) {
+                var user = userItemCheckbox[i];
+                user.checked = this.checked;
+
+                //user item checkbox changed
+                user.onchange = function () {
+                    var isCheckedAll =
+                        userItemCheckbox.length ===
+                        $$('input[name="userIds[]"]:checked').length;
+                    checkboxAll.checked = isCheckedAll;
+                    _this.renderSelectedAction();
+                };
+            }
+            _this.renderSelectedAction();
+        };
+    },
+    renderSelectedAction: function () {
+        var checkedCount = $$('input[name="userIds[]"]:checked').length;
+        var selectedAction = $(".selected-action");
+
+        if (checkedCount > 0) {
+            Object.assign(selectedAction.style, {
+                visibility: "visible",
+                opacity: "1",
+            });
+            $(".selected-action span").innerHTML = checkedCount + " selected";
+        } else {
+            Object.assign(selectedAction.style, {
+                visibility: "hidden",
+                opacity: "0",
+            });
+        }
     },
     start: function () {
         this.render();
