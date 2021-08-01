@@ -198,7 +198,13 @@
                         <div class="card shadow">
                             <div class="card-body">
                                 <div class="search">
-                                    <form class="d-flex">
+                                    <form
+                                        class="
+                                            d-flex
+                                            justify-content-between
+                                            align-items-center
+                                        "
+                                    >
                                         <i class="fas fa-search"></i>
                                         <input
                                             class="form-control"
@@ -206,49 +212,70 @@
                                             placeholder="Search user..."
                                             aria-label="Search"
                                         />
+                                        <button
+                                            type="button"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom"
+                                            name="delete"
+                                            title="Filter list"
+                                        >
+                                            <img
+                                                src="./assets/img/filter.svg"
+                                                alt="Filter list"
+                                                width="20"
+                                            />
+                                        </button>
                                     </form>
                                 </div>
-                                <div class="selected-action">
-                                    <span></span>
-                                    <button
-                                        type="button"
-                                        class="btn check-all-submit-btn"
-                                        data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom"
-                                        title="Delete"
-                                    >
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </div>
-                                <table class="table mt-5" id="users-table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">
-                                                <button>
-                                                    <input
-                                                        type="checkbox"
-                                                        class="form-check-input"
-                                                        id="input-checkboxAll"
-                                                    />
-                                                </button>
-                                            </th>
-                                            <th scope="col">
-                                                Name
-                                                <span>
-                                                    <i
-                                                        class="fas fa-arrow-up"
-                                                    ></i>
-                                                </span>
-                                            </th>
-                                            <th scope="col">Company</th>
-                                            <th scope="col">Role</th>
-                                            <th scope="col">Verified</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
+                                <form action="" name="container-form-users">
+                                    <div class="selected-action">
+                                        <span></span>
+                                        <button
+                                            type="button"
+                                            class="check-all-submit-btn"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom"
+                                            name="delete"
+                                            title="Delete"
+                                        >
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                    <table class="table mt-5" id="users-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    <button>
+                                                        <input
+                                                            type="checkbox"
+                                                            class="
+                                                                form-check-input
+                                                            "
+                                                            id="input-checkboxAll"
+                                                        />
+                                                    </button>
+                                                </th>
+                                                <th scope="col">
+                                                    Name
+                                                    <span class="sort-name">
+                                                        <i
+                                                            class="
+                                                                fas
+                                                                fa-arrow-up
+                                                            "
+                                                        ></i>
+                                                    </span>
+                                                </th>
+                                                <th scope="col">Company</th>
+                                                <th scope="col">Role</th>
+                                                <th scope="col">Verified</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -119,9 +119,10 @@ const app = {
                             <button
                                 type="button"
                                 class="dropdown-toggle"
-                                id="dropdownMenuLink"
+                                id="${user.id}"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
+                                
                             >
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
@@ -158,7 +159,8 @@ const app = {
             });
         };
 
-        //Checkbox all changed
+        var containerForm = document.forms["container-form-users"];
+        var checkAllSubmitBtn = $(".check-all-submit-btn");
         var checkboxAll = $("#input-checkboxAll");
         var userItemCheckbox = $$('input[name="userIds[]"]');
         const _this = this;
@@ -168,17 +170,24 @@ const app = {
             for (i = 0; i < userItemCheckbox.length; i++) {
                 var user = userItemCheckbox[i];
                 user.checked = this.checked;
-
-                //user item checkbox changed
-                user.onchange = function () {
-                    var isCheckedAll =
-                        userItemCheckbox.length ===
-                        $$('input[name="userIds[]"]:checked').length;
-                    checkboxAll.checked = isCheckedAll;
-                    _this.renderSelectedAction();
-                };
             }
             _this.renderSelectedAction();
+        };
+
+        //user item checkbox changed
+        for (i = 0; i < userItemCheckbox.length; i++) {
+            userItemCheckbox[i].onchange = function () {
+                var isCheckedAll =
+                    userItemCheckbox.length ===
+                    $$('input[name="userIds[]"]:checked').length;
+                checkboxAll.checked = isCheckedAll;
+                _this.renderSelectedAction();
+            };
+        }
+
+        //delete all btn clicked
+        checkAllSubmitBtn.onclick = function () {
+            containerForm.submit();
         };
     },
     renderSelectedAction: function () {
@@ -198,6 +207,7 @@ const app = {
             });
         }
     },
+
     start: function () {
         this.render();
         this.handleEvents();

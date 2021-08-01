@@ -33,6 +33,18 @@
                         bottom: unset;
                         right: unset;
                     }
+
+                    button {
+                        @include w-h-40;
+                        border-radius: 50%;
+                        background: transparent;
+                        border: none;
+                        outline: none;
+
+                        &:hover {
+                            background: $backgroundPrimaryColor;
+                        }
+                    }
                 }
             }
 

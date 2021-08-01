@@ -661,6 +661,19 @@ a {
   right: unset;
 }
 
+.main-content main .users .card-body .search form button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.main-content main .users .card-body .search form button:hover {
+  background: #f4f6f8;
+}
+
 .main-content main .users .card-body .selected-action {
   position: absolute;
   padding: 0;
