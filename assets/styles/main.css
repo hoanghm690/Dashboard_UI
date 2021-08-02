@@ -923,6 +923,7 @@ a {
 .main-content main #products .products .card {
   border: none;
   border-radius: 16px;
+  margin-bottom: 24px;
 }
 
 .main-content main #products .products .card .sale,
@@ -1000,7 +1001,36 @@ a {
   width: 16px;
   height: 16px;
   border: 2px solid white;
-  background-color: green;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.main-content main #products .products .card-body .card-text .color .red {
+  background: red;
+}
+
+.main-content main #products .products .card-body .card-text .color .green {
+  background: green;
+}
+
+.main-content main #products .products .card-body .card-text .color .black {
+  background: black;
+}
+
+.main-content main #products .products .card-body .card-text .color .white {
+  background: white;
+}
+
+.main-content main #products .products .card-body .card-text .color .pink {
+  background: pink;
+}
+
+.main-content main #products .products .card-body .card-text .color .blue {
+  background: blue;
+}
+
+.main-content main #products .products .card-body .card-text .color .yellow {
+  background: yellow;
 }
 
 .main-content main #products .products .card-body .card-text .color div:first-child {

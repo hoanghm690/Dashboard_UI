@@ -14,43 +14,36 @@ const app = {
             url: "#dashboard",
             icon: '<i class="fas fa-chart-pie"></i>',
             title: "Dashboard",
-            // isActive: true,
         },
         {
             url: "#users",
             icon: '<i class="fas fa-user-friends"></i>',
             title: "User",
-            // isActive: false,
         },
         {
             url: "#products",
             icon: '<i class="fas fa-shopping-bag"></i>',
             title: "Product",
-            // isActive: false,
         },
         {
             url: "#blogs",
             icon: '<i class="fas fa-file-alt"></i>',
             title: "Blog",
-            // isActive: false,
         },
         {
             url: "#login",
             icon: '<i class="fas fa-sign-in-alt"></i>',
             title: "Login",
-            // isActive: false,
         },
         {
             url: "#register",
             icon: '<i class="fas fa-user-plus"></i>',
             title: "Register",
-            // isActive: false,
         },
         {
             url: "#404",
             icon: '<i class="fas fa-exclamation-triangle"></i>',
             title: "Not Found",
-            // isActive: false,
         },
     ],
     cards: [
@@ -103,6 +96,7 @@ const app = {
         {
             id: 1,
             name: "Nike Air Force 1 NDESTRUKT",
+            url: "#product#",
             img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_1.jpg",
             price_old: 116.75,
             price_new: 96.75,
@@ -112,13 +106,80 @@ const app = {
         },
         {
             id: 2,
+            name: "Nike Space Hippie 04",
+            url: "#product#",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_2.jpg",
+            price_old: 34.93,
+            price_new: 34.93,
+            colors: ["white", "pink"],
+            isSale: false,
+            isNew: false,
+        },
+        {
+            id: 3,
             name: "Nike Air Zoom Pegasus 37 A.I.R. Chaz Bear",
+            url: "#product#",
             img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_3.jpg",
             price_old: 23.79,
             price_new: 9.41,
             colors: ["white", "pink"],
             isSale: false,
             isNew: true,
+        },
+        {
+            id: 4,
+            name: "Nike Blazer Low 77 Vintage",
+            url: "#product#",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_4.jpg",
+            price_old: 78.33,
+            price_new: 78.33,
+            colors: ["pink", "red", "blue"],
+            isSale: false,
+            isNew: false,
+        },
+        {
+            id: 5,
+            name: "Nike ZoomX SuperRep Surge",
+            url: "#product#",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_5.jpg",
+            price_old: 65.32,
+            price_new: 65.32,
+            colors: ["green", "black", "white"],
+            isSale: false,
+            isNew: false,
+        },
+        {
+            id: 6,
+            name: "Zoom Freak 2",
+            url: "#product#",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_6.jpg",
+            price_old: 21.21,
+            price_new: 35.66,
+            colors: ["green", "black", "white"],
+            isSale: true,
+            isNew: false,
+        },
+        {
+            id: 7,
+            name: "Nike Air Max Zephyr",
+            url: "#product#",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_7.jpg",
+            price_old: 33.26,
+            price_new: 33.26,
+            colors: ["green", "black", "white", "yellow"],
+            isSale: false,
+            isNew: false,
+        },
+        {
+            id: 8,
+            name: "Jordan Delta",
+            url: "#product#",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_8.jpg",
+            price_old: 60.57,
+            price_new: 60.57,
+            colors: ["green", "black", "white", "pink", "blue"],
+            isSale: false,
+            isNew: false,
         },
     ],
 
@@ -236,19 +297,27 @@ const app = {
                                 alt="${product.name}"
                             />
                             <div class="card-body">
-                                <a href="">
+                                <a href="${product.url}">
                                     <h6 class="card-title pt-3">
                                         ${product.name}
                                     </h6>
                                 </a>
                                 <div class="card-text pt-3 pb-2">
                                     <span class="color">
-                                        <div></div>
-                                        <div></div>
+                                        ${product.colors
+                                            .map((color) => {
+                                                return `<div class="${color}"></div>`;
+                                            })
+                                            .join("")}
                                     </span>
                                     <h6 class="price">
                                         <span class="price-old">
-                                            $${product.price_old}
+                                            ${
+                                                product.price_old !==
+                                                product.price_new
+                                                    ? "$" + product.price_old
+                                                    : ""
+                                            }
                                         </span>
                                         <span class="price-new"> 
                                             $${product.price_new}

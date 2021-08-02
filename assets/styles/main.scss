@@ -164,6 +164,7 @@ a {
                 .card {
                     border: none;
                     border-radius: 16px;
+                    margin-bottom: 24px;
 
                     .sale,
                     .new {
@@ -224,7 +225,36 @@ a {
                                     width: 16px;
                                     height: 16px;
                                     border: 2px solid rgb(255, 255, 255);
-                                    background-color: green;
+                                    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px
+                                        3.2px;
+                                }
+
+                                .red {
+                                    background: red;
+                                }
+
+                                .green {
+                                    background: green;
+                                }
+
+                                .black {
+                                    background: black;
+                                }
+
+                                .white {
+                                    background: white;
+                                }
+
+                                .pink {
+                                    background: pink;
+                                }
+
+                                .blue {
+                                    background: blue;
+                                }
+
+                                .yellow {
+                                    background: yellow;
                                 }
 
                                 div:first-child {
