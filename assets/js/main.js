@@ -7,7 +7,7 @@ const sidebarMenu = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
 const products = $("#products .products .products-list");
-const blogs = $("#blogs .blogs .blogs-hot");
+const blogs = $("#blogs .blogs .blogs-list");
 const app = {
     currentIndex: 0,
     sidebarMenu: [
@@ -32,7 +32,7 @@ const app = {
             title: "Blog",
         },
         {
-            url: "#login",
+            url: "login.html",
             icon: '<i class="fas fa-sign-in-alt"></i>',
             title: "Login",
         },

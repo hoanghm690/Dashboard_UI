@@ -1234,18 +1234,18 @@ h4 {
           box-shadow: none;
 }
 
-.main-content main #blogs .blogs-hot .card {
+.main-content main #blogs .blogs-list .card {
   border-radius: 16px;
   margin-bottom: 24px;
 }
 
-.main-content main #blogs .blogs-hot .card img {
+.main-content main #blogs .blogs-list .card img {
   border-radius: 16px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.main-content main #blogs .blogs-hot .card-avatar {
+.main-content main #blogs .blogs-list .card-avatar {
   position: absolute;
   padding: 0;
   margin: 0;
@@ -1257,27 +1257,27 @@ h4 {
   bottom: unset;
 }
 
-.main-content main #blogs .blogs-hot .card-avatar img {
+.main-content main #blogs .blogs-list .card-avatar img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin: 1rem;
 }
 
-.main-content main #blogs .blogs-hot .card-img-overlay {
+.main-content main #blogs .blogs-list .card-img-overlay {
   background: rgba(0, 0, 0, 0.5);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   top: unset;
 }
 
-.main-content main #blogs .blogs-hot .card-img-overlay .card-created {
+.main-content main #blogs .blogs-list .card-img-overlay .card-created {
   color: #637381;
   font-size: 0.75rem;
   font-weight: 700;
 }
 
-.main-content main #blogs .blogs-hot .card-img-overlay .card-title {
+.main-content main #blogs .blogs-list .card-img-overlay .card-title {
   display: block;
   color: #fff;
   line-height: 1.5;
@@ -1285,7 +1285,7 @@ h4 {
   font-size: 1.2rem;
 }
 
-.main-content main #blogs .blogs-hot .card-img-overlay .card-actions {
+.main-content main #blogs .blogs-list .card-img-overlay .card-actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1330,5 +1330,150 @@ h4 {
 #page-not-found img {
   -webkit-animation: fadein 0.3s ease;
           animation: fadein 0.3s ease;
+}
+
+#login .card {
+  border-radius: 16px;
+  border: none;
+  margin: 12px 0;
+}
+
+#login .card img:first-child,
+#login .card h3 {
+  margin: 40px;
+}
+
+#login .card img:last-child {
+  width: 100%;
+}
+
+#login .sign-in {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#login .sign-in .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px 0;
+}
+
+#login .sign-in .socials button {
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(145, 158, 171, 0.24);
+  outline: none;
+  padding: 10px 68px;
+}
+
+#login .sign-in .socials button i {
+  font-size: 1.2rem;
+}
+
+#login .sign-in .socials button .fab.fa-google {
+  color: #df3e30;
+}
+
+#login .sign-in .socials button .fab.fa-facebook-f {
+  color: #1877f2;
+}
+
+#login .sign-in .socials button .fab.fa-twitter {
+  color: #1c9cea;
+}
+
+#login .sign-in .socials button:hover {
+  background: rgba(145, 158, 171, 0.06);
+}
+
+#login .sign-in form .material-textfield {
+  position: relative;
+  margin-top: 30px;
+}
+
+#login .sign-in form .material-textfield label {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #fff;
+  color: #637381;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  -webkit-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  pointer-events: none;
+}
+
+#login .sign-in form .material-textfield input {
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid rgba(145, 158, 171, 0.24);
+  border-radius: 8px;
+  padding: 1rem 0.7rem;
+  color: #212b36;
+  -webkit-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
+}
+
+#login .sign-in form .material-textfield input:focus {
+  border-color: #00ab55;
+}
+
+#login .sign-in form .material-textfield input:focus + label {
+  color: #00ab55;
+  top: 0;
+  -webkit-transform: translateY(-50%) scale(0.9);
+          transform: translateY(-50%) scale(0.9);
+}
+
+#login .sign-in form .material-textfield input:not(:placeholder-shown) + label {
+  top: 0;
+  -webkit-transform: translateY(-50%) scale(0.9);
+          transform: translateY(-50%) scale(0.9);
+}
+
+#login .sign-in form .form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#login .sign-in form .form-check input,
+#login .sign-in form .form-check label {
+  cursor: pointer;
+}
+
+#login .sign-in form .form-check input:checked[type="checkbox"],
+#login .sign-in form .form-check label:checked[type="checkbox"] {
+  background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+#login .sign-in form .form-check a {
+  color: #00ab55;
+  font-weight: 500;
+}
+
+#login .sign-in form .btn-success {
+  width: 100%;
+  height: 48px;
 }
 /*# sourceMappingURL=main.css.map */
