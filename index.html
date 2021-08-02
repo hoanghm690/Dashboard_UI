@@ -295,7 +295,12 @@
                         <div class="product-title mt-5">
                             <h4>Products</h4>
                             <div class="action">
-                                <div class="filters">
+                                <div
+                                    class="filters"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasFilterProductRight"
+                                    aria-controls="offcanvasFilterProductRight"
+                                >
                                     <span>Filters</span>
                                     <button>
                                         <img
@@ -303,6 +308,223 @@
                                             width="20"
                                         />
                                     </button>
+                                </div>
+
+                                <div
+                                    class="offcanvas offcanvas-end"
+                                    tabindex="-1"
+                                    id="offcanvasFilterProductRight"
+                                    aria-labelledby="offcanvasFilterProductRightLabel"
+                                >
+                                    <div class="offcanvas-header">
+                                        <h6
+                                            id="offcanvasFilterProductRightLabel"
+                                        >
+                                            Filters
+                                        </h6>
+                                        <button
+                                            type="button"
+                                            class="btn-close text-reset"
+                                            data-bs-dismiss="offcanvas"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <div class="gender">
+                                            <h6>Gender</h6>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    value="men"
+                                                    id="men"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="men"
+                                                >
+                                                    Men
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    value="women"
+                                                    id="women"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="women"
+                                                >
+                                                    Women
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    value="kids"
+                                                    id="kids"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="kids"
+                                                >
+                                                    Kids
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="category">
+                                            <h6>Category</h6>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory1"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory1"
+                                                >
+                                                    All
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory2"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory2"
+                                                >
+                                                    Shose
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory3"
+                                                >
+                                                    Apparel
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory4"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory4"
+                                                >
+                                                    Accessories
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <h6>Price</h6>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductPrice"
+                                                    id="flexRadioFilterProductPrice1"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductPrice1"
+                                                >
+                                                    Below $25
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductPrice"
+                                                    id="flexRadioFilterProductPrice2"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductPrice2"
+                                                >
+                                                    Between $25 - $75
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductPrice"
+                                                    id="flexRadioFilterProductPrice3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductPrice3"
+                                                >
+                                                    Above $75
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="rating">
+                                            <h6>Rating</h6>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="clear-all"
+                                            data-bs-dismiss="offcanvas"
+                                        >
+                                            <img
+                                                src="./assets/img/rubber.svg"
+                                                width="20"
+                                            />
+                                            <h6 class="ms-2">Clear All</h6>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <button

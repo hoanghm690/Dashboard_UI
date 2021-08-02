@@ -114,6 +114,88 @@ a {
                         }
                     }
 
+                    .offcanvas {
+                        width: 280px;
+                        z-index: 1201;
+                        transition: all 0.3s ease;
+
+                        &-header {
+                            border-bottom: 1px solid $borderColor;
+                            padding: 1.6rem 1rem;
+
+                            .btn-close {
+                                border-radius: 50%;
+
+                                &:hover {
+                                    background: $backgroundPrimaryColor
+                                        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+                                        center/1em auto no-repeat;
+                                }
+                            }
+                        }
+
+                        &-body {
+                            .gender,
+                            .category,
+                            .price {
+                                .form-check {
+                                    margin: 16px;
+
+                                    input,
+                                    label {
+                                        cursor: pointer;
+                                    }
+
+                                    .form-check-input:checked[type="checkbox"] {
+                                        background: $backgroundColorActive
+                                            url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+                                    }
+
+                                    .form-check-input:checked[type="radio"] {
+                                        background: $backgroundColorActive
+                                            url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+                                    }
+                                }
+                            }
+
+                            .rating {
+                                .form-check {
+                                    border-radius: 8px;
+                                    margin: 16px 8px 16px 0;
+
+                                    i {
+                                        margin-right: 4px;
+                                    }
+
+                                    .fas.fa-star {
+                                        color: rgb(250, 175, 0);
+                                    }
+
+                                    &:hover {
+                                        background: $backgroundPrimaryColor;
+                                    }
+                                }
+                            }
+
+                            .clear-all {
+                                @include flexCenter;
+                                justify-content: center;
+                                border-radius: 8px;
+                                border: 1px solid rgba(145, 158, 171, 0.32);
+                                height: 48px;
+                                cursor: pointer;
+
+                                &:hover {
+                                    background: $backgroundPrimaryColor;
+                                }
+                            }
+                        }
+                    }
+
+                    .modal-backdrop {
+                        z-index: 1200;
+                    }
+
                     .sort-by {
                         @include flexCenter;
                         border: none;
