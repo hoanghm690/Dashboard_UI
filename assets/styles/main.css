@@ -963,6 +963,10 @@ h4 {
   color: #faaf00;
 }
 
+.main-content main #products .product-title .action .offcanvas-body .rating .form-check .far.fa-star {
+  color: rgba(145, 158, 171, 0.8);
+}
+
 .main-content main #products .product-title .action .offcanvas-body .rating .form-check:hover {
   background: #f4f6f8;
 }
@@ -1168,5 +1172,37 @@ h4 {
 .main-content main #products .products .card-body .card-text .price-old {
   color: #637381;
   text-decoration: line-through;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+#page-not-found h3,
+#page-not-found img {
+  -webkit-animation: fadein 0.3s ease;
+          animation: fadein 0.3s ease;
 }
 /*# sourceMappingURL=main.css.map */
