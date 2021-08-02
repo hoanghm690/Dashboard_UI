@@ -41,7 +41,7 @@ const app = {
             title: "Register",
         },
         {
-            url: "#404",
+            url: "404.html",
             icon: '<i class="fas fa-exclamation-triangle"></i>',
             title: "Not Found",
         },

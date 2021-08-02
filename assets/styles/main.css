@@ -41,9 +41,19 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid #b4bcc3;
 }
 
-body body a {
+a {
   color: #212b36;
   text-decoration: none;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+.btn-success {
+  background: #00ab55;
+  border-color: #00ab55;
+  border-radius: 8px;
 }
 
 #app {
@@ -462,6 +472,7 @@ body body a {
 }
 
 .main-content header .user-wrapper__profile--menu .name {
+  width: 100%;
   border-bottom: 1px solid rgba(145, 158, 171, 0.24);
   display: -ms-inline-grid;
   display: inline-grid;
@@ -941,6 +952,7 @@ body body a {
 .main-content main #products .product-title .action .offcanvas-body .rating .form-check {
   border-radius: 8px;
   margin: 16px 8px 16px 0;
+  cursor: pointer;
 }
 
 .main-content main #products .product-title .action .offcanvas-body .rating .form-check i {
