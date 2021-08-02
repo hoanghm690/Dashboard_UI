@@ -31,7 +31,17 @@ body {
   line-height: 1.5;
 }
 
-a {
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #b4bcc3;
+  border-radius: 20px;
+  border: 3px solid #b4bcc3;
+}
+
+body body a {
   color: #212b36;
   text-decoration: none;
 }
@@ -963,6 +973,16 @@ a {
 
 .main-content main #products .product-title .action .offcanvas-body .clear-all:hover {
   background: #f4f6f8;
+}
+
+.main-content main #products .product-title .action .offcanvas-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content main #products .product-title .action .offcanvas-body::-webkit-scrollbar-thumb {
+  background: #b4bcc3;
+  border-radius: 20px;
+  border: 3px solid #b4bcc3;
 }
 
 .main-content main #products .product-title .action .modal-backdrop {

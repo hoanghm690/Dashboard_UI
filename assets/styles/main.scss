@@ -58,9 +58,19 @@ body {
     font-size: $fontSize;
     font-weight: weight(regular);
     line-height: $lineHeight;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgb(180, 188, 195);
+        border-radius: 20px;
+        border: 3px solid rgb(180, 188, 195);
+    }
 }
 
-a {
+body body a {
     color: $primaryColor;
     text-decoration: none;
 }
@@ -188,6 +198,16 @@ a {
                                 &:hover {
                                     background: $backgroundPrimaryColor;
                                 }
+                            }
+
+                            &::-webkit-scrollbar {
+                                width: 8px;
+                            }
+
+                            &::-webkit-scrollbar-thumb {
+                                background: rgb(180, 188, 195);
+                                border-radius: 20px;
+                                border: 3px solid rgb(180, 188, 195);
                             }
                         }
                     }
