@@ -7,6 +7,7 @@ const sidebarMenu = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
 const products = $("#products .products .products-list");
+const blogs = $("#blogs .blogs .blogs-hot");
 const app = {
     currentIndex: 0,
     sidebarMenu: [
@@ -182,6 +183,52 @@ const app = {
             isNew: false,
         },
     ],
+    blogs: [
+        {
+            id: 1,
+            title: "Tesla Cybertruck-inspired camper trailer for Tesla fans who can’t just wait for the truck!",
+            created: "20 November 2020",
+            url: "#blog#",
+            author: "./assets/img/giphy.gif",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/covers/cover_1.jpg",
+            comment: 13.45,
+            view: 95.39,
+            share: 99.17,
+        },
+        {
+            id: 2,
+            title: "Designify Agency Landing Page Design",
+            created: "07 February 2021",
+            url: "#blog#",
+            author: "./assets/img/giphy.gif",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/covers/cover_2.jpg",
+            comment: 56.61,
+            view: 77.35,
+            share: 52.04,
+        },
+        {
+            id: 3,
+            title: "✨What is Done is Done ✨",
+            created: "10 May 2021",
+            url: "#blog#",
+            author: "./assets/img/giphy.gif",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/covers/cover_3.jpg",
+            comment: 20.93,
+            view: 36.35,
+            share: 16.54,
+        },
+        {
+            id: 4,
+            title: "40 Free Serif Fonts for Digital Designers",
+            created: "01 October 2020",
+            url: "#blog#",
+            author: "./assets/img/giphy.gif",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/covers/cover_8.jpg",
+            comment: 79.43,
+            view: 28.13,
+            share: 77.18,
+        },
+    ],
 
     // render data
     renderSidebars: function () {
@@ -330,6 +377,41 @@ const app = {
         });
         products.innerHTML = htmlProducts.join("");
     },
+    renderBlogs: function () {
+        const htmlBlogs = this.blogs.map((blog) => {
+            return `<div class="col-md-6">
+                        <div class="card text-white">
+                            <img src="${blog.img}" class="card-img" />
+                            <div class="card-avatar">
+                                <img src="${blog.author}" />
+                            </div>
+                            <div class="card-img-overlay">
+                                <p class="card-created mb-1">
+                                    ${blog.created}
+                                </p>
+                                <a href="${blog.url}" class="card-title">
+                                    ${blog.title}
+                                </a>
+                                <div class="card-actions mt-2">
+                                    <div class="card-actions__comments me-3">
+                                        <i class="fas fa-comment-dots"></i>
+                                        <span>${blog.comment}k</span>
+                                    </div>
+                                    <div class="card-actions__views me-3">
+                                        <i class="fas fa-eye"></i>
+                                        <span>${blog.view}k</span>
+                                    </div>
+                                    <div class="card-actions__shares">
+                                        <i class="fas fa-share-alt"></i>
+                                        <span>${blog.share}k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+        });
+        blogs.innerHTML = htmlBlogs.join("");
+    },
     //Handle Events
     handleEvents: function () {
         //Search clicked
@@ -439,6 +521,7 @@ const app = {
         this.renderCards();
         this.renderUsers();
         this.renderProducts();
+        this.renderBlogs();
         this.handleEvents();
     },
 };

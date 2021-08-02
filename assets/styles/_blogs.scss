@@ -1,0 +1,103 @@
+#blogs {
+    .form-search {
+        position: relative;
+
+        input {
+            width: 260px;
+            border-radius: 8px;
+            padding: 6.5px 14px 6.5px 40px;
+            transition: all 0.3s ease;
+
+            &:focus {
+                width: 340px;
+                border: 1px solid #ced4da;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        i {
+            @include positionAbsolute;
+            color: $textColor;
+            top: 12px;
+            left: 14px;
+            bottom: unset;
+            right: unset;
+        }
+
+        button {
+            @include w-h-40;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            outline: none;
+
+            &:hover {
+                background: $backgroundPrimaryColor;
+            }
+        }
+    }
+
+    .form-select {
+        border-radius: 8px;
+        width: 10%;
+
+        &:focus {
+            border: 1px solid $borderColorActive;
+            box-shadow: none;
+        }
+    }
+
+    .blogs {
+        &-hot {
+            .card {
+                border-radius: 16px;
+                margin-bottom: 24px;
+
+                img {
+                    border-radius: 16px;
+                    object-fit: cover;
+                }
+
+                &-avatar {
+                    @include positionAbsolute;
+                    bottom: unset;
+
+                    img {
+                        @include w-h-40;
+                        border-radius: 50%;
+                        margin: 1rem;
+                    }
+                }
+
+                &-img-overlay {
+                    background: rgba(0, 0, 0, 0.5);
+                    border-bottom-left-radius: 16px;
+                    border-bottom-right-radius: 16px;
+                    top: unset;
+
+                    .card-created {
+                        color: $textColor;
+                        font-size: 0.75rem;
+                        font-weight: weight(bold);
+                    }
+
+                    .card-title {
+                        display: block;
+                        color: $textdefaultColor;
+                        line-height: $lineHeight;
+                        font-weight: weight(bold);
+                        font-size: 1.2rem;
+                    }
+
+                    .card-actions {
+                        @include flexCenter;
+                        justify-content: flex-end;
+                        color: $textColor;
+                        font-size: 0.75rem;
+                        font-weight: weight(medium);
+                    }
+                }
+            }
+        }
+    }
+}
