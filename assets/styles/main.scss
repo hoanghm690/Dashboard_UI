@@ -73,7 +73,8 @@ a {
 @import "./sidebar";
 
 .main-content {
-    margin-left: 280px;
+    padding-top: 80px;
+    padding-left: 280px;
 
     @import "./header";
 
@@ -83,5 +84,140 @@ a {
         @import "./cards";
 
         @import "./users";
+
+        #products {
+            .product-title {
+                .action {
+                    @include flexCenter;
+                    justify-content: flex-end;
+
+                    .filters {
+                        cursor: pointer;
+                        padding-left: 8px;
+
+                        span {
+                            font-size: 0.9rem;
+                            font-weight: weight(bold);
+                        }
+
+                        button {
+                            @include w-h-40;
+                            border-radius: 50%;
+                            background: transparent;
+                            border: none;
+                            outline: none;
+                        }
+
+                        &:hover {
+                            background: $backgroundPrimaryColor;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    .sort-by {
+                        @include flexCenter;
+                        border: none;
+                        background: transparent;
+                        cursor: pointer;
+                        margin-left: 20px;
+                        padding: 8px;
+
+                        h6 {
+                            font-size: 0.9rem;
+                            font-weight: weight(bold);
+                            margin-right: 8px;
+
+                            span {
+                                font-weight: weight(regular);
+                            }
+                        }
+
+                        &:hover {
+                            background: $backgroundPrimaryColor;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        border: none;
+                        border-radius: 8px;
+
+                        li {
+                            &.active {
+                                background: $backgroundPrimaryColor;
+                            }
+
+                            .dropdown-item {
+                                font-size: 0.9rem;
+
+                                &:active {
+                                    background: $backgroundPrimaryColor;
+                                    color: $textColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .products {
+                .card {
+                    border: none;
+                    border-radius: 16px;
+
+                    img {
+                        border-top-left-radius: 16px;
+                        border-top-right-radius: 16px;
+                        height: 270px;
+                        object-fit: cover;
+                    }
+
+                    &-body {
+                        a {
+                            .card-title {
+                                font-weight: weight(bold);
+                                font-size: 0.9rem;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+
+                            &:hover {
+                                color: $textColorActive;
+                            }
+                        }
+
+                        .card-text {
+                            @include flexCenter;
+                            justify-content: space-between;
+
+                            .color {
+                                display: flex;
+
+                                div {
+                                    margin-left: -4px;
+                                    border-radius: 50%;
+                                    width: 16px;
+                                    height: 16px;
+                                    border: 2px solid rgb(255, 255, 255);
+                                    background-color: rgb(0, 171, 85);
+                                }
+
+                                div:first-child {
+                                    margin-left: 0;
+                                }
+                            }
+
+                            .price {
+                                &-old {
+                                    color: $textColor;
+                                    text-decoration: line-through;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

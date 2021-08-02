@@ -55,6 +55,7 @@
                 }
 
                 a {
+                    width: 100%;
                     color: $textColor;
                     font-size: 0.875rem;
                     text-transform: capitalize;
@@ -62,12 +63,16 @@
                     position: relative;
                     @include flexCenter;
 
-                    i {
-                        font-size: 1.2rem;
+                    .sidebar-menu__icon {
+                        width: 30px;
+
+                        i {
+                            font-size: 1.2rem;
+                        }
                     }
 
                     span {
-                        margin-left: 16px;
+                        margin-left: 8px;
                     }
                 }
 

@@ -1,10 +1,11 @@
 header {
     @include flexCenter;
-    // @include positionFixed;
-    background: transparent;
+    @include positionFixed;
+    left: 280px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.72);
     justify-content: space-between;
     padding: 0px 40px;
-    position: relative;
     height: 88px;
 
     .search-wrapper {

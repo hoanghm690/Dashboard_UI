@@ -1,4 +1,4 @@
-.users {
+#users .users {
     .card {
         border: none;
         border-radius: 16px;
@@ -107,6 +107,7 @@
                                 color: $textColor;
                                 cursor: pointer;
                                 margin-left: 4px;
+                                transition: all 0.3s ease;
                             }
                         }
                     }

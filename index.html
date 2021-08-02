@@ -187,98 +187,214 @@
                 <main>
                     <h4>Hi, Welcome back</h4>
                     <div class="cards row mt-5"></div>
-                    <div class="d-flex justify-content-between mt-5">
-                        <h4>User</h4>
-                        <a href="" class="btn btn-success shadow"
-                            ><i class="fas fa-plus me-2"></i>
-                            <span>New Users</span>
-                        </a>
-                    </div>
-                    <div class="users mt-4">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="search">
-                                    <form
-                                        class="
-                                            d-flex
-                                            justify-content-between
-                                            align-items-center
-                                        "
-                                    >
-                                        <i class="fas fa-search"></i>
-                                        <input
-                                            class="form-control"
-                                            type="text"
-                                            placeholder="Search user..."
-                                            aria-label="Search"
-                                        />
-                                        <button
-                                            type="button"
-                                            data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom"
-                                            name="delete"
-                                            title="Filter list"
+                    <section id="users">
+                        <div class="d-flex justify-content-between mt-5">
+                            <h4>User</h4>
+                            <a href="" class="btn btn-success shadow"
+                                ><i class="fas fa-plus me-2"></i>
+                                <span>New Users</span>
+                            </a>
+                        </div>
+                        <div class="users mt-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <div class="search">
+                                        <form
+                                            class="
+                                                d-flex
+                                                justify-content-between
+                                                align-items-center
+                                            "
                                         >
-                                            <img
-                                                src="./assets/img/filter.svg"
-                                                alt="Filter list"
-                                                width="20"
+                                            <i class="fas fa-search"></i>
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                placeholder="Search user..."
+                                                aria-label="Search"
                                             />
-                                        </button>
+                                            <button
+                                                type="button"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom"
+                                                name="delete"
+                                                title="Filter list"
+                                            >
+                                                <img
+                                                    src="./assets/img/filter.svg"
+                                                    alt="Filter list"
+                                                    width="20"
+                                                />
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <form action="" name="container-form-users">
+                                        <div class="selected-action">
+                                            <span></span>
+                                            <button
+                                                type="button"
+                                                class="check-all-submit-btn"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom"
+                                                name="delete"
+                                                title="Delete"
+                                            >
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                        <table
+                                            class="table mt-5"
+                                            id="users-table"
+                                        >
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">
+                                                        <button>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="
+                                                                    form-check-input
+                                                                "
+                                                                id="input-checkboxAll"
+                                                            />
+                                                        </button>
+                                                    </th>
+                                                    <th
+                                                        scope="col"
+                                                        aria-sort="ascending"
+                                                    >
+                                                        Name
+                                                        <span class="sort-name">
+                                                            <i
+                                                                class="
+                                                                    fas
+                                                                    fa-arrow-up
+                                                                "
+                                                            ></i>
+                                                        </span>
+                                                    </th>
+                                                    <th scope="col">Company</th>
+                                                    <th scope="col">Role</th>
+                                                    <th scope="col">
+                                                        Verified
+                                                    </th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
                                     </form>
                                 </div>
-                                <form action="" name="container-form-users">
-                                    <div class="selected-action">
-                                        <span></span>
-                                        <button
-                                            type="button"
-                                            class="check-all-submit-btn"
-                                            data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom"
-                                            name="delete"
-                                            title="Delete"
-                                        >
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </div>
-                                    <table class="table mt-5" id="users-table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">
-                                                    <button>
-                                                        <input
-                                                            type="checkbox"
-                                                            class="
-                                                                form-check-input
-                                                            "
-                                                            id="input-checkboxAll"
-                                                        />
-                                                    </button>
-                                                </th>
-                                                <th scope="col">
-                                                    Name
-                                                    <span class="sort-name">
-                                                        <i
-                                                            class="
-                                                                fas
-                                                                fa-arrow-up
-                                                            "
-                                                        ></i>
-                                                    </span>
-                                                </th>
-                                                <th scope="col">Company</th>
-                                                <th scope="col">Role</th>
-                                                <th scope="col">Verified</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </form>
                             </div>
                         </div>
-                    </div>
+                    </section>
+                    <section id="products">
+                        <div class="product-title mt-5">
+                            <h4>Products</h4>
+                            <div class="action">
+                                <div class="filters">
+                                    <span>Filters</span>
+                                    <button>
+                                        <img
+                                            src="./assets/img/filter.svg"
+                                            width="20"
+                                        />
+                                    </button>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="sort-by dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <h6>
+                                        Sort By:
+                                        <span class="caret">Newest</span>
+                                    </h6>
+                                </button>
+
+                                <ul
+                                    class="
+                                        dropdown-menu dropdown-menu-end
+                                        shadow
+                                    "
+                                >
+                                    <li>
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Featured"
+                                        >
+                                            Featured
+                                        </button>
+                                    </li>
+                                    <li class="active">
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Newest"
+                                        >
+                                            Newest
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Price: High-Low"
+                                        >
+                                            Price: High-Low
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Price: Low-High"
+                                        >
+                                            Price: Low-High
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="products">
+                            <div class="row mt-5">
+                                <div class="col-md-3">
+                                    <div class="card shadow">
+                                        <img
+                                            src="https://minimal-kit-react.vercel.app/static/mock-images/products/product_1.jpg"
+                                            class="card-img-top"
+                                            alt=""
+                                        />
+                                        <div class="card-body">
+                                            <a href="">
+                                                <h6 class="card-title pt-3">
+                                                    Nike Air Force 1 NDESTRUKT
+                                                </h6>
+                                            </a>
+                                            <div class="card-text pt-3 pb-2">
+                                                <span class="color">
+                                                    <div></div>
+                                                    <div></div>
+                                                </span>
+                                                <h6 class="price">
+                                                    <span class="price-old"
+                                                        >$116.75
+                                                    </span>
+                                                    <span class="price-new"
+                                                        >$96.75
+                                                    </span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </main>
             </div>
         </div>

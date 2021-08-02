@@ -119,6 +119,7 @@ a {
 }
 
 .sidebar__menu ul li a {
+  width: 100%;
   color: #637381;
   font-size: 0.875rem;
   text-transform: capitalize;
@@ -132,12 +133,16 @@ a {
           align-items: center;
 }
 
-.sidebar__menu ul li a i {
+.sidebar__menu ul li a .sidebar-menu__icon {
+  width: 30px;
+}
+
+.sidebar__menu ul li a .sidebar-menu__icon i {
   font-size: 1.2rem;
 }
 
 .sidebar__menu ul li a span {
-  margin-left: 16px;
+  margin-left: 8px;
 }
 
 .sidebar__menu ul li.active {
@@ -174,7 +179,8 @@ a {
 }
 
 .main-content {
-  margin-left: 280px;
+  padding-top: 80px;
+  padding-left: 280px;
 }
 
 .main-content header {
@@ -184,12 +190,22 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: transparent;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1200;
+  left: 280px;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.72);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0px 40px;
-  position: relative;
   height: 88px;
 }
 
@@ -613,24 +629,24 @@ a {
   background: linear-gradient(135deg, rgba(183, 33, 54, 0) 0%, rgba(183, 33, 54, 0.24) 100%);
 }
 
-.main-content main .users .card {
+.main-content main #users .users .card {
   border: none;
   border-radius: 16px;
 }
 
-.main-content main .users .card-body {
+.main-content main #users .users .card-body {
   padding: 0;
 }
 
-.main-content main .users .card-body .search {
+.main-content main #users .users .card-body .search {
   padding: 1rem 1rem 0 1rem;
 }
 
-.main-content main .users .card-body .search form {
+.main-content main #users .users .card-body .search form {
   position: relative;
 }
 
-.main-content main .users .card-body .search form input {
+.main-content main #users .users .card-body .search form input {
   width: 260px;
   border-radius: 8px;
   padding: 16.5px 14px 16.5px 40px;
@@ -638,14 +654,14 @@ a {
   transition: all 0.3s ease;
 }
 
-.main-content main .users .card-body .search form input:focus {
+.main-content main #users .users .card-body .search form input:focus {
   width: 340px;
   border: 1px solid #ced4da;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.main-content main .users .card-body .search form i {
+.main-content main #users .users .card-body .search form i {
   position: absolute;
   padding: 0;
   margin: 0;
@@ -661,7 +677,7 @@ a {
   right: unset;
 }
 
-.main-content main .users .card-body .search form button {
+.main-content main #users .users .card-body .search form button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -670,11 +686,11 @@ a {
   outline: none;
 }
 
-.main-content main .users .card-body .search form button:hover {
+.main-content main #users .users .card-body .search form button:hover {
   background: #f4f6f8;
 }
 
-.main-content main .users .card-body .selected-action {
+.main-content main #users .users .card-body .selected-action {
   position: absolute;
   padding: 0;
   margin: 0;
@@ -704,7 +720,7 @@ a {
   opacity: 0;
 }
 
-.main-content main .users .card-body .selected-action button {
+.main-content main #users .users .card-body .selected-action button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -715,19 +731,19 @@ a {
   font-size: 1.2rem;
 }
 
-.main-content main .users .card-body .selected-action button:hover {
+.main-content main #users .users .card-body .selected-action button:hover {
   background: #f4f6f8;
 }
 
-.main-content main .users .card-body .selected-action span {
+.main-content main #users .users .card-body .selected-action span {
   font-weight: 700;
 }
 
-.main-content main .users .card-body .table thead tr {
+.main-content main #users .users .card-body .table thead tr {
   vertical-align: middle;
 }
 
-.main-content main .users .card-body .table thead tr th button {
+.main-content main #users .users .card-body .table thead tr th button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -736,44 +752,46 @@ a {
   outline: none;
 }
 
-.main-content main .users .card-body .table thead tr th button:hover {
+.main-content main #users .users .card-body .table thead tr th button:hover {
   background: rgba(0, 171, 85, 0.08);
 }
 
-.main-content main .users .card-body .table thead tr th button input {
+.main-content main #users .users .card-body .table thead tr th button input {
   cursor: pointer;
 }
 
-.main-content main .users .card-body .table thead tr th span i {
+.main-content main #users .users .card-body .table thead tr th span i {
   color: #637381;
   cursor: pointer;
   margin-left: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.main-content main .users .card-body .table tbody tr {
+.main-content main #users .users .card-body .table tbody tr {
   vertical-align: middle;
 }
 
-.main-content main .users .card-body .table tbody tr:hover {
+.main-content main #users .users .card-body .table tbody tr:hover {
   background: #f4f6f8;
 }
 
-.main-content main .users .card-body .table tbody tr td {
+.main-content main #users .users .card-body .table tbody tr td {
   font-size: 0.9rem;
 }
 
-.main-content main .users .card-body .table tbody tr td img {
+.main-content main #users .users .card-body .table tbody tr td img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.main-content main .users .card-body .table tbody tr td i {
+.main-content main #users .users .card-body .table tbody tr td i {
   color: #637381;
 }
 
-.main-content main .users .card-body .table tbody tr td button {
+.main-content main #users .users .card-body .table tbody tr td button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -782,40 +800,184 @@ a {
   outline: none;
 }
 
-.main-content main .users .card-body .table tbody tr td button:hover {
+.main-content main #users .users .card-body .table tbody tr td button:hover {
   background: rgba(0, 171, 85, 0.08);
 }
 
-.main-content main .users .card-body .table tbody tr td button input {
+.main-content main #users .users .card-body .table tbody tr td button input {
   cursor: pointer;
 }
 
-.main-content main .users .card-body .table tbody tr .dropdown {
+.main-content main #users .users .card-body .table tbody tr .dropdown {
   text-align: right;
 }
 
-.main-content main .users .card-body .table tbody tr .dropdown button::after {
+.main-content main #users .users .card-body .table tbody tr .dropdown button::after {
   display: none;
 }
 
-.main-content main .users .card-body .table tbody tr .dropdown-menu {
+.main-content main #users .users .card-body .table tbody tr .dropdown-menu {
   border: none;
   border-radius: 8px;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.main-content main .users .card-body .table tbody tr .dropdown-item {
+.main-content main #users .users .card-body .table tbody tr .dropdown-item {
   color: #637381;
   font-size: 0.9rem;
 }
 
-.main-content main .users .card-body .table tbody tr .dropdown-item i {
+.main-content main #users .users .card-body .table tbody tr .dropdown-item i {
   font-size: 1rem;
   margin: 6px 20px 6px 10px;
 }
 
-.main-content main .users .card-body .table tbody tr .dropdown-item:active {
+.main-content main #users .users .card-body .table tbody tr .dropdown-item:active {
   background: #f4f6f8;
+}
+
+.main-content main #products .product-title .action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main-content main #products .product-title .action .filters {
+  cursor: pointer;
+  padding-left: 8px;
+}
+
+.main-content main #products .product-title .action .filters span {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.main-content main #products .product-title .action .filters button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.main-content main #products .product-title .action .filters:hover {
+  background: #f4f6f8;
+  border-radius: 8px;
+}
+
+.main-content main #products .product-title .action .sort-by {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 8px;
+}
+
+.main-content main #products .product-title .action .sort-by h6 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.main-content main #products .product-title .action .sort-by h6 span {
+  font-weight: 400;
+}
+
+.main-content main #products .product-title .action .sort-by:hover {
+  background: #f4f6f8;
+  border-radius: 8px;
+}
+
+.main-content main #products .product-title .action .dropdown-menu {
+  border: none;
+  border-radius: 8px;
+}
+
+.main-content main #products .product-title .action .dropdown-menu li.active {
+  background: #f4f6f8;
+}
+
+.main-content main #products .product-title .action .dropdown-menu li .dropdown-item {
+  font-size: 0.9rem;
+}
+
+.main-content main #products .product-title .action .dropdown-menu li .dropdown-item:active {
+  background: #f4f6f8;
+  color: #637381;
+}
+
+.main-content main #products .products .card {
+  border: none;
+  border-radius: 16px;
+}
+
+.main-content main #products .products .card img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 270px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-content main #products .products .card-body a .card-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main-content main #products .products .card-body a:hover {
+  color: #00ab55;
+}
+
+.main-content main #products .products .card-body .card-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-content main #products .products .card-body .card-text .color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-content main #products .products .card-body .card-text .color div {
+  margin-left: -4px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  background-color: #00ab55;
+}
+
+.main-content main #products .products .card-body .card-text .color div:first-child {
+  margin-left: 0;
+}
+
+.main-content main #products .products .card-body .card-text .price-old {
+  color: #637381;
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=main.css.map */

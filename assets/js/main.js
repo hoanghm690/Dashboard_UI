@@ -7,18 +7,49 @@ const sidebarMenu = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
 const app = {
+    currentIndex: 0,
     sidebarMenu: [
         {
-            url: "/",
+            url: "#",
             icon: '<i class="fas fa-chart-pie"></i>',
             title: "Dashboard",
-            isActive: true,
+            // isActive: true,
         },
         {
-            url: "/",
+            url: "#users",
             icon: '<i class="fas fa-user-friends"></i>',
             title: "User",
-            isActive: false,
+            // isActive: false,
+        },
+        {
+            url: "#products",
+            icon: '<i class="fas fa-shopping-bag"></i>',
+            title: "Product",
+            // isActive: false,
+        },
+        {
+            url: "#blogs",
+            icon: '<i class="fas fa-file-alt"></i>',
+            title: "Blog",
+            // isActive: false,
+        },
+        {
+            url: "#login",
+            icon: '<i class="fas fa-sign-in-alt"></i>',
+            title: "Login",
+            // isActive: false,
+        },
+        {
+            url: "#register",
+            icon: '<i class="fas fa-user-plus"></i>',
+            title: "Register",
+            // isActive: false,
+        },
+        {
+            url: "#404",
+            icon: '<i class="fas fa-exclamation-triangle"></i>',
+            title: "Not Found",
+            // isActive: false,
         },
     ],
     cards: [
@@ -67,16 +98,24 @@ const app = {
             status: true,
         },
     ],
+
     // render data
-    render: function () {
-        const htmlSidebarMenu = this.sidebarMenu.map((sidebarMenu) => {
-            return `<li class="${sidebarMenu.isActive == true ? "active" : ""}">
+    renderSidebars: function () {
+        const htmlSidebarMenu = this.sidebarMenu.map((sidebarMenu, index) => {
+            return `<li data-index="${index}" class="sidebar-item ${
+                index === this.currentIndex ? "active" : ""
+            }">
                         <a href="${sidebarMenu.url}">
-                            ${sidebarMenu.icon}
+                            <div class="sidebar-menu__icon">${
+                                sidebarMenu.icon
+                            }</div>
                             <span>${sidebarMenu.title}</span>
                         </a>
                     </li>`;
         });
+        sidebarMenu.innerHTML = htmlSidebarMenu.join("");
+    },
+    renderCards: function () {
         const htmlCards = this.cards.map((card) => {
             return `<div class="${card.class} col-md-3">
                         <div class="card">
@@ -90,6 +129,9 @@ const app = {
                         </div>
                     </div>`;
         });
+        cards.innerHTML = htmlCards.join("");
+    },
+    renderUsers: function () {
         const htmlUsers = this.users.map((user) => {
             return `<tr data-id=${user.id}>
                         <td width="48">
@@ -144,8 +186,6 @@ const app = {
                     </tr>
                     `;
         });
-        sidebarMenu.innerHTML = htmlSidebarMenu.join("");
-        cards.innerHTML = htmlCards.join("");
         users.innerHTML = htmlUsers.join("");
     },
     //Handle Events
@@ -159,6 +199,26 @@ const app = {
             });
         };
 
+        //main clicked
+        $("main").onclick = function () {
+            Object.assign(toolbarWrapper.style, {
+                visibility: "hidden",
+                opacity: "0",
+                transform: "translateY(-100px)",
+            });
+        };
+
+        //sidebar menu clicked
+        sidebarMenu.onclick = function (e) {
+            const menuNode = e.target.closest(".sidebar-item:not(.active)");
+            // xử lý khi click vào menu
+            if (menuNode) {
+                _this.currentIndex = Number(menuNode.dataset.index);
+                _this.renderSidebars();
+            }
+        };
+
+        var sortName = $(".sort-name");
         var containerForm = document.forms["container-form-users"];
         var checkAllSubmitBtn = $(".check-all-submit-btn");
         var checkboxAll = $("#input-checkboxAll");
@@ -189,6 +249,22 @@ const app = {
         checkAllSubmitBtn.onclick = function () {
             containerForm.submit();
         };
+
+        //sort name clicked
+        sortName.onclick = function () {
+            $(".sort-name i").style.transform = "rotate(180deg)";
+            _this.users.sort(_this.compareValues("name", "asc"));
+            _this.renderUsers();
+        };
+
+        // //product sort item clicked
+        // var sortItems = $$("#products .action .dropdown-menu li button");
+        // var result = $(".caret");
+        // for (i = 0; i < sortItems.length; i++) {
+        //     sortItems[i].onclick = function (e) {
+        //         result.innerText = sortItems[i].value.join("");
+        //     };
+        // }
     },
     renderSelectedAction: function () {
         var checkedCount = $$('input[name="userIds[]"]:checked').length;
@@ -199,7 +275,7 @@ const app = {
                 visibility: "visible",
                 opacity: "1",
             });
-            $(".selected-action span").innerHTML = checkedCount + " selected";
+            $(".selected-action span").innerText = checkedCount + " selected";
         } else {
             Object.assign(selectedAction.style, {
                 visibility: "hidden",
@@ -208,8 +284,18 @@ const app = {
         }
     },
 
+    compareValues: function (key, order = "asc") {
+        return function innerSort(a, b) {
+            if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
+            const comparison = a[key].localeCompare(b[key]);
+            return order === "desc" ? comparison * -1 : comparison;
+        };
+    },
+
     start: function () {
-        this.render();
+        this.renderSidebars();
+        this.renderCards();
+        this.renderUsers();
         this.handleEvents();
     },
 };
