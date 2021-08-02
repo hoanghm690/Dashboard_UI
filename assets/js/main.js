@@ -6,11 +6,12 @@ const toolbarWrapper = $(".toolbar-wrapper");
 const sidebarMenu = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
+const products = $("#products .products .products-list");
 const app = {
     currentIndex: 0,
     sidebarMenu: [
         {
-            url: "#",
+            url: "#dashboard",
             icon: '<i class="fas fa-chart-pie"></i>',
             title: "Dashboard",
             // isActive: true,
@@ -96,6 +97,28 @@ const app = {
             role: "Backend Developer",
             verified: false,
             status: true,
+        },
+    ],
+    products: [
+        {
+            id: 1,
+            name: "Nike Air Force 1 NDESTRUKT",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_1.jpg",
+            price_old: 116.75,
+            price_new: 96.75,
+            colors: ["green", "black"],
+            isSale: true,
+            isNew: false,
+        },
+        {
+            id: 2,
+            name: "Nike Air Zoom Pegasus 37 A.I.R. Chaz Bear",
+            img: "https://minimal-kit-react.vercel.app/static/mock-images/products/product_3.jpg",
+            price_old: 23.79,
+            price_new: 9.41,
+            colors: ["white", "pink"],
+            isSale: false,
+            isNew: true,
         },
     ],
 
@@ -187,6 +210,56 @@ const app = {
                     `;
         });
         users.innerHTML = htmlUsers.join("");
+    },
+    renderProducts: function () {
+        const htmlProducts = this.products.map((product) => {
+            return `<div class="col-md-3">
+                        <div class="card shadow" data-index=${product.id}>
+                            <span class="${
+                                product.isSale == true
+                                    ? "sale"
+                                    : "" || product.isNew == true
+                                    ? "new"
+                                    : ""
+                            }">
+                                ${
+                                    product.isSale == true
+                                        ? "sale"
+                                        : "" || product.isNew == true
+                                        ? "new"
+                                        : ""
+                                }
+                            </span>
+                            <img
+                                src="${product.img}"
+                                class="card-img-top"
+                                alt="${product.name}"
+                            />
+                            <div class="card-body">
+                                <a href="">
+                                    <h6 class="card-title pt-3">
+                                        ${product.name}
+                                    </h6>
+                                </a>
+                                <div class="card-text pt-3 pb-2">
+                                    <span class="color">
+                                        <div></div>
+                                        <div></div>
+                                    </span>
+                                    <h6 class="price">
+                                        <span class="price-old">
+                                            $${product.price_old}
+                                        </span>
+                                        <span class="price-new"> 
+                                            $${product.price_new}
+                                        </span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+        });
+        products.innerHTML = htmlProducts.join("");
     },
     //Handle Events
     handleEvents: function () {
@@ -296,6 +369,7 @@ const app = {
         this.renderSidebars();
         this.renderCards();
         this.renderUsers();
+        this.renderProducts();
         this.handleEvents();
     },
 };

@@ -543,26 +543,26 @@ a {
   padding: 30px 40px;
 }
 
-.main-content main .cards .sales .card,
-.main-content main .cards .users .card,
-.main-content main .cards .orders .card,
-.main-content main .cards .reports .card {
+.main-content main #dashboard .cards .sales .card,
+.main-content main #dashboard .cards .users .card,
+.main-content main #dashboard .cards .orders .card,
+.main-content main #dashboard .cards .reports .card {
   border: none;
   border-radius: 16px;
   padding: 40px 0px;
 }
 
-.main-content main .cards .sales .card-body,
-.main-content main .cards .users .card-body,
-.main-content main .cards .orders .card-body,
-.main-content main .cards .reports .card-body {
+.main-content main #dashboard .cards .sales .card-body,
+.main-content main #dashboard .cards .users .card-body,
+.main-content main #dashboard .cards .orders .card-body,
+.main-content main #dashboard .cards .reports .card-body {
   padding: 0;
 }
 
-.main-content main .cards .sales .card-body .card-icon,
-.main-content main .cards .users .card-body .card-icon,
-.main-content main .cards .orders .card-body .card-icon,
-.main-content main .cards .reports .card-body .card-icon {
+.main-content main #dashboard .cards .sales .card-body .card-icon,
+.main-content main #dashboard .cards .users .card-body .card-icon,
+.main-content main #dashboard .cards .orders .card-body .card-icon,
+.main-content main #dashboard .cards .reports .card-body .card-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -578,54 +578,54 @@ a {
   margin: auto auto 24px;
 }
 
-.main-content main .cards .sales .card-body .card-icon i,
-.main-content main .cards .users .card-body .card-icon i,
-.main-content main .cards .orders .card-body .card-icon i,
-.main-content main .cards .reports .card-body .card-icon i {
+.main-content main #dashboard .cards .sales .card-body .card-icon i,
+.main-content main #dashboard .cards .users .card-body .card-icon i,
+.main-content main #dashboard .cards .orders .card-body .card-icon i,
+.main-content main #dashboard .cards .reports .card-body .card-icon i {
   font-size: 1.4rem;
 }
 
-.main-content main .cards .sales .card-body h3,
-.main-content main .cards .users .card-body h3,
-.main-content main .cards .orders .card-body h3,
-.main-content main .cards .reports .card-body h3 {
+.main-content main #dashboard .cards .sales .card-body h3,
+.main-content main #dashboard .cards .users .card-body h3,
+.main-content main #dashboard .cards .orders .card-body h3,
+.main-content main #dashboard .cards .reports .card-body h3 {
   font-weight: 700;
   line-height: 1.5;
 }
 
-.main-content main .cards .sales .card {
+.main-content main #dashboard .cards .sales .card {
   background-color: #c8facd;
   color: #005249;
 }
 
-.main-content main .cards .sales .card .card-icon {
+.main-content main #dashboard .cards .sales .card .card-icon {
   background: linear-gradient(135deg, rgba(0, 123, 85, 0) 0%, rgba(0, 123, 85, 0.24) 100%);
 }
 
-.main-content main .cards .users .card {
+.main-content main #dashboard .cards .users .card {
   color: #04297a;
   background-color: #d0f2ff;
 }
 
-.main-content main .cards .users .card .card-icon {
+.main-content main #dashboard .cards .users .card .card-icon {
   background: linear-gradient(135deg, rgba(12, 83, 183, 0) 0%, rgba(12, 83, 183, 0.24) 100%);
 }
 
-.main-content main .cards .orders .card {
+.main-content main #dashboard .cards .orders .card {
   color: #7a4f01;
   background-color: #fff7cd;
 }
 
-.main-content main .cards .orders .card .card-icon {
+.main-content main #dashboard .cards .orders .card .card-icon {
   background: linear-gradient(135deg, rgba(183, 129, 3, 0) 0%, rgba(183, 129, 3, 0.24) 100%);
 }
 
-.main-content main .cards .reports .card {
+.main-content main #dashboard .cards .reports .card {
   color: #7a0c2e;
   background-color: #ffe7d9;
 }
 
-.main-content main .cards .reports .card .card-icon {
+.main-content main #dashboard .cards .reports .card .card-icon {
   background: linear-gradient(135deg, rgba(183, 33, 54, 0) 0%, rgba(183, 33, 54, 0.24) 100%);
 }
 
@@ -925,6 +925,37 @@ a {
   border-radius: 16px;
 }
 
+.main-content main #products .products .card .sale,
+.main-content main #products .products .card .new {
+  height: 22px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px 8px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  top: 16px;
+  right: 16px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.main-content main #products .products .card .sale {
+  background: #ff4842;
+}
+
+.main-content main #products .products .card .new {
+  background: #1890ff;
+}
+
 .main-content main #products .products .card img {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -969,7 +1000,7 @@ a {
   width: 16px;
   height: 16px;
   border: 2px solid white;
-  background-color: #00ab55;
+  background-color: green;
 }
 
 .main-content main #products .products .card-body .card-text .color div:first-child {
