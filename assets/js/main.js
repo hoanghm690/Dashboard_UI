@@ -3,14 +3,14 @@ const $$ = document.querySelectorAll.bind(document);
 
 const searchBtn = $(".search-wrapper");
 const toolbarWrapper = $(".toolbar-wrapper");
-const sidebarMenu = $(".sidebar__menu ul");
+const sidebarMenus = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
 const products = $("#products .products .products-list");
 const blogs = $("#blogs .blogs .blogs-list");
 const app = {
     currentIndex: 0,
-    sidebarMenu: [
+    sidebarMenus: [
         {
             url: "#dashboard",
             icon: '<i class="fas fa-chart-pie"></i>',
@@ -232,7 +232,7 @@ const app = {
 
     // render data
     renderSidebars: function () {
-        const htmlSidebarMenu = this.sidebarMenu.map((sidebarMenu, index) => {
+        const htmlSidebarMenu = this.sidebarMenus.map((sidebarMenu, index) => {
             return `<li data-index="${index}" class="sidebar-item ${
                 index === this.currentIndex ? "active" : ""
             }">
@@ -244,7 +244,7 @@ const app = {
                         </a>
                     </li>`;
         });
-        sidebarMenu.innerHTML = htmlSidebarMenu.join("");
+        sidebarMenus.innerHTML = htmlSidebarMenu.join("");
     },
     renderCards: function () {
         const htmlCards = this.cards.map((card) => {
@@ -433,7 +433,7 @@ const app = {
         };
 
         //sidebar menu clicked
-        sidebarMenu.onclick = function (e) {
+        sidebarMenus.onclick = function (e) {
             const menuNode = e.target.closest(".sidebar-item:not(.active)");
             // xử lý khi click vào menu
             if (menuNode) {
@@ -480,15 +480,6 @@ const app = {
             _this.users.sort(_this.compareValues("name", "asc"));
             _this.renderUsers();
         };
-
-        // //product sort item clicked
-        // var sortItems = $$("#products .action .dropdown-menu li button");
-        // var result = $(".caret");
-        // for (i = 0; i < sortItems.length; i++) {
-        //     sortItems[i].onclick = function (e) {
-        //         result.innerText = sortItems[i].value.join("");
-        //     };
-        // }
     },
     renderSelectedAction: function () {
         var checkedCount = $$('input[name="userIds[]"]:checked').length;

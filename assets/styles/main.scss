@@ -129,15 +129,18 @@ h4 {
     }
 }
 
-#login {
+#login,
+#register {
     .card {
+        height: 100%;
         border-radius: 16px;
         border: none;
-        margin: 12px 0;
+        margin: 16px 0;
 
         img:first-child,
         h3 {
             margin: 40px;
+            line-height: $lineHeight;
         }
 
         img:last-child {
@@ -159,7 +162,7 @@ h4 {
                 background: transparent;
                 border: 1px solid $borderColor;
                 outline: none;
-                padding: 10px 68px;
+                padding: 12px 68px;
 
                 i {
                     font-size: 1.2rem;
@@ -184,6 +187,12 @@ h4 {
         }
 
         form {
+            .fullname {
+                .material-textfield {
+                    width: 48.666667%;
+                }
+            }
+
             .material-textfield {
                 position: relative;
                 margin-top: 30px;
@@ -228,6 +237,19 @@ h4 {
                         transform: translateY(-50%) scale(0.9);
                     }
                 }
+
+                .show-password {
+                    @include positionAbsolute;
+                    left: unset;
+                    bottom: unset;
+                    top: 30%;
+                    right: 14px;
+                    cursor: pointer;
+
+                    i {
+                        color: $textColor;
+                    }
+                }
             }
 
             .form-check {
@@ -253,6 +275,16 @@ h4 {
             .btn-success {
                 width: 100%;
                 height: 48px;
+            }
+
+            .policy {
+                color: $textColor;
+                font-size: 0.9rem;
+
+                a {
+                    color: $textColorActive;
+                    font-weight: weight(medium);
+                }
             }
         }
     }

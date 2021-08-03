@@ -1332,27 +1332,35 @@ h4 {
           animation: fadein 0.3s ease;
 }
 
-#login .card {
+#login .card,
+#register .card {
+  height: 100%;
   border-radius: 16px;
   border: none;
-  margin: 12px 0;
+  margin: 16px 0;
 }
 
 #login .card img:first-child,
-#login .card h3 {
+#login .card h3,
+#register .card img:first-child,
+#register .card h3 {
   margin: 40px;
+  line-height: 1.5;
 }
 
-#login .card img:last-child {
+#login .card img:last-child,
+#register .card img:last-child {
   width: 100%;
 }
 
-#login .sign-in {
+#login .sign-in,
+#register .sign-in {
   max-width: 500px;
   margin: 0 auto;
 }
 
-#login .sign-in .socials {
+#login .sign-in .socials,
+#register .sign-in .socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1365,40 +1373,53 @@ h4 {
   margin: 30px 0;
 }
 
-#login .sign-in .socials button {
+#login .sign-in .socials button,
+#register .sign-in .socials button {
   border-radius: 8px;
   background: transparent;
   border: 1px solid rgba(145, 158, 171, 0.24);
   outline: none;
-  padding: 10px 68px;
+  padding: 12px 68px;
 }
 
-#login .sign-in .socials button i {
+#login .sign-in .socials button i,
+#register .sign-in .socials button i {
   font-size: 1.2rem;
 }
 
-#login .sign-in .socials button .fab.fa-google {
+#login .sign-in .socials button .fab.fa-google,
+#register .sign-in .socials button .fab.fa-google {
   color: #df3e30;
 }
 
-#login .sign-in .socials button .fab.fa-facebook-f {
+#login .sign-in .socials button .fab.fa-facebook-f,
+#register .sign-in .socials button .fab.fa-facebook-f {
   color: #1877f2;
 }
 
-#login .sign-in .socials button .fab.fa-twitter {
+#login .sign-in .socials button .fab.fa-twitter,
+#register .sign-in .socials button .fab.fa-twitter {
   color: #1c9cea;
 }
 
-#login .sign-in .socials button:hover {
+#login .sign-in .socials button:hover,
+#register .sign-in .socials button:hover {
   background: rgba(145, 158, 171, 0.06);
 }
 
-#login .sign-in form .material-textfield {
+#login .sign-in form .fullname .material-textfield,
+#register .sign-in form .fullname .material-textfield {
+  width: 48.666667%;
+}
+
+#login .sign-in form .material-textfield,
+#register .sign-in form .material-textfield {
   position: relative;
   margin-top: 30px;
 }
 
-#login .sign-in form .material-textfield label {
+#login .sign-in form .material-textfield label,
+#register .sign-in form .material-textfield label {
   position: absolute;
   font-size: 1rem;
   left: 0;
@@ -1416,7 +1437,8 @@ h4 {
   pointer-events: none;
 }
 
-#login .sign-in form .material-textfield input {
+#login .sign-in form .material-textfield input,
+#register .sign-in form .material-textfield input {
   width: 100%;
   font-size: 1rem;
   outline: none;
@@ -1428,24 +1450,50 @@ h4 {
   transition: 0.1s ease-out;
 }
 
-#login .sign-in form .material-textfield input:focus {
+#login .sign-in form .material-textfield input:focus,
+#register .sign-in form .material-textfield input:focus {
   border-color: #00ab55;
 }
 
-#login .sign-in form .material-textfield input:focus + label {
+#login .sign-in form .material-textfield input:focus + label,
+#register .sign-in form .material-textfield input:focus + label {
   color: #00ab55;
   top: 0;
   -webkit-transform: translateY(-50%) scale(0.9);
           transform: translateY(-50%) scale(0.9);
 }
 
-#login .sign-in form .material-textfield input:not(:placeholder-shown) + label {
+#login .sign-in form .material-textfield input:not(:placeholder-shown) + label,
+#register .sign-in form .material-textfield input:not(:placeholder-shown) + label {
   top: 0;
   -webkit-transform: translateY(-50%) scale(0.9);
           transform: translateY(-50%) scale(0.9);
 }
 
-#login .sign-in form .form-check {
+#login .sign-in form .material-textfield .show-password,
+#register .sign-in form .material-textfield .show-password {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1200;
+  left: unset;
+  bottom: unset;
+  top: 30%;
+  right: 14px;
+  cursor: pointer;
+}
+
+#login .sign-in form .material-textfield .show-password i,
+#register .sign-in form .material-textfield .show-password i {
+  color: #637381;
+}
+
+#login .sign-in form .form-check,
+#register .sign-in form .form-check {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1458,22 +1506,40 @@ h4 {
 }
 
 #login .sign-in form .form-check input,
-#login .sign-in form .form-check label {
+#login .sign-in form .form-check label,
+#register .sign-in form .form-check input,
+#register .sign-in form .form-check label {
   cursor: pointer;
 }
 
 #login .sign-in form .form-check input:checked[type="checkbox"],
-#login .sign-in form .form-check label:checked[type="checkbox"] {
+#login .sign-in form .form-check label:checked[type="checkbox"],
+#register .sign-in form .form-check input:checked[type="checkbox"],
+#register .sign-in form .form-check label:checked[type="checkbox"] {
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 
-#login .sign-in form .form-check a {
+#login .sign-in form .form-check a,
+#register .sign-in form .form-check a {
   color: #00ab55;
   font-weight: 500;
 }
 
-#login .sign-in form .btn-success {
+#login .sign-in form .btn-success,
+#register .sign-in form .btn-success {
   width: 100%;
   height: 48px;
+}
+
+#login .sign-in form .policy,
+#register .sign-in form .policy {
+  color: #637381;
+  font-size: 0.9rem;
+}
+
+#login .sign-in form .policy a,
+#register .sign-in form .policy a {
+  color: #00ab55;
+  font-weight: 500;
 }
 /*# sourceMappingURL=main.css.map */

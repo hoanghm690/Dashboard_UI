@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Login</title>
+        <title>Register</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -26,32 +26,39 @@
 
     <body>
         <div id="app">
-            <section id="login">
+            <section id="register">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card shadow">
                                 <img src="./assets/img/logo.svg" width="40" />
-                                <h3 class="fw-bold">Hi, Welcome Back</h3>
+                                <h3 class="fw-bold">
+                                    Manage the job more effectively with TonTon
+                                </h3>
                                 <img
-                                    class="mb-5"
-                                    src="./assets/img/illustration_login.png"
+                                    class="mb-2"
+                                    src="./assets/img/illustration_register.png"
                                     width="450"
                                 />
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="text-end p-5">
-                                <span>Don’t have an account?</span>
+                            <div class="text-end p-5 pb-4">
+                                <span> Already have an account?</span>
                                 <a
-                                    href="register.html"
+                                    href="login.html"
                                     class="text-success fw-bold"
-                                    >Get started</a
                                 >
+                                    Login
+                                </a>
                             </div>
                             <div class="sign-in">
-                                <h4 class="fw-bold mb-2">Sign in</h4>
-                                <span>Enter your details below.</span>
+                                <h4 class="fw-bold mb-2">
+                                    Get started absolutely free.
+                                </h4>
+                                <span
+                                    >Free forever. No credit card needed.</span
+                                >
                                 <div class="socials">
                                     <button>
                                         <i class="fab fa-google"></i>
@@ -72,6 +79,34 @@
                                     >OR</span
                                 >
                                 <form action="">
+                                    <div
+                                        class="
+                                            d-flex
+                                            justify-content-between
+                                            fullname
+                                        "
+                                    >
+                                        <div class="material-textfield">
+                                            <input
+                                                placeholder=" "
+                                                type="text"
+                                                id="firstname"
+                                                name="firstname"
+                                            />
+                                            <label>First Name</label>
+                                            <span class="message"></span>
+                                        </div>
+                                        <div class="material-textfield">
+                                            <input
+                                                placeholder=" "
+                                                type="text"
+                                                id="lastname"
+                                                name="lastname"
+                                            />
+                                            <label>Last Name</label>
+                                            <span class="message"></span>
+                                        </div>
+                                    </div>
                                     <div class="material-textfield">
                                         <input
                                             placeholder=" "
@@ -95,27 +130,17 @@
                                             <i class="fas fa-eye-slash"></i>
                                         </div>
                                     </div>
-                                    <div class="mt-4 mb-4 form-check">
-                                        <div>
-                                            <input
-                                                type="checkbox"
-                                                class="form-check-input"
-                                                id="rememberMe"
-                                            />
-                                            <label
-                                                class="form-check-label"
-                                                for="rememberMe"
-                                                >Remember me</label
-                                            >
-                                        </div>
-                                        <a href="">Forgot password?</a>
-                                    </div>
                                     <button
                                         type="submit"
-                                        class="btn btn-success"
+                                        class="btn btn-success mt-4 mb-4"
                                     >
                                         Login
                                     </button>
+                                    <div class="policy text-center">
+                                        By registering, I agree to Minimal
+                                        <a href="">Terms of Service</a> and
+                                        <a href="">Privacy Policy</a>.
+                                    </div>
                                 </form>
                             </div>
                         </div>
