@@ -71,7 +71,7 @@
                                     "
                                     >OR</span
                                 >
-                                <form action="">
+                                <form action="" method="post" id="form-login">
                                     <div class="material-textfield">
                                         <input
                                             placeholder=" "
@@ -129,5 +129,22 @@
             crossorigin="anonymous"
         ></script>
         <script src="./assets/js/validate.js"></script>
+        <script>
+            Validator({
+                form: "#form-login",
+                formGroupSelector: ".material-textfield",
+                errorSelector: ".message",
+                rules: [
+                    Validator.isRequired("#email"),
+                    Validator.isEmail("#email"),
+                    Validator.isRequired("#password"),
+                    Validator.minLength("#password", 6),
+                ],
+                onSubmit: function (data) {
+                    //Call API
+                    console.log(data);
+                },
+            });
+        </script>
     </body>
 </html>

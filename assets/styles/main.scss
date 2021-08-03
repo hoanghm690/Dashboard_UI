@@ -238,6 +238,21 @@ h4 {
                     }
                 }
 
+                .message {
+                    position: absolute;
+                    top: 100%;
+                    left: 12px;
+                    color: rgb(255, 72, 66);
+                    font-size: 0.9rem;
+                    line-height: $lineHeight;
+                }
+
+                &.invalid input,
+                &.invalid label {
+                    border-color: rgb(255, 72, 66);
+                    color: rgb(255, 72, 66) !important;
+                }
+
                 .show-password {
                     @include positionAbsolute;
                     left: unset;

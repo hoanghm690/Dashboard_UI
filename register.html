@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="text-end p-5 pb-4">
+                            <div class="text-end p-5 pb-3">
                                 <span> Already have an account?</span>
                                 <a
                                     href="login.html"
@@ -78,7 +78,11 @@
                                     "
                                     >OR</span
                                 >
-                                <form action="">
+                                <form
+                                    action=""
+                                    method="POST"
+                                    id="form-register"
+                                >
                                     <div
                                         class="
                                             d-flex
@@ -132,9 +136,9 @@
                                     </div>
                                     <button
                                         type="submit"
-                                        class="btn btn-success mt-4 mb-4"
+                                        class="btn btn-success mt-5 mb-4"
                                     >
-                                        Login
+                                        Register
                                     </button>
                                     <div class="policy text-center">
                                         By registering, I agree to Minimal
@@ -154,5 +158,24 @@
             crossorigin="anonymous"
         ></script>
         <script src="./assets/js/validate.js"></script>
+        <script>
+            Validator({
+                form: "#form-register",
+                formGroupSelector: ".material-textfield",
+                errorSelector: ".message",
+                rules: [
+                    Validator.isRequired("#firstname"),
+                    Validator.isRequired("#lastname"),
+                    Validator.isRequired("#email"),
+                    Validator.isEmail("#email"),
+                    Validator.isRequired("#password"),
+                    Validator.minLength("#password", 6),
+                ],
+                onSubmit: function (data) {
+                    //Call API
+                    console.log(data);
+                },
+            });
+        </script>
     </body>
 </html>

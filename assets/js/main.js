@@ -37,7 +37,7 @@ const app = {
             title: "Login",
         },
         {
-            url: "#register",
+            url: "register.html",
             icon: '<i class="fas fa-user-plus"></i>',
             title: "Register",
         },
