@@ -67,6 +67,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: $backgroundColor;
     color: $primaryColor;
@@ -158,3 +162,28 @@ h4 {
 }
 
 @import "./login";
+
+.to-top {
+    @include flexCenter;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    @include w-h-40;
+    border-radius: 50%;
+    background: $backgroundColorActive;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    i {
+        color: $textdefaultColor;
+    }
+
+    &.show {
+        opacity: 1;
+        pointer-events: auto;
+        bottom: 80px;
+    }
+}

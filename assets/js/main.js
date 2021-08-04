@@ -4,6 +4,10 @@ const $$ = document.querySelectorAll.bind(document);
 const searchBtn = $(".search-wrapper .search-wrapper__icon");
 const menuSidebarBtn = $(".search-wrapper .menu-wrapper__mobile");
 const toolbarWrapper = $(".search-wrapper .toolbar-wrapper");
+const sidebar = $(".sidebar");
+const overlay = $(".sidebar-overlay");
+const toTop = $(".to-top");
+
 const sidebarMenus = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
@@ -250,7 +254,7 @@ const app = {
     },
     renderCards: function () {
         const htmlCards = this.cards.map((card) => {
-            return `<div class="${card.class} col-md-3 col-xs-12">
+            return `<div class="${card.class} col-md-3">
                         <div class="card">
                             <div class="card-body text-center">
                                 <div class="card-icon">
@@ -419,11 +423,12 @@ const app = {
     //Handle Events
     handleEvents: function () {
         //Search clicked
+        //Show toolbar wrapper (search)
         searchBtn.onclick = function () {
             toolbarWrapper.classList.add("show");
         };
 
-        //hide toolbar wrapper
+        //Hide toolbar wrapper (search)
         $("main").onclick = function () {
             toolbarWrapper.classList.remove("show");
         };
@@ -431,7 +436,7 @@ const app = {
             toolbarWrapper.classList.remove("show");
         };
 
-        //sidebar menu clicked
+        //Sidebar menu clicked
         sidebarMenus.onclick = function (e) {
             const menuNode = e.target.closest(".sidebar-item:not(.active)");
             // xử lý khi click vào menu
@@ -441,16 +446,27 @@ const app = {
             }
         };
 
-        //menu sidebar mobile clicked
-        const sidebar = $(".sidebar");
-        const overlay = $(".sidebar-overlay");
+        //Scroll -> show to-top btn
+        window.onscroll = function () {
+            if (this.scrollY > 20) {
+                toTop.classList.add("show");
+            } else {
+                toTop.classList.remove("show");
+            }
+        };
 
-        //show sidebar menu
+        //To top btn clicked
+        toTop.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        //Menu sidebar mobile clicked
+        //Show sidebar menu
         menuSidebarBtn.onclick = function () {
             sidebar.classList.add("show");
         };
 
-        //hide sidebar menu
+        //Hide sidebar menu
         overlay.onclick = function () {
             sidebar.classList.remove("show");
         };
@@ -461,7 +477,7 @@ const app = {
         var userItemCheckbox = $$('input[name="userIds[]"]');
         const _this = this;
 
-        //checkbox all changed
+        //Checkbox all changed
         checkboxAll.onchange = function () {
             for (var userItem of userItemCheckbox) {
                 userItem.checked = this.checked;
@@ -481,7 +497,7 @@ const app = {
             };
         }
 
-        //sort name clicked
+        //Sort name clicked
         sortName.onclick = function () {
             $(".sort-name i").style.transform = "rotate(180deg)";
             _this.users.sort(_this.compareValues("name", "asc"));
