@@ -71,6 +71,12 @@ header {
                 outline: none;
                 padding: 0 10px;
             }
+
+            &.show {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     }
 

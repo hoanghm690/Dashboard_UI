@@ -9,6 +9,7 @@ const cards = $(".cards");
 const users = $("#users-table tbody");
 const products = $("#products .products .products-list");
 const blogs = $("#blogs .blogs .blogs-list");
+
 const app = {
     currentIndex: 0,
     sidebarMenus: [
@@ -419,20 +420,15 @@ const app = {
     handleEvents: function () {
         //Search clicked
         searchBtn.onclick = function () {
-            Object.assign(toolbarWrapper.style, {
-                visibility: "visible",
-                opacity: "1",
-                transform: "translateY(0)",
-            });
+            toolbarWrapper.classList.add("show");
         };
 
-        //main clicked
+        //hide toolbar wrapper
         $("main").onclick = function () {
-            Object.assign(toolbarWrapper.style, {
-                visibility: "hidden",
-                opacity: "0",
-                transform: "translateY(-100px)",
-            });
+            toolbarWrapper.classList.remove("show");
+        };
+        $(".sidebar").onclick = function () {
+            toolbarWrapper.classList.remove("show");
         };
 
         //sidebar menu clicked
@@ -446,13 +442,15 @@ const app = {
         };
 
         //menu sidebar mobile clicked
-        var sidebar = $(".sidebar");
-        var overlay = $(".sidebar-overlay");
+        const sidebar = $(".sidebar");
+        const overlay = $(".sidebar-overlay");
 
+        //show sidebar menu
         menuSidebarBtn.onclick = function () {
             sidebar.classList.add("show");
         };
 
+        //hide sidebar menu
         overlay.onclick = function () {
             sidebar.classList.remove("show");
         };

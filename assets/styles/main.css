@@ -394,6 +394,13 @@ h4 {
   padding: 0 10px;
 }
 
+.main-content header .search-wrapper .toolbar-wrapper.show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .main-content header .user-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
