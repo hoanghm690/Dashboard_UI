@@ -1,0 +1,175 @@
+#login,
+#register {
+    .card {
+        height: 100%;
+        border-radius: 16px;
+        border: none;
+        margin: 16px 0;
+
+        img:first-child,
+        h3 {
+            margin: 40px;
+            line-height: $lineHeight;
+        }
+
+        img:last-child {
+            width: 100%;
+        }
+    }
+
+    .sign-in {
+        max-width: 500px;
+        margin: 0 auto;
+
+        .socials {
+            @include flexCenter;
+            justify-content: space-between;
+            margin: 30px 0;
+
+            button {
+                border-radius: 8px;
+                background: transparent;
+                border: 1px solid $borderColor;
+                outline: none;
+                padding: 12px 68px;
+
+                i {
+                    font-size: 1.2rem;
+                }
+
+                .fab.fa-google {
+                    color: #df3e30;
+                }
+
+                .fab.fa-facebook-f {
+                    color: #1877f2;
+                }
+
+                .fab.fa-twitter {
+                    color: #1c9cea;
+                }
+
+                &:hover {
+                    background: $backgroundHoverColor;
+                }
+            }
+        }
+
+        form {
+            .fullname {
+                .material-textfield {
+                    width: 48.666667%;
+                }
+            }
+
+            .material-textfield {
+                position: relative;
+                margin-top: 30px;
+
+                label {
+                    position: absolute;
+                    font-size: $fontSize;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: $backgroundColor;
+                    color: $textColor;
+                    padding: 0 0.3rem;
+                    margin: 0 0.5rem;
+                    transition: 0.1s ease-out;
+                    transform-origin: left top;
+                    pointer-events: none;
+                }
+
+                input {
+                    width: 100%;
+                    font-size: $fontSize;
+                    outline: none;
+                    border: 1px solid $borderColor;
+                    border-radius: 8px;
+                    padding: 1rem 0.7rem;
+                    color: $primaryColor;
+                    transition: 0.1s ease-out;
+
+                    &:focus {
+                        border-color: $borderColorActive;
+                    }
+
+                    &:focus + label {
+                        color: $textColorActive;
+                        top: 0;
+                        transform: translateY(-50%) scale(0.9);
+                    }
+
+                    &:not(:placeholder-shown) + label {
+                        top: 0;
+                        transform: translateY(-50%) scale(0.9);
+                    }
+                }
+
+                .message {
+                    position: absolute;
+                    top: 100%;
+                    left: 12px;
+                    color: rgb(255, 72, 66);
+                    font-size: 0.9rem;
+                    line-height: $lineHeight;
+                }
+
+                &.invalid input,
+                &.invalid label {
+                    border-color: rgb(255, 72, 66);
+                    color: rgb(255, 72, 66) !important;
+                }
+
+                .show-password {
+                    @include positionAbsolute;
+                    left: unset;
+                    bottom: unset;
+                    top: 30%;
+                    right: 14px;
+                    cursor: pointer;
+
+                    i {
+                        color: $textColor;
+                    }
+                }
+            }
+
+            .form-check {
+                @include flexCenter;
+                justify-content: space-between;
+
+                input,
+                label {
+                    cursor: pointer;
+
+                    &:checked[type="checkbox"] {
+                        background: $backgroundColorActive
+                            url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+                    }
+                }
+
+                a {
+                    color: $textColorActive;
+                    font-weight: weight(medium);
+                }
+            }
+
+            .btn-success {
+                width: 100%;
+                height: 48px;
+            }
+
+            .policy {
+                color: $textColor;
+                font-size: 0.9rem;
+
+                a {
+                    color: $textColorActive;
+                    font-weight: weight(medium);
+                }
+            }
+        }
+    }
+}

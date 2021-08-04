@@ -14,14 +14,38 @@ header {
     }
 
     .search-wrapper {
-        @include flexCenter;
-        @include w-h-40;
-        border-radius: 50%;
-        cursor: pointer;
-        justify-content: center;
+        &__icon {
+            @include flexCenter;
+            @include w-h-40;
+            border-radius: 50%;
+            cursor: pointer;
+            justify-content: center;
 
-        &:hover {
-            background: $backgroundPrimaryColor;
+            &:hover {
+                background: $backgroundPrimaryColor;
+            }
+        }
+
+        @include mobile {
+            @include flexCenter;
+        }
+
+        .menu-wrapper__mobile {
+            margin-right: 10px;
+            @include flexCenter;
+            @include w-h-40;
+            border-radius: 50%;
+            cursor: pointer;
+            justify-content: center;
+            display: none;
+
+            @include mobile {
+                display: flex;
+            }
+
+            &:hover {
+                background: $backgroundPrimaryColor;
+            }
         }
 
         .toolbar-wrapper {

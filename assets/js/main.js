@@ -1,8 +1,9 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const searchBtn = $(".search-wrapper");
-const toolbarWrapper = $(".toolbar-wrapper");
+const searchBtn = $(".search-wrapper .search-wrapper__icon");
+const menuSidebarBtn = $(".search-wrapper .menu-wrapper__mobile");
+const toolbarWrapper = $(".search-wrapper .toolbar-wrapper");
 const sidebarMenus = $(".sidebar__menu ul");
 const cards = $(".cards");
 const users = $("#users-table tbody");
@@ -264,7 +265,7 @@ const app = {
     },
     renderUsers: function () {
         const htmlUsers = this.users.map((user) => {
-            return `<tr data-id=${user.id}>
+            return `<tr data-id=${user.id} aria-checked="false">
                         <td width="48">
                             <button>
                                 <input type="checkbox" 
@@ -444,6 +445,19 @@ const app = {
             }
         };
 
+        //menu sidebar mobile clicked
+        var sidebar = $(".sidebar");
+        var overlay = $(".sidebar-overlay");
+
+        menuSidebarBtn.onclick = function () {
+            sidebar.classList.add("show");
+        };
+
+        overlay.onclick = function () {
+            sidebar.classList.remove("show");
+        };
+        //
+
         var sortName = $(".sort-name");
         var checkboxAll = $("#input-checkboxAll");
         var userItemCheckbox = $$('input[name="userIds[]"]');
@@ -464,6 +478,7 @@ const app = {
                     userItemCheckbox.length ===
                     $$('input[name="userIds[]"]:checked').length;
                 checkboxAll.checked = isCheckedAll;
+
                 _this.renderSelectedAction();
             };
         }
