@@ -15,11 +15,26 @@
         img:last-child {
             width: 100%;
         }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    .text-end {
+        @include mobile {
+            padding: 3rem 1.5rem !important;
+            text-align: center !important;
+        }
     }
 
     .sign-in {
         max-width: 500px;
         margin: 0 auto;
+
+        @include mobile {
+            text-align: center;
+        }
 
         .socials {
             @include flexCenter;
@@ -32,6 +47,10 @@
                 border: 1px solid $borderColor;
                 outline: none;
                 padding: 12px 68px;
+
+                @include mobile {
+                    padding: 12px 42px;
+                }
 
                 i {
                     font-size: 1.2rem;
@@ -145,8 +164,13 @@
                     cursor: pointer;
 
                     &:checked[type="checkbox"] {
+                        border-color: $borderColorActive;
                         background: $backgroundColorActive
                             url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+                    }
+
+                    &:focus {
+                        border-color: $borderColorActive;
                     }
                 }
 
@@ -164,6 +188,10 @@
             .policy {
                 color: $textColor;
                 font-size: 0.9rem;
+
+                @include mobile {
+                    margin-bottom: 40px;
+                }
 
                 a {
                     color: $textColorActive;

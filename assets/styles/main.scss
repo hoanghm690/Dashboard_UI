@@ -161,9 +161,23 @@ h4 {
 }
 
 #page-not-found {
-    h3,
+    h3 {
+        animation: fadein 0.3s ease;
+    }
+
+    p {
+        @include mobile {
+            padding: 0 25px;
+            text-align: justify;
+        }
+    }
+
     img {
         animation: fadein 0.3s ease;
+
+        @include mobile {
+            width: 300px;
+        }
     }
 }
 

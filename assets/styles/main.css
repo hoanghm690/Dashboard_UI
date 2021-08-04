@@ -460,7 +460,7 @@ h4 {
 
 @media (max-width: 768px) {
   .main-content header .user-wrapper__notification--menu {
-    width: 290px;
+    width: 280px;
   }
 }
 
@@ -1568,10 +1568,27 @@ h4 {
   }
 }
 
-#page-not-found h3,
+#page-not-found h3 {
+  -webkit-animation: fadein 0.3s ease;
+          animation: fadein 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  #page-not-found p {
+    padding: 0 25px;
+    text-align: justify;
+  }
+}
+
 #page-not-found img {
   -webkit-animation: fadein 0.3s ease;
           animation: fadein 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  #page-not-found img {
+    width: 300px;
+  }
 }
 
 #login .card,
@@ -1595,10 +1612,32 @@ h4 {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  #login .card,
+  #register .card {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #login .text-end,
+  #register .text-end {
+    padding: 3rem 1.5rem !important;
+    text-align: center !important;
+  }
+}
+
 #login .sign-in,
 #register .sign-in {
   max-width: 500px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #login .sign-in,
+  #register .sign-in {
+    text-align: center;
+  }
 }
 
 #login .sign-in .socials,
@@ -1622,6 +1661,13 @@ h4 {
   border: 1px solid rgba(145, 158, 171, 0.24);
   outline: none;
   padding: 12px 68px;
+}
+
+@media (max-width: 768px) {
+  #login .sign-in .socials button,
+  #register .sign-in .socials button {
+    padding: 12px 42px;
+  }
 }
 
 #login .sign-in .socials button i,
@@ -1776,7 +1822,15 @@ h4 {
 #login .sign-in form .form-check label:checked[type="checkbox"],
 #register .sign-in form .form-check input:checked[type="checkbox"],
 #register .sign-in form .form-check label:checked[type="checkbox"] {
+  border-color: #00ab55;
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+#login .sign-in form .form-check input:focus,
+#login .sign-in form .form-check label:focus,
+#register .sign-in form .form-check input:focus,
+#register .sign-in form .form-check label:focus {
+  border-color: #00ab55;
 }
 
 #login .sign-in form .form-check a,
@@ -1795,6 +1849,13 @@ h4 {
 #register .sign-in form .policy {
   color: #637381;
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  #login .sign-in form .policy,
+  #register .sign-in form .policy {
+    margin-bottom: 40px;
+  }
 }
 
 #login .sign-in form .policy a,
