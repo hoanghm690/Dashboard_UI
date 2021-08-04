@@ -41,6 +41,11 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid #b4bcc3;
 }
 
+.light {
+  background: white;
+  color: black;
+}
+
 a {
   color: #212b36;
   text-decoration: none;
@@ -74,6 +79,16 @@ h4 {
   bottom: 0;
   right: 0;
   z-index: 1200;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: none;
+  }
 }
 
 .sidebar__logo {
@@ -203,6 +218,12 @@ h4 {
   padding-left: 280px;
 }
 
+@media (max-width: 768px) {
+  .main-content {
+    padding-left: 0;
+  }
+}
+
 .main-content header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -227,6 +248,13 @@ h4 {
           justify-content: space-between;
   padding: 0px 40px;
   height: 88px;
+}
+
+@media (max-width: 768px) {
+  .main-content header {
+    left: 0;
+    padding: 0 15px;
+  }
 }
 
 .main-content header .search-wrapper {
@@ -276,6 +304,12 @@ h4 {
   transition: all 0.4s ease;
   visibility: hidden;
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content header .search-wrapper .toolbar-wrapper {
+    padding: 0px 25px;
+  }
 }
 
 .main-content header .search-wrapper .toolbar-wrapper input {
@@ -337,6 +371,12 @@ h4 {
   visibility: hidden;
   opacity: 0;
   z-index: 1200;
+}
+
+@media (max-width: 768px) {
+  .main-content header .user-wrapper__notification--menu {
+    width: 320px;
+  }
 }
 
 .main-content header .user-wrapper__notification--menu::before {
@@ -466,6 +506,12 @@ h4 {
   z-index: 1200;
 }
 
+@media (max-width: 768px) {
+  .main-content header .user-wrapper__profile--menu {
+    width: 220px;
+  }
+}
+
 .main-content header .user-wrapper__profile--menu:hover {
   visibility: visible;
   opacity: 1;
@@ -564,6 +610,12 @@ h4 {
   padding: 30px 40px;
 }
 
+@media (max-width: 768px) {
+  .main-content main {
+    padding: 30px 15px;
+  }
+}
+
 .main-content main #dashboard .cards .sales .card,
 .main-content main #dashboard .cards .users .card,
 .main-content main #dashboard .cards .orders .card,
@@ -571,6 +623,15 @@ h4 {
   border: none;
   border-radius: 16px;
   padding: 40px 0px;
+}
+
+@media (max-width: 768px) {
+  .main-content main #dashboard .cards .sales .card,
+  .main-content main #dashboard .cards .users .card,
+  .main-content main #dashboard .cards .orders .card,
+  .main-content main #dashboard .cards .reports .card {
+    margin-bottom: 15px;
+  }
 }
 
 .main-content main #dashboard .cards .sales .card-body,
@@ -659,6 +720,12 @@ h4 {
   padding: 0;
 }
 
+@media (max-width: 768px) {
+  .main-content main #users .users .card-body {
+    overflow: hidden;
+  }
+}
+
 .main-content main #users .users .card-body .search {
   padding: 1rem 1rem 0 1rem;
 }
@@ -675,11 +742,23 @@ h4 {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .main-content main #users .users .card-body .search form input {
+    width: 200px;
+  }
+}
+
 .main-content main #users .users .card-body .search form input:focus {
   width: 340px;
   border: 1px solid #ced4da;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .main-content main #users .users .card-body .search form input:focus {
+    width: 260px;
+  }
 }
 
 .main-content main #users .users .card-body .search form i {
@@ -696,6 +775,7 @@ h4 {
   left: 14px;
   bottom: unset;
   right: unset;
+  z-index: 1199;
 }
 
 .main-content main #users .users .card-body .search form button {
@@ -739,6 +819,13 @@ h4 {
   transition: all 0.3s ease;
   visibility: hidden;
   opacity: 0;
+  z-index: 1199;
+}
+
+@media (max-width: 768px) {
+  .main-content main #users .users .card-body .selected-action {
+    padding: 0 20px;
+  }
 }
 
 .main-content main #users .users .card-body .selected-action button {
@@ -756,8 +843,21 @@ h4 {
   background: #f4f6f8;
 }
 
+@media (max-width: 768px) {
+  .main-content main #users .users .card-body .selected-action button {
+    margin-right: -10px;
+  }
+}
+
 .main-content main #users .users .card-body .selected-action span {
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .main-content main #users .users .card-body .table {
+    display: block;
+    overflow-x: auto;
+  }
 }
 
 .main-content main #users .users .card-body .table thead tr {
@@ -876,6 +976,12 @@ h4 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .main-content main #products .product-title .action {
+    margin-top: 2rem;
+  }
 }
 
 .main-content main #products .product-title .action .filters {
@@ -1187,11 +1293,23 @@ h4 {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .main-content main #blogs .form-search input {
+    width: 200px;
+  }
+}
+
 .main-content main #blogs .form-search input:focus {
   width: 340px;
   border: 1px solid #ced4da;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .main-content main #blogs .form-search input:focus {
+    width: 240px;
+  }
 }
 
 .main-content main #blogs .form-search i {
@@ -1226,6 +1344,12 @@ h4 {
 .main-content main #blogs .form-select {
   border-radius: 8px;
   width: 10%;
+}
+
+@media (max-width: 768px) {
+  .main-content main #blogs .form-select {
+    width: 28%;
+  }
 }
 
 .main-content main #blogs .form-select:focus {

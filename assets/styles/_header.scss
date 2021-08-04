@@ -8,6 +8,11 @@ header {
     padding: 0px 40px;
     height: 88px;
 
+    @include mobile {
+        left: 0;
+        padding: 0 15px;
+    }
+
     .search-wrapper {
         @include flexCenter;
         @include w-h-40;
@@ -30,6 +35,10 @@ header {
             transition: all 0.4s ease;
             visibility: hidden;
             opacity: 0;
+
+            @include mobile {
+                padding: 0px 25px;
+            }
 
             input {
                 background: $backgroundColor;
@@ -82,6 +91,10 @@ header {
                 visibility: hidden;
                 opacity: 0;
                 z-index: 1200;
+
+                @include mobile {
+                    width: 320px;
+                }
 
                 &::before {
                     content: "";
@@ -197,6 +210,10 @@ header {
                 visibility: hidden;
                 opacity: 0;
                 z-index: 1200;
+
+                @include mobile {
+                    width: 220px;
+                }
 
                 &:hover {
                     visibility: visible;

@@ -7,6 +7,10 @@
         border-radius: 16px;
         padding: 40px 0px;
 
+        @include mobile {
+            margin-bottom: 15px;
+        }
+
         &-body {
             padding: 0;
 

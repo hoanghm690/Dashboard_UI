@@ -51,6 +51,22 @@
     cursor: pointer;
 }
 
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background: lighten($backgroundColor, 100%);
+        color: darken($primaryColor, 100%);
+    } @else {
+        background: darken($backgroundColor, 100%);
+        color: lighten($primaryColor, 100%);
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
 body {
     background: $backgroundColor;
     color: $primaryColor;
@@ -68,6 +84,10 @@ body {
         border-radius: 20px;
         border: 3px solid rgb(180, 188, 195);
     }
+}
+
+.light {
+    @include theme($light-theme: true);
 }
 
 a {
@@ -96,10 +116,18 @@ h4 {
     padding-top: 80px;
     padding-left: 280px;
 
+    @include mobile {
+        padding-left: 0;
+    }
+
     @import "./header";
 
     main {
         padding: 30px 40px;
+
+        @include mobile {
+            padding: 30px 15px;
+        }
 
         @import "./cards";
 

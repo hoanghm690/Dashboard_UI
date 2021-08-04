@@ -4,6 +4,10 @@
             @include flexCenter;
             justify-content: flex-end;
 
+            @include mobile {
+                margin-top: 2rem;
+            }
+
             .filters {
                 cursor: pointer;
                 padding-left: 8px;

@@ -248,7 +248,7 @@ const app = {
     },
     renderCards: function () {
         const htmlCards = this.cards.map((card) => {
-            return `<div class="${card.class} col-md-3">
+            return `<div class="${card.class} col-md-3 col-xs-12">
                         <div class="card">
                             <div class="card-body text-center">
                                 <div class="card-icon">
@@ -274,8 +274,10 @@ const app = {
                             </button>
                         </td>
                         <td>
-                            <img src="${user.avatar}"/>
-                            <span>${user.name}</span>
+                            <div class="d-flex align-items-center">
+                                <img src="${user.avatar}"/>
+                                <span>${user.name}</span>
+                            </div>
                         </td>
                         <td>${user.company}</td>
                         <td>${user.role}</td>
@@ -443,24 +445,21 @@ const app = {
         };
 
         var sortName = $(".sort-name");
-        var containerForm = document.forms["container-form-users"];
-        var checkAllSubmitBtn = $(".check-all-submit-btn");
         var checkboxAll = $("#input-checkboxAll");
         var userItemCheckbox = $$('input[name="userIds[]"]');
         const _this = this;
 
         //checkbox all changed
         checkboxAll.onchange = function () {
-            for (i = 0; i < userItemCheckbox.length; i++) {
-                var user = userItemCheckbox[i];
-                user.checked = this.checked;
+            for (var userItem of userItemCheckbox) {
+                userItem.checked = this.checked;
             }
             _this.renderSelectedAction();
         };
 
         //user item checkbox changed
-        for (i = 0; i < userItemCheckbox.length; i++) {
-            userItemCheckbox[i].onchange = function () {
+        for (var userItem of userItemCheckbox) {
+            userItem.onchange = function () {
                 var isCheckedAll =
                     userItemCheckbox.length ===
                     $$('input[name="userIds[]"]:checked').length;
@@ -469,11 +468,6 @@ const app = {
             };
         }
 
-        //delete all btn clicked
-        checkAllSubmitBtn.onclick = function () {
-            containerForm.submit();
-        };
-
         //sort name clicked
         sortName.onclick = function () {
             $(".sort-name i").style.transform = "rotate(180deg)";
@@ -481,6 +475,7 @@ const app = {
             _this.renderUsers();
         };
     },
+
     renderSelectedAction: function () {
         var checkedCount = $$('input[name="userIds[]"]:checked').length;
         var selectedAction = $(".selected-action");

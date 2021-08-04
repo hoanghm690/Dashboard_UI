@@ -5,6 +5,11 @@
     height: 100%;
     @include positionFixed;
 
+    @include mobile {
+        flex-direction: column;
+        display: none;
+    }
+
     &__logo {
         padding: 24px 20px;
 

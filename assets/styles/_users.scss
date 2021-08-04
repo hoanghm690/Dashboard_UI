@@ -6,6 +6,10 @@
         &-body {
             padding: 0;
 
+            @include mobile {
+                overflow: hidden;
+            }
+
             .search {
                 padding: 1rem 1rem 0 1rem;
 
@@ -18,10 +22,18 @@
                         padding: 16.5px 14px 16.5px 40px;
                         transition: all 0.3s ease;
 
+                        @include mobile {
+                            width: 200px;
+                        }
+
                         &:focus {
                             width: 340px;
                             border: 1px solid #ced4da;
                             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+                            @include mobile {
+                                width: 260px;
+                            }
                         }
                     }
 
@@ -32,6 +44,7 @@
                         left: 14px;
                         bottom: unset;
                         right: unset;
+                        z-index: 1199;
                     }
 
                     button {
@@ -61,6 +74,11 @@
                 transition: all 0.3s ease;
                 visibility: hidden;
                 opacity: 0;
+                z-index: 1199;
+
+                @include mobile {
+                    padding: 0 20px;
+                }
 
                 button {
                     @include w-h-40;
@@ -74,6 +92,10 @@
                     &:hover {
                         background: $backgroundPrimaryColor;
                     }
+
+                    @include mobile {
+                        margin-right: -10px;
+                    }
                 }
 
                 span {
@@ -82,6 +104,11 @@
             }
 
             .table {
+                @include mobile {
+                    display: block;
+                    overflow-x: auto;
+                }
+
                 thead {
                     tr {
                         vertical-align: middle;

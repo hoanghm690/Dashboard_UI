@@ -8,10 +8,18 @@
             padding: 6.5px 14px 6.5px 40px;
             transition: all 0.3s ease;
 
+            @include mobile {
+                width: 200px;
+            }
+
             &:focus {
                 width: 340px;
                 border: 1px solid #ced4da;
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+                @include mobile {
+                    width: 240px;
+                }
             }
         }
 
@@ -40,6 +48,10 @@
     .form-select {
         border-radius: 8px;
         width: 10%;
+
+        @include mobile {
+            width: 28%;
+        }
 
         &:focus {
             border: 1px solid $borderColorActive;
