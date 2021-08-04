@@ -460,7 +460,7 @@ h4 {
 
 @media (max-width: 768px) {
   .main-content header .user-wrapper__notification--menu {
-    width: 320px;
+    width: 290px;
   }
 }
 
@@ -838,7 +838,7 @@ h4 {
 
 @media (max-width: 768px) {
   .main-content main #users .users .card-body .search form input {
-    width: 200px;
+    width: 180px;
   }
 }
 
@@ -851,7 +851,7 @@ h4 {
 
 @media (max-width: 768px) {
   .main-content main #users .users .card-body .search form input:focus {
-    width: 260px;
+    width: 220px;
   }
 }
 
@@ -976,7 +976,12 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table thead tr th button input:checked[type="checkbox"] {
+  border-color: #00ab55;
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+.main-content main #users .users .card-body .table thead tr th button input:focus {
+  border-color: #00ab55;
 }
 
 .main-content main #users .users .card-body .table thead tr th span i {
@@ -1028,7 +1033,12 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table tbody tr td button input:checked[type="checkbox"] {
+  border-color: #00ab55;
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+.main-content main #users .users .card-body .table tbody tr td button input:focus {
+  border-color: #00ab55;
 }
 
 .main-content main #users .users .card-body .table tbody tr .dropdown {
@@ -1119,7 +1129,7 @@ h4 {
 }
 
 .main-content main #products .product-title .action .offcanvas-header .btn-close:hover {
-  background: #f4f6f8 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  background: rgba(145, 158, 171, 0.06) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
 }
 
 .main-content main #products .product-title .action .offcanvas-body .gender .form-check,
@@ -1137,16 +1147,24 @@ h4 {
   cursor: pointer;
 }
 
-.main-content main #products .product-title .action .offcanvas-body .gender .form-check .form-check-input:checked[type="checkbox"],
-.main-content main #products .product-title .action .offcanvas-body .category .form-check .form-check-input:checked[type="checkbox"],
-.main-content main #products .product-title .action .offcanvas-body .price .form-check .form-check-input:checked[type="checkbox"] {
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input:checked[type="checkbox"],
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input:checked[type="checkbox"],
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input:checked[type="checkbox"] {
+  border-color: #00ab55;
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 
-.main-content main #products .product-title .action .offcanvas-body .gender .form-check .form-check-input:checked[type="radio"],
-.main-content main #products .product-title .action .offcanvas-body .category .form-check .form-check-input:checked[type="radio"],
-.main-content main #products .product-title .action .offcanvas-body .price .form-check .form-check-input:checked[type="radio"] {
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input:checked[type="radio"],
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input:checked[type="radio"],
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input:checked[type="radio"] {
+  border-color: #00ab55;
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input:focus,
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input:focus,
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input:focus {
+  border-color: #00ab55;
 }
 
 .main-content main #products .product-title .action .offcanvas-body .rating .form-check {
@@ -1395,7 +1413,7 @@ h4 {
 
 @media (max-width: 768px) {
   .main-content main #blogs .form-search input {
-    width: 200px;
+    width: 180px;
   }
 }
 
@@ -1408,7 +1426,7 @@ h4 {
 
 @media (max-width: 768px) {
   .main-content main #blogs .form-search input:focus {
-    width: 240px;
+    width: 200px;
   }
 }
 
@@ -1448,7 +1466,7 @@ h4 {
 
 @media (max-width: 768px) {
   .main-content main #blogs .form-select {
-    width: 28%;
+    width: 30%;
   }
 }
 

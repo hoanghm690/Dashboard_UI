@@ -9,7 +9,7 @@
             transition: all 0.3s ease;
 
             @include mobile {
-                width: 200px;
+                width: 180px;
             }
 
             &:focus {
@@ -18,7 +18,7 @@
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
                 @include mobile {
-                    width: 240px;
+                    width: 200px;
                 }
             }
         }
@@ -50,7 +50,7 @@
         width: 10%;
 
         @include mobile {
-            width: 28%;
+            width: 30%;
         }
 
         &:focus {

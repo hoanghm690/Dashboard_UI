@@ -23,7 +23,7 @@
                         transition: all 0.3s ease;
 
                         @include mobile {
-                            width: 200px;
+                            width: 180px;
                         }
 
                         &:focus {
@@ -32,7 +32,7 @@
                             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
                             @include mobile {
-                                width: 260px;
+                                width: 220px;
                             }
                         }
                     }
@@ -129,8 +129,13 @@
                                     cursor: pointer;
 
                                     &:checked[type="checkbox"] {
+                                        border-color: $borderColorActive;
                                         background: $backgroundColorActive
                                             url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+                                    }
+
+                                    &:focus {
+                                        border-color: $borderColorActive;
                                     }
                                 }
                             }
@@ -180,8 +185,13 @@
                                     cursor: pointer;
 
                                     &:checked[type="checkbox"] {
+                                        border-color: $borderColorActive;
                                         background: $backgroundColorActive
                                             url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+                                    }
+
+                                    &:focus {
+                                        border-color: $borderColorActive;
                                     }
                                 }
                             }
