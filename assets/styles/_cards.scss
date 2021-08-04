@@ -1,4 +1,13 @@
 #dashboard .cards {
+    .sales,
+    .users,
+    .orders,
+    .reports {
+        @include tablet {
+            width: 50%;
+        }
+    }
+
     .sales .card,
     .users .card,
     .orders .card,

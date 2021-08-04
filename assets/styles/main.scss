@@ -67,6 +67,12 @@
     }
 }
 
+@mixin tablet {
+    @media (max-width: $tablet) and (min-width: $mobile) {
+        @content;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }

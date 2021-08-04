@@ -33,7 +33,7 @@
 
             .offcanvas {
                 width: 280px;
-                z-index: 1201;
+                z-index: 1203;
                 transition: all 0.3s ease;
 
                 &-header {
@@ -125,7 +125,7 @@
             }
 
             .modal-backdrop {
-                z-index: 1200;
+                z-index: 1202;
             }
 
             .sort-by {
@@ -175,111 +175,120 @@
     }
 
     .products {
-        .card {
-            border: none;
-            border-radius: 16px;
-            margin-bottom: 24px;
-
-            .sale,
-            .new {
-                height: 22px;
-                border-radius: 8px;
-                @include flexCenter;
-                justify-content: center;
-                padding: 0px 8px;
-                color: rgb(255, 255, 255);
-                font-size: 0.75rem;
-                font-weight: weight(bold);
-                top: 16px;
-                right: 16px;
-                position: absolute;
-                text-transform: uppercase;
+        &-list {
+            .col-md-3 {
+                @include tablet {
+                    width: 50%;
+                }
             }
 
-            .sale {
-                background: rgb(255, 72, 66);
-            }
+            .card {
+                border: none;
+                border-radius: 16px;
+                margin-bottom: 24px;
 
-            .new {
-                background: rgb(24, 144, 255);
-            }
-
-            img {
-                border-top-left-radius: 16px;
-                border-top-right-radius: 16px;
-                height: 270px;
-                object-fit: cover;
-            }
-
-            &-body {
-                a {
-                    .card-title {
-                        font-weight: weight(bold);
-                        font-size: 0.9rem;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                    }
-
-                    &:hover {
-                        color: $textColorActive;
-                    }
+                .sale,
+                .new {
+                    height: 22px;
+                    border-radius: 8px;
+                    @include flexCenter;
+                    justify-content: center;
+                    padding: 0px 8px;
+                    color: rgb(255, 255, 255);
+                    font-size: 0.75rem;
+                    font-weight: weight(bold);
+                    top: 16px;
+                    right: 16px;
+                    position: absolute;
+                    text-transform: uppercase;
                 }
 
-                .card-text {
-                    @include flexCenter;
-                    justify-content: space-between;
+                .sale {
+                    background: rgb(255, 72, 66);
+                }
 
-                    .color {
-                        display: flex;
+                .new {
+                    background: rgb(24, 144, 255);
+                }
 
-                        div {
-                            margin-left: -4px;
-                            border-radius: 50%;
-                            width: 16px;
-                            height: 16px;
-                            border: 2px solid rgb(255, 255, 255);
-                            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+                img {
+                    border-top-left-radius: 16px;
+                    border-top-right-radius: 16px;
+                    height: 270px;
+                    object-fit: cover;
+                }
+
+                &-body {
+                    a {
+                        .card-title {
+                            font-weight: weight(bold);
+                            font-size: 0.9rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                         }
 
-                        .red {
-                            background: red;
-                        }
-
-                        .green {
-                            background: green;
-                        }
-
-                        .black {
-                            background: black;
-                        }
-
-                        .white {
-                            background: white;
-                        }
-
-                        .pink {
-                            background: pink;
-                        }
-
-                        .blue {
-                            background: blue;
-                        }
-
-                        .yellow {
-                            background: yellow;
-                        }
-
-                        div:first-child {
-                            margin-left: 0;
+                        &:hover {
+                            color: $textColorActive;
                         }
                     }
 
-                    .price {
-                        &-old {
-                            color: $textColor;
-                            text-decoration: line-through;
-                            margin-right: 4px;
+                    .card-text {
+                        @include flexCenter;
+                        justify-content: space-between;
+
+                        .color {
+                            display: flex;
+
+                            div {
+                                margin-left: -4px;
+                                border-radius: 50%;
+                                width: 16px;
+                                height: 16px;
+                                border: 2px solid rgb(255, 255, 255);
+                                box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px
+                                    3.2px;
+                            }
+
+                            .red {
+                                background: red;
+                            }
+
+                            .green {
+                                background: green;
+                            }
+
+                            .black {
+                                background: black;
+                            }
+
+                            .white {
+                                background: white;
+                            }
+
+                            .pink {
+                                background: pink;
+                            }
+
+                            .blue {
+                                background: blue;
+                            }
+
+                            .yellow {
+                                background: yellow;
+                            }
+
+                            div:first-child {
+                                margin-left: 0;
+                            }
+                        }
+
+                        .price {
+                            &-old {
+                                color: $textColor;
+                                text-decoration: line-through;
+                                margin-right: 4px;
+                            }
                         }
                     }
                 }
