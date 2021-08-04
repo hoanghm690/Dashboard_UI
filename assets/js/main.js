@@ -91,11 +91,29 @@ const app = {
         },
         {
             id: 2,
-            avatar: "./assets/img/giphy.gif",
-            name: "Hoang Huynh",
+            avatar: "https://minimal-kit-react.vercel.app/static/mock-images/avatars/avatar_24.jpg",
+            name: "Antonia Reichel",
             company: "Rogahn Inc",
             role: "Backend Developer",
             verified: false,
+            status: true,
+        },
+        {
+            id: 3,
+            avatar: "https://minimal-kit-react.vercel.app/static/mock-images/avatars/avatar_14.jpg",
+            name: "Sherman Beier",
+            company: "Senger and Sons",
+            role: "UX Designer",
+            verified: false,
+            status: false,
+        },
+        {
+            id: 4,
+            avatar: "https://minimal-kit-react.vercel.app/static/mock-images/avatars/avatar_5.jpg",
+            name: "Tanya Cormier",
+            company: "Ledner - Thiel",
+            role: "Leader",
+            verified: true,
             status: true,
         },
     ],
@@ -270,7 +288,7 @@ const app = {
     },
     renderUsers: function () {
         const htmlUsers = this.users.map((user) => {
-            return `<tr data-id=${user.id} aria-checked="false">
+            return `<tr data-id=${user.id}>
                         <td width="48">
                             <button>
                                 <input type="checkbox" 
@@ -500,9 +518,17 @@ const app = {
         //Sort name clicked
         sortName.onclick = function () {
             $(".sort-name i").style.transform = "rotate(180deg)";
-            _this.users.sort(_this.compareValues("name", "asc"));
+            _this.users.sort(compareValues("name"));
             _this.renderUsers();
         };
+
+        function compareValues(key, order = "asc") {
+            return function innerSort(a, b) {
+                if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
+                const comparison = a[key].localeCompare(b[key]);
+                return order === "desc" ? comparison * -1 : comparison;
+            };
+        }
     },
 
     renderSelectedAction: function () {
@@ -521,14 +547,6 @@ const app = {
                 opacity: "0",
             });
         }
-    },
-
-    compareValues: function (key, order = "asc") {
-        return function innerSort(a, b) {
-            if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
-            const comparison = a[key].localeCompare(b[key]);
-            return order === "desc" ? comparison * -1 : comparison;
-        };
     },
 
     start: function () {

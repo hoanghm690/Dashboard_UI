@@ -993,6 +993,7 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table tbody tr {
+  height: 68px;
   vertical-align: middle;
 }
 
