@@ -74,6 +74,26 @@
             }
         }
 
+        .divider {
+            margin: 40px 0;
+            position: relative;
+            width: 100%;
+            border-top: thin solid rgba(145, 158, 171, 0.24);
+
+            &::before {
+                @include positionAbsolute;
+                background-color: $backgroundColor;
+                content: "OR";
+                color: $textColor;
+                font-size: 0.9rem;
+                padding: 0 10px;
+                left: 50%;
+                right: unset;
+                top: -12px;
+                transform: translateX(-50%);
+            }
+        }
+
         form {
             .fullname {
                 .material-textfield {

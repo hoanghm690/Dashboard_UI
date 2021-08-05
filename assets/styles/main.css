@@ -169,9 +169,11 @@ h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.sidebar__menu ul li:hover {
+.sidebar__menu ul li:hover, .sidebar__menu ul li:focus, .sidebar__menu ul li:active {
   background: #f4f6f8;
 }
 
@@ -1778,6 +1780,36 @@ h4 {
 #login .sign-in .socials button:hover,
 #register .sign-in .socials button:hover {
   background: rgba(145, 158, 171, 0.06);
+}
+
+#login .sign-in .divider,
+#register .sign-in .divider {
+  margin: 40px 0;
+  position: relative;
+  width: 100%;
+  border-top: thin solid rgba(145, 158, 171, 0.24);
+}
+
+#login .sign-in .divider::before,
+#register .sign-in .divider::before {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1200;
+  background-color: #fff;
+  content: "OR";
+  color: #637381;
+  font-size: 0.9rem;
+  padding: 0 10px;
+  left: 50%;
+  right: unset;
+  top: -12px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #login .sign-in form .fullname .material-textfield,
