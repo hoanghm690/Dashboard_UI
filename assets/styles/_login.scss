@@ -130,6 +130,10 @@
                     color: $primaryColor;
                     transition: 0.1s ease-out;
 
+                    &:hover {
+                        border-color: $primaryColor;
+                    }
+
                     &:focus {
                         border-color: $borderColorActive;
                     }

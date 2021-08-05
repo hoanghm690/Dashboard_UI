@@ -1855,6 +1855,11 @@ h4 {
   transition: 0.1s ease-out;
 }
 
+#login .sign-in form .material-textfield input:hover,
+#register .sign-in form .material-textfield input:hover {
+  border-color: #212b36;
+}
+
 #login .sign-in form .material-textfield input:focus,
 #register .sign-in form .material-textfield input:focus {
   border-color: #00ab55;

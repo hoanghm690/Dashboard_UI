@@ -520,6 +520,7 @@ const app = {
             $(".sort-name i").style.transform = "rotate(180deg)";
             _this.users.sort(compareValues("name"));
             _this.renderUsers();
+            _this.handleEvents();
         };
 
         function compareValues(key, order = "asc") {
