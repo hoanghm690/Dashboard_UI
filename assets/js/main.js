@@ -530,6 +530,16 @@ const app = {
                 return order === "desc" ? comparison * -1 : comparison;
             };
         }
+
+        const darkMode = $(".sidebar__darkmode");
+        const darkModeInput = $(".sidebar__darkmode input");
+        darkMode.onclick = function (e) {
+            e.preventDefault();
+            $("body").classList.toggle("dark");
+            !darkModeInput.checked
+                ? darkModeInput.setAttribute("checked", true)
+                : darkModeInput.removeAttribute("checked");
+        };
     },
 
     renderSelectedAction: function () {

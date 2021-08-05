@@ -51,16 +51,6 @@
     cursor: pointer;
 }
 
-@mixin theme($light-theme: true) {
-    @if $light-theme {
-        background: lighten($backgroundColor, 100%);
-        color: darken($primaryColor, 100%);
-    } @else {
-        background: darken($backgroundColor, 100%);
-        color: lighten($primaryColor, 100%);
-    }
-}
-
 @mixin mobile {
     @media (max-width: $mobile) {
         @content;
@@ -102,9 +92,7 @@ body {
     }
 }
 
-.light {
-    @include theme($light-theme: true);
-}
+@import "./darkmode";
 
 a {
     color: $primaryColor;

@@ -1,0 +1,202 @@
+.dark {
+    background: $primaryColor;
+    color: $backgroundColor;
+
+    .sidebar {
+        background: $primaryColor;
+
+        a {
+            color: $textdefaultColor;
+        }
+
+        &__user {
+            .profile {
+                background: $backgroundHoverColor;
+
+                .name {
+                    color: $textdefaultColor;
+                }
+            }
+        }
+
+        &__menu {
+            li {
+                &.active {
+                    background: $backgroundHoverColor;
+                }
+
+                &:hover:not(.active) {
+                    background: $backgroundHoverColor;
+                }
+            }
+        }
+    }
+
+    header {
+        background: $primaryColor !important;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+
+        .search-wrapper__icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .toolbar-wrapper {
+            background: $primaryColor !important;
+
+            img {
+                filter: brightness(0) invert(1);
+            }
+
+            input {
+                background: $primaryColor !important;
+                color: $textdefaultColor !important;
+            }
+        }
+
+        .user-wrapper__notification--menu,
+        .user-wrapper__profile--menu {
+            background: $primaryColor !important;
+
+            &::before {
+                border-color: transparent transparent $primaryColor transparent !important;
+            }
+
+            a {
+                background: $primaryColor !important;
+                color: $textdefaultColor !important;
+
+                &:hover {
+                    background: $backgroundHoverColor !important;
+                    color: $textdefaultColor !important;
+                }
+
+                .content-noti__text {
+                    .text-dark {
+                        color: $textdefaultColor !important;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        #users {
+            .search {
+                form {
+                    input {
+                        border: none;
+                        background: $backgroundHoverColor;
+                        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+                        color: $textdefaultColor;
+
+                        &:focus {
+                            border: none !important;
+                        }
+                    }
+
+                    button {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+
+            #users-table {
+                color: $textdefaultColor;
+
+                tbody {
+                    tr {
+                        &:hover {
+                            background: $backgroundHoverColor;
+                        }
+
+                        .dropdown {
+                            &-menu {
+                                background: $primaryColor;
+
+                                li {
+                                    a,
+                                    i {
+                                        color: $textdefaultColor;
+                                        &:hover {
+                                            background: $backgroundHoverColor !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #products {
+            .product-title {
+                .action {
+                    .filters {
+                        button {
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+
+                    .sort-by {
+                        color: $textdefaultColor;
+                    }
+
+                    .dropdown-menu {
+                        background: $primaryColor;
+
+                        li {
+                            .dropdown-item {
+                                color: $textdefaultColor;
+
+                                &:hover {
+                                    background: $backgroundHoverColor;
+                                }
+
+                                &:active {
+                                    color: $textdefaultColor !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .products {
+                .card {
+                    &-body {
+                        background: $primaryColor;
+
+                        a {
+                            color: $textdefaultColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        #blogs {
+            .form-search {
+                input {
+                    background: $primaryColor;
+                    border: none;
+                    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+                    color: $textdefaultColor;
+
+                    &:focus {
+                        border: none !important;
+                    }
+                }
+            }
+
+            .form-select {
+                background: $primaryColor
+                    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+                background-repeat: no-repeat;
+                background-position: right 0.75rem center;
+                background-size: 16px 12px;
+                color: $textdefaultColor;
+            }
+        }
+    }
+}

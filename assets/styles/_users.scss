@@ -2,6 +2,7 @@
     .card {
         border: none;
         border-radius: 16px;
+        background: unset;
 
         &-body {
             padding: 0;
@@ -55,7 +56,7 @@
                         outline: none;
 
                         &:hover {
-                            background: $backgroundPrimaryColor;
+                            background: $backgroundHoverColor;
                         }
                     }
                 }
@@ -90,7 +91,7 @@
                     font-size: 1.2rem;
 
                     &:hover {
-                        background: $backgroundPrimaryColor;
+                        background: $backgroundHoverColor;
                     }
 
                     @include mobile {

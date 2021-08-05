@@ -25,6 +25,7 @@
 
         i {
             @include positionAbsolute;
+            z-index: 1199;
             color: $textColor;
             top: 12px;
             left: 14px;
@@ -72,6 +73,7 @@
 
                 &-avatar {
                     @include positionAbsolute;
+                    z-index: 1199;
                     bottom: unset;
 
                     img {

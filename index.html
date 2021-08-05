@@ -1,452 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UI Dashboard</title>
+        <link
+            rel="shortcut icon"
+            href="./assets/img/logo.svg"
+            type="image/svg"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./assets/styles/main.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UI Dashboard</title>
-    <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./assets/styles/main.css" />
-</head>
-
-<body class="light">
-    <div id="app">
-        <div class="sidebar">
-            <div class="sidebar__logo">
-                <a href="index.html">
-                    <img src="./assets/img/logo.svg" />
-                </a>
-            </div>
-            <div class="sidebar__user">
-                <a href="#">
-                    <div class="profile">
-                        <div class="avatar">
-                            <img src="./assets/img/giphy.gif" alt="" />
-                        </div>
-                        <div class="name">
-                            <h6>Ton Ton</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="sidebar__menu">
-                <ul></ul>
-            </div>
-        </div>
-        <div class="sidebar-overlay"></div>
-        <div class="main-content">
-            <header>
-                <div class="search-wrapper">
-                    <div class="menu-wrapper__mobile">
-                        <img src="./assets/img/menu.svg" width="20" />
-                    </div>
-                    <div class="search-wrapper__icon">
-                        <img src="./assets/img/search.svg" width="20" />
-                    </div>
-                    <div class="toolbar-wrapper shadow">
-                        <img src="./assets/img/search.svg" width="20" />
-                        <input type="text" placeholder="Search..." />
-                        <button class="btn btn-success">Search</button>
-                    </div>
+    <body>
+        <div id="app">
+            <div class="sidebar">
+                <div class="sidebar__logo">
+                    <a href="index.html">
+                        <img src="./assets/img/logo.svg" />
+                    </a>
                 </div>
-                <div class="user-wrapper">
-                    <div class="user-wrapper__notification">
-                        <button type="button" class="position-relative">
-                            <i class="fas fa-bell"></i>
-                            <span class="
+                <div class="sidebar__user">
+                    <a href="#">
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="./assets/img/giphy.gif" alt="" />
+                            </div>
+                            <div class="name">
+                                <h6>Ton Ton</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar__menu">
+                    <ul></ul>
+                </div>
+                <div class="sidebar__darkmode">
+                    <div class="toggleWrapper">
+                        <input type="checkbox" class="dn" id="dn" />
+                        <label for="dn" class="toggle">
+                            <span class="toggle__handler">
+                                <span class="crater crater--1"></span>
+                                <span class="crater crater--2"></span>
+                                <span class="crater crater--3"></span>
+                            </span>
+                            <span class="star star--1"></span>
+                            <span class="star star--2"></span>
+                            <span class="star star--3"></span>
+                            <span class="star star--4"></span>
+                            <span class="star star--5"></span>
+                            <span class="star star--6"></span>
+                        </label>
+                    </div>
+                    <!-- <div class="form-check form-switch">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="flexSwitchCheckDefault"
+                        />
+                        <label
+                            class="form-check-label"
+                            for="flexSwitchCheckDefault"
+                            >Dark mode</label
+                        >
+                    </div> -->
+                </div>
+            </div>
+            <div class="sidebar-overlay"></div>
+            <div class="main-content">
+                <header>
+                    <div class="search-wrapper">
+                        <div class="menu-wrapper__mobile">
+                            <img src="./assets/img/menu.svg" width="20" />
+                        </div>
+                        <div class="search-wrapper__icon">
+                            <img src="./assets/img/search.svg" width="20" />
+                        </div>
+                        <div class="toolbar-wrapper shadow">
+                            <img src="./assets/img/search.svg" width="20" />
+                            <input type="text" placeholder="Search..." />
+                            <button class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+                    <div class="user-wrapper">
+                        <div class="user-wrapper__notification">
+                            <button type="button" class="position-relative">
+                                <i class="fas fa-bell"></i>
+                                <span
+                                    class="
                                         position-absolute
                                         translate-middle
                                         badge
                                         rounded-circle
                                         bg-danger
-                                    ">
-                                2
-                            </span>
-                        </button>
-                        <div class="user-wrapper__notification--menu shadow">
-                            <div class="header">
-                                <div>
-                                    <span>Notifications</span>
-                                    <p>You have 2 unread messages</p>
+                                    "
+                                >
+                                    2
+                                </span>
+                            </button>
+                            <div
+                                class="user-wrapper__notification--menu shadow"
+                            >
+                                <div class="header">
+                                    <div>
+                                        <span>Notifications</span>
+                                        <p>You have 2 unread messages</p>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        class="btn"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom"
+                                        title="Mark all as read"
+                                    >
+                                        <i class="fas fa-check-double"></i>
+                                    </button>
                                 </div>
-                                <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                    title="Mark all as read">
-                                    <i class="fas fa-check-double"></i>
-                                </button>
-                            </div>
-                            <div class="content">
-                                <div class="content-text">new</div>
-                                <div class="content-noti">
-                                    <a href="">
-                                        <img src="./assets/img/giphy.gif" />
-                                        <div class="content-noti__text">
-                                            <p class="m-0">
-                                                <span class="
+                                <div class="content">
+                                    <div class="content-text">new</div>
+                                    <div class="content-noti">
+                                        <a href="">
+                                            <img src="./assets/img/giphy.gif" />
+                                            <div class="content-noti__text">
+                                                <p class="m-0">
+                                                    <span
+                                                        class="
                                                             fw-bold
                                                             text-dark
-                                                        ">Marlene Willms
-                                                    PhD</span>
-                                                <span>answered to your
-                                                    comment on the
-                                                    minimal</span>
-                                            </p>
-                                            <span class="text-lowercase">
-                                                <i class="
+                                                        "
+                                                        >Marlene Willms
+                                                        PhD</span
+                                                    >
+                                                    <span
+                                                        >answered to your
+                                                        comment on the
+                                                        minimal</span
+                                                    >
+                                                </p>
+                                                <span class="text-lowercase">
+                                                    <i
+                                                        class="
                                                             fas
                                                             fa-clock
                                                             me-1
-                                                        "></i>
-                                                about 4 hours
-                                            </span>
-                                        </div>
-                                    </a>
-                                    <a href="">
-                                        <img src="./assets/img/giphy.gif" />
-                                        <div class="content-noti__text">
-                                            <p class="m-0">
-                                                <span class="
+                                                        "
+                                                    ></i>
+                                                    about 4 hours
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <img src="./assets/img/giphy.gif" />
+                                            <div class="content-noti__text">
+                                                <p class="m-0">
+                                                    <span
+                                                        class="
                                                             fw-bold
                                                             text-dark
-                                                        ">Marlene Willms
-                                                    PhD</span>
-                                                <span>answered to your
-                                                    comment on the
-                                                    minimal</span>
-                                            </p>
-                                            <span class="text-lowercase">
-                                                <i class="
+                                                        "
+                                                        >Marlene Willms
+                                                        PhD</span
+                                                    >
+                                                    <span
+                                                        >answered to your
+                                                        comment on the
+                                                        minimal</span
+                                                    >
+                                                </p>
+                                                <span class="text-lowercase">
+                                                    <i
+                                                        class="
                                                             fas
                                                             fa-clock
                                                             me-1
-                                                        "></i>
-                                                about 4 hours
-                                            </span>
-                                        </div>
-                                    </a>
+                                                        "
+                                                    ></i>
+                                                    about 4 hours
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="content-text">before that</div>
                                 </div>
-                                <div class="content-text">before that</div>
+                            </div>
+                        </div>
+                        <div class="user-wrapper__profile">
+                            <div class="user-wrapper__profile--avatar">
+                                <img src="./assets/img/giphy.gif" />
+                            </div>
+                            <div class="user-wrapper__profile--menu shadow">
+                                <div class="name">
+                                    <span>Ton Ton</span>
+                                    <p>humiho.69@gmail.com</p>
+                                </div>
+                                <a href="" class="profile">
+                                    <i class="fas fa-user"></i>
+                                    <span>Profile</span>
+                                </a>
+                                <a href="" class="settings">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <a href="" class="logout">
+                                    <span>Logout</span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="user-wrapper__profile">
-                        <div class="user-wrapper__profile--avatar">
-                            <img src="./assets/img/giphy.gif" />
-                        </div>
-                        <div class="user-wrapper__profile--menu shadow">
-                            <div class="name">
-                                <span>Ton Ton</span>
-                                <p>humiho.69@gmail.com</p>
-                            </div>
-                            <a href="" class="profile">
-                                <i class="fas fa-user"></i>
-                                <span>Profile</span>
-                            </a>
-                            <a href="" class="settings">
-                                <i class="fas fa-cog"></i>
-                                <span>Settings</span>
-                            </a>
-                            <a href="" class="logout">
-                                <span>Logout</span>
+                </header>
+                <main>
+                    <section id="dashboard">
+                        <h4>Hi, Welcome back</h4>
+                        <div class="cards row mt-5"></div>
+                    </section>
+                    <section id="users">
+                        <div class="d-flex justify-content-between mt-5">
+                            <h4>User</h4>
+                            <a href="" class="btn btn-success shadow"
+                                ><i class="fas fa-plus me-2"></i>
+                                <span>New User</span>
                             </a>
                         </div>
-                    </div>
-                </div>
-            </header>
-            <main>
-                <section id="dashboard">
-                    <h4>Hi, Welcome back</h4>
-                    <div class="cards row mt-5"></div>
-                </section>
-                <section id="users">
-                    <div class="d-flex justify-content-between mt-5">
-                        <h4>User</h4>
-                        <a href="" class="btn btn-success shadow"><i class="fas fa-plus me-2"></i>
-                            <span>New User</span>
-                        </a>
-                    </div>
-                    <div class="users mt-4">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="search">
-                                    <form class="
+                        <div class="users mt-4">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <div class="search">
+                                        <form
+                                            class="
                                                 d-flex
                                                 justify-content-between
                                                 align-items-center
-                                            ">
-                                        <i class="fas fa-search"></i>
-                                        <input class="form-control" type="text" placeholder="Search user..."
-                                            aria-label="Search" />
-                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                            name="delete" title="Filter list">
-                                            <img src="./assets/img/filter.svg" alt="Filter list" width="20" />
+                                            "
+                                        >
+                                            <i class="fas fa-search"></i>
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                placeholder="Search user..."
+                                                aria-label="Search"
+                                            />
+                                            <button
+                                                type="button"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom"
+                                                name="delete"
+                                                title="Filter list"
+                                            >
+                                                <img
+                                                    src="./assets/img/filter.svg"
+                                                    alt="Filter list"
+                                                    width="20"
+                                                />
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="selected-action">
+                                        <span></span>
+                                        <button
+                                            type="button"
+                                            class="check-all-submit-btn"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom"
+                                            name="delete"
+                                            title="Delete"
+                                        >
+                                            <i class="fas fa-trash-alt"></i>
                                         </button>
-                                    </form>
+                                    </div>
+                                    <table class="table mt-5" id="users-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    <button>
+                                                        <input
+                                                            type="checkbox"
+                                                            class="
+                                                                form-check-input
+                                                            "
+                                                            id="input-checkboxAll"
+                                                        />
+                                                    </button>
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    data-order="descending"
+                                                >
+                                                    <span>Name</span>
+                                                    <span class="sort-name">
+                                                        <i
+                                                            class="
+                                                                fas
+                                                                fa-arrow-up
+                                                            "
+                                                        ></i>
+                                                    </span>
+                                                </th>
+                                                <th scope="col">Company</th>
+                                                <th scope="col">Role</th>
+                                                <th scope="col">Verified</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
                                 </div>
-                                <div class="selected-action">
-                                    <span></span>
-                                    <button type="button" class="check-all-submit-btn" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" name="delete" title="Delete">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </div>
-                                <table class="table mt-5" id="users-table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">
-                                                <button>
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="input-checkboxAll" />
-                                                </button>
-                                            </th>
-                                            <th scope="col" data-order="descending">
-                                                <span>Name</span>
-                                                <span class="sort-name">
-                                                    <i class="fas fa-arrow-up"></i>
-                                                </span>
-                                            </th>
-                                            <th scope="col">Company</th>
-                                            <th scope="col">Role</th>
-                                            <th scope="col">Verified</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section id="products">
-                    <div class="product-title mt-5">
-                        <h4>Products</h4>
-                        <div class="action">
-                            <div class="filters" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasFilterProductRight"
-                                aria-controls="offcanvasFilterProductRight">
-                                <span>Filters</span>
-                                <button>
-                                    <img src="./assets/img/filter.svg" width="20" />
-                                </button>
-                            </div>
+                    </section>
+                    <section id="products">
+                        <div class="product-title mt-5">
+                            <h4>Products</h4>
+                            <div class="action">
+                                <div
+                                    class="filters"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasFilterProductRight"
+                                    aria-controls="offcanvasFilterProductRight"
+                                >
+                                    <span>Filters</span>
+                                    <button>
+                                        <img
+                                            src="./assets/img/filter.svg"
+                                            width="20"
+                                        />
+                                    </button>
+                                </div>
 
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasFilterProductRight"
-                                aria-labelledby="offcanvasFilterProductRightLabel">
-                                <div class="offcanvas-header">
-                                    <h6 id="offcanvasFilterProductRightLabel">
-                                        Filters
+                                <div
+                                    class="offcanvas offcanvas-end"
+                                    tabindex="-1"
+                                    id="offcanvasFilterProductRight"
+                                    aria-labelledby="offcanvasFilterProductRightLabel"
+                                >
+                                    <div class="offcanvas-header">
+                                        <h6
+                                            id="offcanvasFilterProductRightLabel"
+                                        >
+                                            Filters
+                                        </h6>
+                                        <button
+                                            type="button"
+                                            class="btn-close text-reset"
+                                            data-bs-dismiss="offcanvas"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <div class="gender">
+                                            <h6>Gender</h6>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    value="men"
+                                                    id="men"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="men"
+                                                >
+                                                    Men
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    value="women"
+                                                    id="women"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="women"
+                                                >
+                                                    Women
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    value="kids"
+                                                    id="kids"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="kids"
+                                                >
+                                                    Kids
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="category">
+                                            <h6>Category</h6>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory1"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory1"
+                                                >
+                                                    All
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory2"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory2"
+                                                >
+                                                    Shose
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory3"
+                                                >
+                                                    Apparel
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductCategory"
+                                                    id="flexRadioFilterProductCategory4"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductCategory4"
+                                                >
+                                                    Accessories
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="price">
+                                            <h6>Price</h6>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductPrice"
+                                                    id="flexRadioFilterProductPrice1"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductPrice1"
+                                                >
+                                                    Below $25
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductPrice"
+                                                    id="flexRadioFilterProductPrice2"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductPrice2"
+                                                >
+                                                    Between $25 - $75
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="flexRadioFilterProductPrice"
+                                                    id="flexRadioFilterProductPrice3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="flexRadioFilterProductPrice3"
+                                                >
+                                                    Above $75
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="rating">
+                                            <h6>Rating</h6>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                            <div class="form-check">
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                                <span class="ms-2">& Up</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="clear-all"
+                                            data-bs-dismiss="offcanvas"
+                                        >
+                                            <img
+                                                src="./assets/img/rubber.svg"
+                                                width="20"
+                                            />
+                                            <h6 class="ms-2">Clear All</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="sort-by dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <h6>
+                                        Sort By:
+                                        <span class="caret">Newest</span>
                                     </h6>
-                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="offcanvas-body">
-                                    <div class="gender">
-                                        <h6>Gender</h6>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="men" id="men" />
-                                            <label class="form-check-label" for="men">
-                                                Men
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="women" id="women" />
-                                            <label class="form-check-label" for="women">
-                                                Women
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="kids" id="kids" />
-                                            <label class="form-check-label" for="kids">
-                                                Kids
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="category">
-                                        <h6>Category</h6>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio"
-                                                name="flexRadioFilterProductCategory"
-                                                id="flexRadioFilterProductCategory1" />
-                                            <label class="form-check-label" for="flexRadioFilterProductCategory1">
-                                                All
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio"
-                                                name="flexRadioFilterProductCategory"
-                                                id="flexRadioFilterProductCategory2" />
-                                            <label class="form-check-label" for="flexRadioFilterProductCategory2">
-                                                Shose
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio"
-                                                name="flexRadioFilterProductCategory"
-                                                id="flexRadioFilterProductCategory3" />
-                                            <label class="form-check-label" for="flexRadioFilterProductCategory3">
-                                                Apparel
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio"
-                                                name="flexRadioFilterProductCategory"
-                                                id="flexRadioFilterProductCategory4" />
-                                            <label class="form-check-label" for="flexRadioFilterProductCategory4">
-                                                Accessories
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <h6>Price</h6>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio"
-                                                name="flexRadioFilterProductPrice" id="flexRadioFilterProductPrice1" />
-                                            <label class="form-check-label" for="flexRadioFilterProductPrice1">
-                                                Below $25
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio"
-                                                name="flexRadioFilterProductPrice" id="flexRadioFilterProductPrice2" />
-                                            <label class="form-check-label" for="flexRadioFilterProductPrice2">
-                                                Between $25 - $75
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio"
-                                                name="flexRadioFilterProductPrice" id="flexRadioFilterProductPrice3" />
-                                            <label class="form-check-label" for="flexRadioFilterProductPrice3">
-                                                Above $75
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="rating">
-                                        <h6>Rating</h6>
-                                        <div class="form-check">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span class="ms-2">& Up</span>
-                                        </div>
-                                        <div class="form-check">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span class="ms-2">& Up</span>
-                                        </div>
-                                        <div class="form-check">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span class="ms-2">& Up</span>
-                                        </div>
-                                        <div class="form-check">
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span class="ms-2">& Up</span>
-                                        </div>
-                                    </div>
-                                    <div class="clear-all" data-bs-dismiss="offcanvas">
-                                        <img src="./assets/img/rubber.svg" width="20" />
-                                        <h6 class="ms-2">Clear All</h6>
-                                    </div>
-                                </div>
-                            </div>
+                                </button>
 
-                            <button type="button" class="sort-by dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <h6>
-                                    Sort By:
-                                    <span class="caret">Newest</span>
-                                </h6>
-                            </button>
-
-                            <ul class="
+                                <ul
+                                    class="
                                         dropdown-menu dropdown-menu-end
                                         shadow
-                                    ">
-                                <li>
-                                    <button class="dropdown-item" type="button" value="Featured">
-                                        Featured
-                                    </button>
-                                </li>
-                                <li class="active">
-                                    <button class="dropdown-item" type="button" value="Newest">
-                                        Newest
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="dropdown-item" type="button" value="Price: High-Low">
-                                        Price: High-Low
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="dropdown-item" type="button" value="Price: Low-High">
-                                        Price: Low-High
-                                    </button>
-                                </li>
-                            </ul>
+                                    "
+                                >
+                                    <li>
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Featured"
+                                        >
+                                            Featured
+                                        </button>
+                                    </li>
+                                    <li class="active">
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Newest"
+                                        >
+                                            Newest
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Price: High-Low"
+                                        >
+                                            Price: High-Low
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="dropdown-item"
+                                            type="button"
+                                            value="Price: Low-High"
+                                        >
+                                            Price: Low-High
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="products">
-                        <div class="products-list row mt-5"></div>
-                    </div>
-                </section>
-                <section id="blogs">
-                    <div class="d-flex justify-content-between mt-5">
-                        <h4>Blog</h4>
-                        <a href="" class="btn btn-success shadow"><i class="fas fa-plus me-2"></i>
-                            <span>New Post</span>
-                        </a>
-                    </div>
-                    <div class="d-flex justify-content-between mt-5">
-                        <form class="
+                        <div class="products">
+                            <div class="products-list row mt-5"></div>
+                        </div>
+                    </section>
+                    <section id="blogs">
+                        <div class="d-flex justify-content-between mt-5">
+                            <h4>Blog</h4>
+                            <a href="" class="btn btn-success shadow"
+                                ><i class="fas fa-plus me-2"></i>
+                                <span>New Post</span>
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-between mt-5">
+                            <form
+                                class="
                                     form-search
                                     d-flex
                                     justify-content-between
                                     align-items-center
-                                ">
-                            <i class="fas fa-search"></i>
-                            <input class="form-control" type="text" placeholder="Search post..." aria-label="Search" />
-                        </form>
-                        <select class="form-select">
-                            <option value="lasted" selected>Lasted</option>
-                            <option value="popular">Popular</option>
-                            <option value="oldest">Oldest</option>
-                        </select>
-                    </div>
-                    <div class="blogs">
-                        <div class="blogs-list row mt-5"></div>
-                    </div>
-                </section>
-            </main>
+                                "
+                            >
+                                <i class="fas fa-search"></i>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Search post..."
+                                    aria-label="Search"
+                                />
+                            </form>
+                            <select class="form-select">
+                                <option value="lasted" selected>Lasted</option>
+                                <option value="popular">Popular</option>
+                                <option value="oldest">Oldest</option>
+                            </select>
+                        </div>
+                        <div class="blogs">
+                            <div class="blogs-list row mt-5"></div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <div class="to-top shadow">
+                <i class="fas fa-arrow-up"></i>
+            </div>
         </div>
-        <div class="to-top shadow">
-            <i class="fas fa-arrow-up"></i>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="./assets/js/main.js"></script>
-</body>
-
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>
