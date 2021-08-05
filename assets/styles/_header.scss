@@ -13,6 +13,10 @@ header {
         padding: 0 15px;
     }
 
+    @include laptop {
+        left: 0;
+    }
+
     .search-wrapper {
         &__icon {
             @include flexCenter;
@@ -30,6 +34,10 @@ header {
             @include flexCenter;
         }
 
+        @include laptop {
+            @include flexCenter;
+        }
+
         .menu-wrapper__mobile {
             margin-right: 10px;
             @include flexCenter;
@@ -40,6 +48,10 @@ header {
             display: none;
 
             @include mobile {
+                display: flex;
+            }
+
+            @include laptop {
                 display: flex;
             }
 

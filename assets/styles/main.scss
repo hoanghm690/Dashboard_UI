@@ -73,6 +73,12 @@
     }
 }
 
+@mixin laptop {
+    @media (max-width: $laptop) {
+        @content;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -127,6 +133,10 @@ h4 {
     padding-left: 280px;
 
     @include mobile {
+        padding-left: 0;
+    }
+
+    @include laptop {
         padding-left: 0;
     }
 

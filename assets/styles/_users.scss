@@ -126,6 +126,8 @@
                                 }
 
                                 input {
+                                    border-radius: 0.15rem;
+                                    border: 2px solid rgb(99, 115, 129);
                                     cursor: pointer;
 
                                     &:checked[type="checkbox"] {
@@ -183,6 +185,8 @@
                                 }
 
                                 input {
+                                    border-radius: 0.15rem;
+                                    border: 2px solid rgb(99, 115, 129);
                                     cursor: pointer;
 
                                     &:checked[type="checkbox"] {

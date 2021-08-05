@@ -20,6 +20,10 @@
             margin-bottom: 15px;
         }
 
+        @include laptop {
+            margin-bottom: 24px;
+        }
+
         &-body {
             padding: 0;
 

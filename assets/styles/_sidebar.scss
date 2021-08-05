@@ -20,6 +20,10 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
+
+        @include laptop {
+            width: 200vh;
+        }
     }
 
     &__logo {
@@ -123,6 +127,24 @@
     }
 
     @include mobile {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-280px);
+        transition: all 0.3s ease;
+
+        &.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        &.show + &-overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    @include laptop {
         visibility: hidden;
         opacity: 0;
         transform: translateX(-280px);

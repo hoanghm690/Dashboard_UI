@@ -107,6 +107,12 @@ h4 {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 1224px) {
+  .sidebar-overlay {
+    width: 200vh;
+  }
+}
+
 .sidebar__logo {
   padding: 24px 20px;
 }
@@ -250,12 +256,39 @@ h4 {
   }
 }
 
+@media (max-width: 1224px) {
+  .sidebar {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translateX(-280px);
+            transform: translateX(-280px);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .sidebar.show {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .sidebar.show + .sidebar-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .main-content {
   padding-top: 80px;
   padding-left: 280px;
 }
 
 @media (max-width: 768px) {
+  .main-content {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 1224px) {
   .main-content {
     padding-left: 0;
   }
@@ -294,6 +327,12 @@ h4 {
   }
 }
 
+@media (max-width: 1224px) {
+  .main-content header {
+    left: 0;
+  }
+}
+
 .main-content header .search-wrapper__icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -325,6 +364,17 @@ h4 {
   }
 }
 
+@media (max-width: 1224px) {
+  .main-content header .search-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .main-content header .search-wrapper .menu-wrapper__mobile {
   margin-right: 10px;
   display: -webkit-box;
@@ -344,6 +394,14 @@ h4 {
 }
 
 @media (max-width: 768px) {
+  .main-content header .search-wrapper .menu-wrapper__mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 1224px) {
   .main-content header .search-wrapper .menu-wrapper__mobile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -728,6 +786,15 @@ h4 {
   }
 }
 
+@media (max-width: 1224px) {
+  .main-content main #dashboard .cards .sales .card,
+  .main-content main #dashboard .cards .users .card,
+  .main-content main #dashboard .cards .orders .card,
+  .main-content main #dashboard .cards .reports .card {
+    margin-bottom: 24px;
+  }
+}
+
 .main-content main #dashboard .cards .sales .card-body,
 .main-content main #dashboard .cards .users .card-body,
 .main-content main #dashboard .cards .orders .card-body,
@@ -972,6 +1039,8 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table thead tr th button input {
+  border-radius: 0.15rem;
+  border: 2px solid #637381;
   cursor: pointer;
 }
 
@@ -1030,6 +1099,8 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table tbody tr td button input {
+  border-radius: 0.15rem;
+  border: 2px solid #637381;
   cursor: pointer;
 }
 
@@ -1139,25 +1210,38 @@ h4 {
   margin: 16px;
 }
 
-.main-content main #products .product-title .action .offcanvas-body .gender .form-check input,
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input,
 .main-content main #products .product-title .action .offcanvas-body .gender .form-check label,
-.main-content main #products .product-title .action .offcanvas-body .category .form-check input,
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input,
 .main-content main #products .product-title .action .offcanvas-body .category .form-check label,
-.main-content main #products .product-title .action .offcanvas-body .price .form-check input,
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input,
 .main-content main #products .product-title .action .offcanvas-body .price .form-check label {
   cursor: pointer;
 }
 
-.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input:checked[type="checkbox"],
-.main-content main #products .product-title .action .offcanvas-body .category .form-check-input:checked[type="checkbox"],
-.main-content main #products .product-title .action .offcanvas-body .price .form-check-input:checked[type="checkbox"] {
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input[type="checkbox"],
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input[type="checkbox"],
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input[type="checkbox"] {
+  border-radius: 0.15rem;
+  border: 2px solid #637381;
+}
+
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input[type="checkbox"]:checked,
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input[type="checkbox"]:checked,
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input[type="checkbox"]:checked {
   border-color: #00ab55;
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 
-.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input:checked[type="radio"],
-.main-content main #products .product-title .action .offcanvas-body .category .form-check-input:checked[type="radio"],
-.main-content main #products .product-title .action .offcanvas-body .price .form-check-input:checked[type="radio"] {
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input[type="radio"],
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input[type="radio"],
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input[type="radio"] {
+  border: 2px solid #637381;
+}
+
+.main-content main #products .product-title .action .offcanvas-body .gender .form-check-input[type="radio"]:checked,
+.main-content main #products .product-title .action .offcanvas-body .category .form-check-input[type="radio"]:checked,
+.main-content main #products .product-title .action .offcanvas-body .price .form-check-input[type="radio"]:checked {
   border-color: #00ab55;
   background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
