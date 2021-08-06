@@ -1437,6 +1437,10 @@ h4 {
   vertical-align: middle;
 }
 
+.main-content main #users .users .card-body .table thead tr th {
+  cursor: pointer;
+}
+
 .main-content main #users .users .card-body .table thead tr th button {
   width: 40px;
   height: 40px;
@@ -1453,7 +1457,6 @@ h4 {
 .main-content main #users .users .card-body .table thead tr th button input {
   border-radius: 0.15rem;
   border: 2px solid #637381;
-  cursor: pointer;
 }
 
 .main-content main #users .users .card-body .table thead tr th button input:checked[type="checkbox"] {

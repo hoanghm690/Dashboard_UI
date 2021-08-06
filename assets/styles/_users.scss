@@ -115,6 +115,8 @@
                         vertical-align: middle;
 
                         th {
+                            cursor: pointer;
+
                             button {
                                 @include w-h-40;
                                 border-radius: 50%;
@@ -129,7 +131,6 @@
                                 input {
                                     border-radius: 0.15rem;
                                     border: 2px solid rgb(99, 115, 129);
-                                    cursor: pointer;
 
                                     &:checked[type="checkbox"] {
                                         border-color: $borderColorActive;

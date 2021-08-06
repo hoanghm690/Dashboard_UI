@@ -1,6 +1,8 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+const UIADMIN_STORAGE_KEY = "UI_ADMIN";
+
 const searchBtn = $(".search-wrapper .search-wrapper__icon");
 const menuSidebarBtn = $(".search-wrapper .menu-wrapper__mobile");
 const toolbarWrapper = $(".search-wrapper .toolbar-wrapper");
@@ -16,7 +18,7 @@ const blogs = $("#blogs .blogs .blogs-list");
 
 const app = {
     currentIndex: 0,
-    theme: false,
+    config: JSON.parse(localStorage.getItem(UIADMIN_STORAGE_KEY)) || {},
     sidebarMenus: [
         {
             url: "#dashboard",
@@ -254,7 +256,10 @@ const app = {
             share: 77.18,
         },
     ],
-
+    setConfig: function (key, value) {
+        this.config[key] = value;
+        localStorage.setItem(UIADMIN_STORAGE_KEY, JSON.stringify(this.config));
+    },
     // render data
     renderSidebars: function () {
         const htmlSidebarMenu = this.sidebarMenus.map((sidebarMenu, index) => {
@@ -441,6 +446,13 @@ const app = {
     },
     //Handle Events
     handleEvents: function () {
+        const sortName = $(".sort-name");
+        const checkboxAll = $("#input-checkboxAll");
+        const userItemCheckbox = $$('input[name="userIds[]"]');
+        const darkMode = $(".sidebar__darkmode");
+        const darkModeInput = $(".sidebar__darkmode input");
+        const _this = this;
+
         //Search clicked
         //Show toolbar wrapper (search)
         searchBtn.onclick = function () {
@@ -491,11 +503,6 @@ const app = {
         };
         //
 
-        var sortName = $(".sort-name");
-        var checkboxAll = $("#input-checkboxAll");
-        var userItemCheckbox = $$('input[name="userIds[]"]');
-        const _this = this;
-
         //Checkbox all changed
         checkboxAll.onchange = function () {
             for (var userItem of userItemCheckbox) {
@@ -517,23 +524,22 @@ const app = {
         }
 
         //Sort name clicked
-        sortName.onclick = function () {
-            $(".sort-name i").style.transform = "rotate(180deg)";
-            _this.users.sort(compareValues("name"));
-            _this.renderUsers();
-            _this.handleEvents();
-        };
+        // sortName.onclick = function () {
+        //     $(".sort-name i").style.transform = "rotate(180deg)";
+        //     _this.users.sort(compareValues("name"));
+        //     _this.renderUsers();
+        //     _this.handleEvents();
+        // };
 
-        function compareValues(key, order = "asc") {
-            return function innerSort(a, b) {
-                if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
-                const comparison = a[key].localeCompare(b[key]);
-                return order === "desc" ? comparison * -1 : comparison;
-            };
-        }
+        // function compareValues(key, order = "asc") {
+        //     return function innerSort(a, b) {
+        //         if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
+        //         const comparison = a[key].localeCompare(b[key]);
+        //         return order === "desc" ? comparison * -1 : comparison;
+        //     };
+        // }
 
-        const darkMode = $(".sidebar__darkmode");
-        const darkModeInput = $(".sidebar__darkmode input");
+        //Dark mode clicked switch
         darkMode.onclick = function (e) {
             e.preventDefault();
             $("body").classList.toggle("dark");
