@@ -16,6 +16,7 @@ const blogs = $("#blogs .blogs .blogs-list");
 
 const app = {
     currentIndex: 0,
+    theme: false,
     sidebarMenus: [
         {
             url: "#dashboard",

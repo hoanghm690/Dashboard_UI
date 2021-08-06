@@ -109,7 +109,7 @@
                             }
 
                             &:hover {
-                                background: $backgroundPrimaryColor;
+                                background: $backgroundHoverColor;
                             }
                         }
                     }
@@ -123,7 +123,7 @@
                         cursor: pointer;
 
                         &:hover {
-                            background: $backgroundPrimaryColor;
+                            background: $backgroundHoverColor;
                         }
                     }
 

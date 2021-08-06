@@ -138,6 +138,18 @@
                         }
                     }
 
+                    .offcanvas {
+                        background: $primaryColor;
+
+                        &-header,
+                        &-body {
+                            .btn-close,
+                            .clear-all img {
+                                filter: brightness(0) invert(1);
+                            }
+                        }
+                    }
+
                     .sort-by {
                         color: $textdefaultColor;
                     }
