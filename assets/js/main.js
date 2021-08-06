@@ -1,7 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const UIADMIN_STORAGE_KEY = "UI_ADMIN";
+const STORAGE_KEY = "UI_ADMIN";
 
 const searchBtn = $(".search-wrapper .search-wrapper__icon");
 const menuSidebarBtn = $(".search-wrapper .menu-wrapper__mobile");
@@ -18,7 +18,8 @@ const blogs = $("#blogs .blogs .blogs-list");
 
 const app = {
     currentIndex: 0,
-    config: JSON.parse(localStorage.getItem(UIADMIN_STORAGE_KEY)) || {},
+    darkModeStatus: false,
+    config: JSON.parse(localStorage.getItem(STORAGE_KEY)) || {},
     sidebarMenus: [
         {
             url: "#dashboard",
@@ -258,7 +259,7 @@ const app = {
     ],
     setConfig: function (key, value) {
         this.config[key] = value;
-        localStorage.setItem(UIADMIN_STORAGE_KEY, JSON.stringify(this.config));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.config));
     },
     // render data
     renderSidebars: function () {
@@ -444,13 +445,12 @@ const app = {
         });
         blogs.innerHTML = htmlBlogs.join("");
     },
+
     //Handle Events
     handleEvents: function () {
-        const sortName = $(".sort-name");
         const checkboxAll = $("#input-checkboxAll");
         const userItemCheckbox = $$('input[name="userIds[]"]');
-        const darkMode = $(".sidebar__darkmode");
-        const darkModeInput = $(".sidebar__darkmode input");
+        const darkModeCheck = $(".sidebar__darkmode .toggleWrapper #dn");
         const _this = this;
 
         //Search clicked
@@ -518,34 +518,15 @@ const app = {
                     userItemCheckbox.length ===
                     $$('input[name="userIds[]"]:checked').length;
                 checkboxAll.checked = isCheckedAll;
-
                 _this.renderSelectedAction();
             };
         }
 
-        //Sort name clicked
-        // sortName.onclick = function () {
-        //     $(".sort-name i").style.transform = "rotate(180deg)";
-        //     _this.users.sort(compareValues("name"));
-        //     _this.renderUsers();
-        //     _this.handleEvents();
-        // };
-
-        // function compareValues(key, order = "asc") {
-        //     return function innerSort(a, b) {
-        //         if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
-        //         const comparison = a[key].localeCompare(b[key]);
-        //         return order === "desc" ? comparison * -1 : comparison;
-        //     };
-        // }
-
         //Dark mode clicked switch
-        darkMode.onclick = function (e) {
-            e.preventDefault();
-            $("body").classList.toggle("dark");
-            !darkModeInput.checked
-                ? darkModeInput.setAttribute("checked", true)
-                : darkModeInput.removeAttribute("checked");
+        darkModeCheck.onclick = function () {
+            _this.darkModeStatus = !_this.darkModeStatus;
+            _this.setConfig("darkModeStatus", _this.darkModeStatus);
+            document.body.classList.toggle("dark");
         };
     },
 
@@ -567,13 +548,26 @@ const app = {
         }
     },
 
+    loadConfig: function () {
+        this.darkModeStatus = this.config.darkModeStatus;
+    },
+
     start: function () {
+        // gán cấu hình từ config vào ứng dụng
+        this.loadConfig();
         this.renderSidebars();
         this.renderCards();
         this.renderUsers();
         this.renderProducts();
         this.renderBlogs();
         this.handleEvents();
+
+        const darkModeCheck = $(".sidebar__darkmode .toggleWrapper #dn");
+        !darkModeCheck.checked
+            ? (darkModeCheck.checked = this.darkModeStatus) &&
+              document.body.classList.add("dark")
+            : (darkModeCheck.checked = !this.darkModeStatus) &&
+              document.body.classList.remove("dark");
     },
 };
 
