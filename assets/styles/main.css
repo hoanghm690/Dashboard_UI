@@ -135,6 +135,14 @@ body::-webkit-scrollbar-thumb {
   fill: #fff !important;
 }
 
+.dark main #dashboard .card .apexcharts-tooltip {
+  background: #212b36;
+}
+
+.dark main #dashboard .card .apexcharts-tooltip-title {
+  background: #212b36;
+}
+
 .dark main #dashboard .card .apexcharts-legend-text {
   color: #fff !important;
 }

@@ -89,6 +89,14 @@
                     fill: $textdefaultColor !important;
                 }
 
+                .apexcharts-tooltip {
+                    background: $primaryColor;
+
+                    &-title {
+                        background: $primaryColor;
+                    }
+                }
+
                 .apexcharts-legend-text {
                     color: $textdefaultColor !important;
                 }
