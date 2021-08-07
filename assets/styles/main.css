@@ -126,6 +126,19 @@ body::-webkit-scrollbar-thumb {
   color: #fff !important;
 }
 
+.dark main #dashboard .card {
+  background: #212b36;
+}
+
+.dark main #dashboard .card .apexcharts-text {
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+.dark main #dashboard .card .apexcharts-legend-text {
+  color: #fff !important;
+}
+
 .dark main #users .search form input {
   border: none;
   background: rgba(145, 158, 171, 0.06);
@@ -1181,6 +1194,32 @@ h4 {
   .main-content main {
     padding: 30px 15px;
   }
+}
+
+.main-content main #dashboard .card {
+  border: none;
+  border-radius: 16px;
+}
+
+.main-content main #dashboard .card #mixedchart .apexcharts-legend {
+  inset: unset !important;
+  right: 0 !important;
+}
+
+.main-content main #dashboard .card #mixedchart .apexcharts-legend-series {
+  margin: 2px 12px !important;
+}
+
+.main-content main #dashboard .card #mixedchart .apexcharts-legend-text {
+  margin-left: 4px !important;
+}
+
+.main-content main #dashboard .card #piechart .apexcharts-legend-series {
+  margin: 2px 12px !important;
+}
+
+.main-content main #dashboard .card #piechart .apexcharts-legend-text {
+  margin-left: 4px !important;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {

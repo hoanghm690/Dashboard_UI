@@ -137,6 +137,40 @@ h4 {
             padding: 30px 15px;
         }
 
+        #dashboard {
+            .card {
+                border: none;
+                border-radius: 16px;
+
+                #mixedchart {
+                    .apexcharts-legend {
+                        inset: unset !important;
+                        right: 0 !important;
+
+                        &-series {
+                            margin: 2px 12px !important;
+                        }
+
+                        &-text {
+                            margin-left: 4px !important;
+                        }
+                    }
+                }
+
+                #piechart {
+                    .apexcharts-legend {
+                        &-series {
+                            margin: 2px 12px !important;
+                        }
+
+                        &-text {
+                            margin-left: 4px !important;
+                        }
+                    }
+                }
+            }
+        }
+
         @import "./cards";
 
         @import "./users";

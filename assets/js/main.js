@@ -556,6 +556,128 @@ const app = {
         this.darkModeStatus = this.config.darkModeStatus;
     },
 
+    mixedChart: function () {
+        var options = {
+            series: [
+                {
+                    name: "Team A",
+                    type: "column",
+                    data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+                },
+                {
+                    name: "Team B",
+                    type: "area",
+                    data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
+                },
+                {
+                    name: "Team C",
+                    type: "line",
+                    data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
+                },
+            ],
+            colors: ["#00ab55", "#ffc107", "#1890ff"],
+            chart: {
+                height: 350,
+                type: "line",
+                stacked: false,
+                toolbar: {
+                    show: false,
+                },
+            },
+            stroke: {
+                width: [0, 2, 3],
+                curve: "smooth",
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    columnWidth: "10%",
+                },
+            },
+            fill: {
+                opacity: [0.85, 0.1, 1],
+                gradient: {
+                    inverseColors: false,
+                    shade: "light",
+                    type: "vertical",
+                    opacityFrom: 0.85,
+                    opacityTo: 0.55,
+                    stops: [0, 100, 100, 100],
+                },
+            },
+            labels: [
+                "01/01/2003",
+                "02/01/2003",
+                "03/01/2003",
+                "04/01/2003",
+                "05/01/2003",
+                "06/01/2003",
+                "07/01/2003",
+                "08/01/2003",
+                "09/01/2003",
+                "10/01/2003",
+                "11/01/2003",
+            ],
+
+            markers: {
+                size: 0,
+            },
+            xaxis: {
+                type: "datetime",
+            },
+            yaxis: {
+                min: 0,
+                max: 80,
+                tickAmount: 4,
+            },
+            tooltip: {
+                shared: true,
+                intersect: false,
+                y: {
+                    formatter: function (y) {
+                        if (typeof y !== "undefined") {
+                            return y.toFixed(0) + " visits";
+                        }
+                        return y;
+                    },
+                },
+            },
+        };
+
+        var chart = new ApexCharts($("#mixedchart"), options);
+        chart.render();
+    },
+
+    pieChart: function () {
+        var options = {
+            series: [4344, 5435, 1443, 4443],
+            colors: ["#00ab55", "#1890ff", "#ffc107", "#ff4842"],
+            chart: {
+                type: "pie",
+            },
+            labels: ["America", "Asia", "Europe", "Africa"],
+            legend: {
+                position: "bottom",
+            },
+            responsive: [
+                {
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200,
+                        },
+                        legend: {
+                            position: "bottom",
+                        },
+                    },
+                },
+            ],
+        };
+
+        var chart = new ApexCharts($("#piechart"), options);
+        chart.render();
+    },
+
     start: function () {
         // gán cấu hình từ config vào ứng dụng
         this.loadConfig();
@@ -565,6 +687,10 @@ const app = {
         this.renderProducts();
         this.renderBlogs();
         this.handleEvents();
+
+        //api APEXCHARTS
+        this.mixedChart();
+        this.pieChart();
 
         const darkModeCheck = $(".sidebar__darkmode .toggleWrapper #dn");
         !darkModeCheck.checked

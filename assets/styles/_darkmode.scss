@@ -80,6 +80,21 @@
     }
 
     main {
+        #dashboard {
+            .card {
+                background: $primaryColor;
+
+                .apexcharts-text {
+                    color: $textdefaultColor !important;
+                    fill: $textdefaultColor !important;
+                }
+
+                .apexcharts-legend-text {
+                    color: $textdefaultColor !important;
+                }
+            }
+        }
+
         #users {
             .search {
                 form {
