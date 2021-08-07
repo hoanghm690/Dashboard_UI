@@ -334,13 +334,17 @@ const app = {
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="#edit?id=${
+                                        user.id
+                                    }">
                                         <i class="fas fa-pen"></i>
                                         Edit
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="#delete?id=${
+                                        user.id
+                                    }">
                                         <i class="far fa-trash-alt"></i>
                                         Delete
                                     </a>

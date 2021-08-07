@@ -1557,6 +1557,56 @@ h4 {
   background: #f4f6f8;
 }
 
+.main-content main #users .users .card-body .pagination {
+  display: block;
+  list-style: none;
+  padding: 8px;
+  text-align: right;
+}
+
+.main-content main #users .users .card-body .pagination li {
+  border-radius: 2px;
+  color: #212b36;
+  display: inline-block;
+  margin: 0;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+  cursor: pointer;
+}
+
+.main-content main #users .users .card-body .pagination li:hover:not(.active) {
+  background: rgba(233, 30, 99, 0.12);
+}
+
+.main-content main #users .users .card-body .pagination-number,
+.main-content main #users .users .card-body .pagination-arrow i {
+  vertical-align: middle;
+}
+
+.main-content main #users .users .card-body .pagination-number {
+  border-radius: 50% !important;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 24px;
+  min-width: 40px;
+  padding: 8px 0;
+}
+
+.main-content main #users .users .card-body .pagination-number.active {
+  background: #ffd91a;
+}
+
+.main-content main #users .users .card-body .pagination-arrow i {
+  font-size: 16px;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .main-content main #users .users .card-body .pagination {
+    text-align: center;
+  }
+}
+
 .main-content main #products .product-title .action {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2068,6 +2118,10 @@ h4 {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
   }
+}
+
+#page-not-found {
+  overflow: hidden;
 }
 
 #page-not-found h3 {

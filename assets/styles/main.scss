@@ -159,6 +159,8 @@ h4 {
 }
 
 #page-not-found {
+    overflow: hidden;
+
     h3 {
         animation: fadein 0.3s ease;
     }
