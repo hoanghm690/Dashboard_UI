@@ -279,7 +279,7 @@ const app = {
     },
     renderCards: function () {
         const htmlCards = this.cards.map((card) => {
-            return `<div class="${card.class} col-md-3">
+            return `<div class="${card.class} col-md-3 col-sm-6 col-xs-12">
                         <div class="card">
                             <div class="card-body text-center">
                                 <div class="card-icon">
@@ -354,7 +354,7 @@ const app = {
     },
     renderProducts: function () {
         const htmlProducts = this.products.map((product) => {
-            return `<div class="col-md-3">
+            return `<div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="card shadow" data-index=${product.id}>
                             <span class="${
                                 product.isSale == true
@@ -412,7 +412,7 @@ const app = {
     },
     renderBlogs: function () {
         const htmlBlogs = this.blogs.map((blog) => {
-            return `<div class="col-md-6">
+            return `<div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="card text-white">
                             <img src="${blog.img}" class="card-img" />
                             <div class="card-avatar">
