@@ -127,6 +127,21 @@
                     }
                 }
             }
+
+            .pagination {
+                li {
+                    color: $textdefaultColor !important;
+                    &:hover:not(.active) {
+                        background: $backgroundHoverColor !important;
+                    }
+                }
+                &-number {
+                    &.active {
+                        background: #ffd91a;
+                        color: $primaryColor !important;
+                    }
+                }
+            }
         }
 
         #products {

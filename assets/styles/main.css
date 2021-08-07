@@ -165,6 +165,19 @@ body::-webkit-scrollbar-thumb {
   background: rgba(145, 158, 171, 0.06) !important;
 }
 
+.dark main #users .pagination li {
+  color: #fff !important;
+}
+
+.dark main #users .pagination li:hover:not(.active) {
+  background: rgba(145, 158, 171, 0.06) !important;
+}
+
+.dark main #users .pagination-number.active {
+  background: #ffd91a;
+  color: #212b36 !important;
+}
+
 .dark main #products .product-title .action .filters button {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
