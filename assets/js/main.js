@@ -654,6 +654,7 @@ const app = {
             colors: ["#00ab55", "#1890ff", "#ffc107", "#ff4842"],
             chart: {
                 type: "pie",
+                height: "300px",
             },
             labels: ["America", "Asia", "Europe", "Africa"],
             legend: {
@@ -678,6 +679,105 @@ const app = {
         chart.render();
     },
 
+    barChart: function () {
+        var options = {
+            series: [
+                {
+                    data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
+                },
+            ],
+            colors: ["#00ab55"],
+            chart: {
+                type: "bar",
+                height: 350,
+                toolbar: {
+                    show: false,
+                },
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    barHeight: "30%",
+                    horizontal: true,
+                },
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            xaxis: {
+                categories: [
+                    "Italy",
+                    "Japan",
+                    "China",
+                    "Canada",
+                    "France",
+                    "Germany",
+                    "South Korea",
+                    "Netherlands",
+                    "United States",
+                    "United Kingdom",
+                ],
+            },
+        };
+
+        var chart = new ApexCharts($("#barchart"), options);
+        chart.render();
+    },
+
+    radarChart: function () {
+        var options = {
+            series: [
+                {
+                    name: "Series 1",
+                    data: [80, 50, 30, 40, 100, 20],
+                },
+                {
+                    name: "Series 2",
+                    data: [20, 30, 40, 80, 20, 80],
+                },
+                {
+                    name: "Series 3",
+                    data: [44, 76, 78, 13, 43, 10],
+                },
+            ],
+            chart: {
+                height: 350,
+                type: "radar",
+                dropShadow: {
+                    enabled: true,
+                    blur: 1,
+                    left: 1,
+                    top: 1,
+                },
+                toolbar: {
+                    show: false,
+                },
+            },
+            stroke: {
+                width: 2,
+            },
+            fill: {
+                opacity: 0.1,
+            },
+            markers: {
+                size: 0,
+            },
+            xaxis: {
+                categories: [
+                    "English",
+                    "History",
+                    "Physics",
+                    "Geography",
+                    "Chinese",
+                    "Math",
+                ],
+            },
+        };
+
+        var chart = new ApexCharts($("#radarchart"), options);
+        chart.render();
+    },
+
     start: function () {
         // gán cấu hình từ config vào ứng dụng
         this.loadConfig();
@@ -691,6 +791,8 @@ const app = {
         //api APEXCHARTS
         this.mixedChart();
         this.pieChart();
+        this.barChart();
+        this.radarChart();
 
         const darkModeCheck = $(".sidebar__darkmode .toggleWrapper #dn");
         !darkModeCheck.checked
