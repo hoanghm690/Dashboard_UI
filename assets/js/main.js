@@ -21,7 +21,6 @@ const tasks = $("#tasks");
 const app = {
     currentIndex: 0,
     darkModeStatus: false,
-    isDone: false,
     config: JSON.parse(localStorage.getItem(STORAGE_KEY)) || {},
     sidebarMenus: [
         {
@@ -286,22 +285,27 @@ const app = {
         {
             id: 1,
             task: "Create FireStone Logo",
+            completed: false,
         },
         {
             id: 2,
             task: "Add SCSS and JS files if required",
+            completed: false,
         },
         {
             id: 3,
             task: "Stakeholder Meeting",
+            completed: false,
         },
         {
             id: 4,
             task: "Scoping & Estimations",
+            completed: false,
         },
         {
             id: 5,
             task: "Sprint Showcase",
+            completed: false,
         },
     ],
     setConfig: function (key, value) {
@@ -512,7 +516,7 @@ const app = {
     },
     renderTasks: function () {
         const htmls = this.tasks.map((task) => {
-            return ` <div class="form-check mb-2">
+            return `<div class="form-check mb-2">
                         <button>
                             <input
                                 class="form-check-input"
@@ -532,9 +536,9 @@ const app = {
 
     //Handle Events
     handleEvents: function () {
-        const taskItemCheckbox = $$('input[name="taskIds[]"]');
+        const taskItemsList = $$('input[name="taskIds[]"]');
         const checkboxAll = $("#input-checkboxAll");
-        const userItemCheckbox = $$('input[name="userIds[]"]');
+        const userItemsList = $$('input[name="userIds[]"]');
         const darkModeCheck = $(".sidebar__darkmode .toggleWrapper #dn");
         const _this = this;
 
@@ -590,17 +594,17 @@ const app = {
 
         //Checkbox all changed
         checkboxAll.onchange = function () {
-            for (let userItem of userItemCheckbox) {
+            for (let userItem of userItemsList) {
                 userItem.checked = this.checked;
             }
             _this.renderSelectedAction();
         };
 
         //user item checkbox changed
-        for (let userItem of userItemCheckbox) {
+        for (let userItem of userItemsList) {
             userItem.onchange = function () {
                 var isCheckedAll =
-                    userItemCheckbox.length ===
+                    userItemsList.length ===
                     $$('input[name="userIds[]"]:checked').length;
                 checkboxAll.checked = isCheckedAll;
                 _this.renderSelectedAction();
@@ -615,10 +619,12 @@ const app = {
         };
 
         //Task changed
-        for (let item of taskItemCheckbox) {
+        for (let item of taskItemsList) {
             item.onchange = function () {
                 var itemParent = item.parentNode.parentElement;
                 itemParent.classList.toggle("done");
+                item.completed = !item.completed;
+                _this.setConfig("tasks", taskItemsList);
             };
         }
     },
