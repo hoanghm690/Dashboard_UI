@@ -16,10 +16,12 @@ const users = $("#users-table tbody");
 const products = $("#products .products .products-list");
 const blogs = $("#blogs .blogs .blogs-list");
 const trafficBySites = $("#traffic-by-site");
+const tasks = $("#tasks");
 
 const app = {
     currentIndex: 0,
     darkModeStatus: false,
+    isDone: false,
     config: JSON.parse(localStorage.getItem(STORAGE_KEY)) || {},
     sidebarMenus: [
         {
@@ -280,6 +282,28 @@ const app = {
             traffic: 44.93,
         },
     ],
+    tasks: [
+        {
+            id: 1,
+            task: "Create FireStone Logo",
+        },
+        {
+            id: 2,
+            task: "Add SCSS and JS files if required",
+        },
+        {
+            id: 3,
+            task: "Stakeholder Meeting",
+        },
+        {
+            id: 4,
+            task: "Scoping & Estimations",
+        },
+        {
+            id: 5,
+            task: "Sprint Showcase",
+        },
+    ],
     setConfig: function (key, value) {
         this.config[key] = value;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(this.config));
@@ -486,9 +510,29 @@ const app = {
         });
         trafficBySites.innerHTML = htmls.join("");
     },
+    renderTasks: function () {
+        const htmls = this.tasks.map((task) => {
+            return ` <div class="form-check mb-2">
+                        <button>
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value="${task.task}"
+                                id="task-${task.id}"
+                                name="taskIds[]"
+                            />
+                        </button>
+                        <label class="form-check-label ms-2" for="task-${task.id}">
+                            ${task.task}
+                        </label>
+                    </div>`;
+        });
+        tasks.innerHTML = htmls.join("");
+    },
 
     //Handle Events
     handleEvents: function () {
+        const taskItemCheckbox = $$('input[name="taskIds[]"]');
         const checkboxAll = $("#input-checkboxAll");
         const userItemCheckbox = $$('input[name="userIds[]"]');
         const darkModeCheck = $(".sidebar__darkmode .toggleWrapper #dn");
@@ -546,14 +590,14 @@ const app = {
 
         //Checkbox all changed
         checkboxAll.onchange = function () {
-            for (var userItem of userItemCheckbox) {
+            for (let userItem of userItemCheckbox) {
                 userItem.checked = this.checked;
             }
             _this.renderSelectedAction();
         };
 
         //user item checkbox changed
-        for (var userItem of userItemCheckbox) {
+        for (let userItem of userItemCheckbox) {
             userItem.onchange = function () {
                 var isCheckedAll =
                     userItemCheckbox.length ===
@@ -569,6 +613,14 @@ const app = {
             _this.setConfig("darkModeStatus", _this.darkModeStatus);
             document.body.classList.toggle("dark");
         };
+
+        //Task changed
+        for (let item of taskItemCheckbox) {
+            item.onchange = function () {
+                var itemParent = item.parentNode.parentElement;
+                itemParent.classList.toggle("done");
+            };
+        }
     },
 
     renderSelectedAction: function () {
@@ -824,6 +876,7 @@ const app = {
         this.renderProducts();
         this.renderBlogs();
         this.renderTrafficBySites();
+        this.renderTasks();
         this.handleEvents();
 
         //api APEXCHARTS

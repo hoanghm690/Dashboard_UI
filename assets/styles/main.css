@@ -1263,6 +1263,12 @@ h4 {
   border-radius: 16px;
 }
 
+@media (max-width: 768px) {
+  .main-content main #dashboard .others .card {
+    margin-bottom: 24px;
+  }
+}
+
 .main-content main #dashboard .others .card-body #traffic-by-site .text-center {
   border-radius: 8px;
   border: 1px solid rgba(145, 158, 171, 0.24);
@@ -1297,6 +1303,49 @@ h4 {
   color: #637381;
   font-size: 0.9rem;
   margin: 0;
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check {
+  padding: 0;
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check button:hover {
+  background: rgba(145, 158, 171, 0.06);
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check button input {
+  border-radius: 0.15rem;
+  border: 2px solid #637381;
+  float: unset;
+  margin-left: 0;
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check button input:checked[type="checkbox"] {
+  border-color: #00ab55;
+  background: #00ab55 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check button input:focus {
+  border-color: #00ab55;
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check-label {
+  cursor: pointer;
+}
+
+.main-content main #dashboard .others .card-body #tasks .form-check.done > .form-check-label {
+  color: #637381;
+  text-decoration: line-through;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -1580,7 +1629,7 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table thead tr th button:hover {
-  background: rgba(0, 171, 85, 0.08);
+  background: rgba(145, 158, 171, 0.06);
 }
 
 .main-content main #users .users .card-body .table thead tr th button input {
@@ -1639,7 +1688,7 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table tbody tr td button:hover {
-  background: rgba(0, 171, 85, 0.08);
+  background: rgba(145, 158, 171, 0.06);
 }
 
 .main-content main #users .users .card-body .table tbody tr td button input {

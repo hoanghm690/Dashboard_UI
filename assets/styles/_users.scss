@@ -125,7 +125,7 @@
                                 outline: none;
 
                                 &:hover {
-                                    background: rgba(0, 171, 85, 0.08);
+                                    background: $backgroundHoverColor;
                                 }
 
                                 input {
@@ -183,7 +183,7 @@
                                 outline: none;
 
                                 &:hover {
-                                    background: rgba(0, 171, 85, 0.08);
+                                    background: $backgroundHoverColor;
                                 }
 
                                 input {

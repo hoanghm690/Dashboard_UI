@@ -43,6 +43,10 @@
             border: none;
             border-radius: 16px;
 
+            @include mobile {
+                margin-bottom: 24px;
+            }
+
             &-body {
                 #traffic-by-site {
                     .text-center {
@@ -78,6 +82,51 @@
                             color: $textColor;
                             font-size: 0.9rem;
                             margin: 0;
+                        }
+                    }
+                }
+
+                #tasks {
+                    .form-check {
+                        padding: 0;
+
+                        button {
+                            @include w-h-40;
+                            border-radius: 50%;
+                            border: none;
+                            background: transparent;
+                            outline: none;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: $backgroundHoverColor;
+                            }
+
+                            input {
+                                border-radius: 0.15rem;
+                                border: 2px solid rgb(99, 115, 129);
+                                float: unset;
+                                margin-left: 0;
+
+                                &:checked[type="checkbox"] {
+                                    border-color: $borderColorActive;
+                                    background: $backgroundColorActive
+                                        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+                                }
+
+                                &:focus {
+                                    border-color: $borderColorActive;
+                                }
+                            }
+                        }
+
+                        &-label {
+                            cursor: pointer;
+                        }
+
+                        &.done > .form-check-label {
+                            color: $textColor;
+                            text-decoration: line-through;
                         }
                     }
                 }
