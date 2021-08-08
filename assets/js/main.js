@@ -11,10 +11,11 @@ const overlay = $(".sidebar-overlay");
 const toTop = $(".to-top");
 
 const sidebarMenus = $(".sidebar__menu ul");
-const cards = $(".cards");
+const cards = $(".cards .row");
 const users = $("#users-table tbody");
 const products = $("#products .products .products-list");
 const blogs = $("#blogs .blogs .blogs-list");
+const trafficBySites = $("#traffic-by-site");
 
 const app = {
     currentIndex: 0,
@@ -257,6 +258,28 @@ const app = {
             share: 77.18,
         },
     ],
+    trafficBySites: [
+        {
+            icon: '<i class="fab fa-facebook-f"></i>',
+            social: "Facebook",
+            traffic: 59.96,
+        },
+        {
+            icon: '<i class="fab fa-google"></i>',
+            social: "Google",
+            traffic: 75.06,
+        },
+        {
+            icon: '<i class="fab fa-linkedin-in"></i>',
+            social: "Linkedin",
+            traffic: 80.94,
+        },
+        {
+            icon: '<i class="fab fa-twitter"></i>',
+            social: "Twitter",
+            traffic: 44.93,
+        },
+    ],
     setConfig: function (key, value) {
         this.config[key] = value;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(this.config));
@@ -448,6 +471,20 @@ const app = {
                     </div>`;
         });
         blogs.innerHTML = htmlBlogs.join("");
+    },
+    renderTrafficBySites: function () {
+        const htmls = this.trafficBySites.map((site) => {
+            return `<div class="col-md-6 mb-4">
+                        <div class="text-center">
+                            ${site.icon}
+                            <h5 class="fw-bold">
+                                ${site.traffic}k
+                            </h5>
+                            <p>${site.social}</p>
+                        </div>
+                    </div>`;
+        });
+        trafficBySites.innerHTML = htmls.join("");
     },
 
     //Handle Events
@@ -786,6 +823,7 @@ const app = {
         this.renderUsers();
         this.renderProducts();
         this.renderBlogs();
+        this.renderTrafficBySites();
         this.handleEvents();
 
         //api APEXCHARTS

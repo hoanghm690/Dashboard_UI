@@ -81,29 +81,47 @@
 
     main {
         #dashboard {
-            .card {
-                background: $primaryColor;
-
-                .apexcharts-text {
-                    color: $textdefaultColor !important;
-                    fill: $textdefaultColor !important;
-                }
-
-                .apexcharts-tooltip {
+            .charts {
+                .card {
                     background: $primaryColor;
 
-                    &-title {
+                    .apexcharts-text {
+                        color: $textdefaultColor !important;
+                        fill: $textdefaultColor !important;
+                    }
+
+                    .apexcharts-tooltip {
                         background: $primaryColor;
+
+                        &-title {
+                            background: $primaryColor;
+                        }
+                    }
+
+                    .apexcharts-legend-text {
+                        color: $textdefaultColor !important;
+                    }
+
+                    #piechart {
+                        @include flexCenter;
+                        justify-content: center;
                     }
                 }
+            }
 
-                .apexcharts-legend-text {
-                    color: $textdefaultColor !important;
-                }
+            .others {
+                .card {
+                    background: $primaryColor;
 
-                #piechart {
-                    @include flexCenter;
-                    justify-content: center;
+                    &-body {
+                        #traffic-by-site {
+                            .text-center {
+                                p {
+                                    color: #bbb5b5 !important;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

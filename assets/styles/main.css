@@ -126,28 +126,28 @@ body::-webkit-scrollbar-thumb {
   color: #fff !important;
 }
 
-.dark main #dashboard .card {
+.dark main #dashboard .charts .card {
   background: #212b36;
 }
 
-.dark main #dashboard .card .apexcharts-text {
+.dark main #dashboard .charts .card .apexcharts-text {
   color: #fff !important;
   fill: #fff !important;
 }
 
-.dark main #dashboard .card .apexcharts-tooltip {
+.dark main #dashboard .charts .card .apexcharts-tooltip {
   background: #212b36;
 }
 
-.dark main #dashboard .card .apexcharts-tooltip-title {
+.dark main #dashboard .charts .card .apexcharts-tooltip-title {
   background: #212b36;
 }
 
-.dark main #dashboard .card .apexcharts-legend-text {
+.dark main #dashboard .charts .card .apexcharts-legend-text {
   color: #fff !important;
 }
 
-.dark main #dashboard .card #piechart {
+.dark main #dashboard .charts .card #piechart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,6 +157,14 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.dark main #dashboard .others .card {
+  background: #212b36;
+}
+
+.dark main #dashboard .others .card-body #traffic-by-site .text-center p {
+  color: #bbb5b5 !important;
 }
 
 .dark main #users .search form input {
@@ -1216,38 +1224,79 @@ h4 {
   }
 }
 
-.main-content main #dashboard .card {
+.main-content main #dashboard .charts .card {
   border: none;
   border-radius: 16px;
 }
 
 @media (max-width: 768px) {
-  .main-content main #dashboard .card {
+  .main-content main #dashboard .charts .card {
     margin-bottom: 24px;
   }
 }
 
-.main-content main #dashboard .card #mixedchart .apexcharts-legend {
+.main-content main #dashboard .charts .card #mixedchart .apexcharts-legend {
   inset: unset !important;
   right: 0 !important;
 }
 
-.main-content main #dashboard .card #mixedchart .apexcharts-legend-series {
+.main-content main #dashboard .charts .card #mixedchart .apexcharts-legend-series {
   margin: 2px 12px !important;
 }
 
-.main-content main #dashboard .card #mixedchart .apexcharts-legend-text {
+.main-content main #dashboard .charts .card #mixedchart .apexcharts-legend-text {
   margin-left: 4px !important;
 }
 
-.main-content main #dashboard .card #piechart .apexcharts-legend-series,
-.main-content main #dashboard .card #radarchart .apexcharts-legend-series {
+.main-content main #dashboard .charts .card #piechart .apexcharts-legend-series,
+.main-content main #dashboard .charts .card #radarchart .apexcharts-legend-series {
   margin: 2px 12px !important;
 }
 
-.main-content main #dashboard .card #piechart .apexcharts-legend-text,
-.main-content main #dashboard .card #radarchart .apexcharts-legend-text {
+.main-content main #dashboard .charts .card #piechart .apexcharts-legend-text,
+.main-content main #dashboard .charts .card #radarchart .apexcharts-legend-text {
   margin-left: 4px !important;
+}
+
+.main-content main #dashboard .others .card {
+  border: none;
+  border-radius: 16px;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center {
+  border-radius: 8px;
+  border: 1px solid rgba(145, 158, 171, 0.24);
+  padding: 20px 0;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center i {
+  font-size: 1.4rem;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center .fab.fa-facebook-f {
+  color: #1877f2;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center .fab.fa-google {
+  color: #df3e30;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center .fab.fa-linkedin-in {
+  color: #006097;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center .fab.fa-twitter {
+  color: #1c9cea;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center h5 {
+  margin: 10px 0;
+}
+
+.main-content main #dashboard .others .card-body #traffic-by-site .text-center p {
+  color: #637381;
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
