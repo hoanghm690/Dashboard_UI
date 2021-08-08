@@ -116,6 +116,7 @@
 
                         th:first-child::after {
                             content: "";
+                            padding: 0;
                         }
 
                         th {

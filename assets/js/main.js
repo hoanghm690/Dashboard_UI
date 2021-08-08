@@ -18,6 +18,11 @@ const blogs = $("#blogs .blogs .blogs-list");
 const trafficBySites = $("#traffic-by-site");
 const tasks = $("#tasks");
 
+// const prevBtn = $(".pagination-arrow.arrow-left");
+// const nextBtn = $(".pagination-arrow.arrow-right");
+// var current_page = 1;
+// var records_per_page = 2;
+
 const app = {
     currentIndex: 0,
     darkModeStatus: false,
@@ -308,6 +313,7 @@ const app = {
             completed: false,
         },
     ],
+
     setConfig: function (key, value) {
         this.config[key] = value;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(this.config));
@@ -542,6 +548,20 @@ const app = {
         const darkModeCheck = $(".sidebar__darkmode .toggleWrapper #dn");
         const _this = this;
 
+        // prevBtn.onclick = function () {
+        //     if (current_page > 1) {
+        //         current_page--;
+        //         _this.renderUsers(current_page);
+        //     }
+        // };
+
+        // nextBtn.onclick = function () {
+        //     if (current_page < _this.numPages()) {
+        //         current_page++;
+        //         _this.renderUsers(current_page);
+        //     }
+        // };
+
         //Search clicked
         //Show toolbar wrapper (search)
         searchBtn.onclick = function () {
@@ -622,8 +642,8 @@ const app = {
         for (let item of taskItemsList) {
             item.onchange = function () {
                 var itemParent = item.parentNode.parentElement;
-                itemParent.classList.toggle("done");
                 item.completed = !item.completed;
+                itemParent.classList.toggle("done", item.completed);
                 _this.setConfig("tasks", taskItemsList);
             };
         }
@@ -760,7 +780,7 @@ const app = {
                     breakpoint: 480,
                     options: {
                         chart: {
-                            width: 200,
+                            width: 350,
                         },
                         legend: {
                             position: "bottom",

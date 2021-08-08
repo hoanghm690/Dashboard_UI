@@ -1248,6 +1248,20 @@ h4 {
   margin-left: 4px !important;
 }
 
+@media (max-width: 768px) {
+  .main-content main #dashboard .charts .card #piechart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .main-content main #dashboard .charts .card #piechart .apexcharts-legend-series,
 .main-content main #dashboard .charts .card #radarchart .apexcharts-legend-series {
   margin: 2px 12px !important;
@@ -1617,6 +1631,7 @@ h4 {
 
 .main-content main #users .users .card-body .table thead tr th:first-child::after {
   content: "";
+  padding: 0;
 }
 
 .main-content main #users .users .card-body .table thead tr th {

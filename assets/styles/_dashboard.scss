@@ -23,6 +23,13 @@
                 }
             }
 
+            #piechart {
+                @include mobile {
+                    @include flexCenter;
+                    justify-content: center;
+                }
+            }
+
             #piechart,
             #radarchart {
                 .apexcharts-legend {
