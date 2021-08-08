@@ -184,6 +184,10 @@ body::-webkit-scrollbar-thumb {
           filter: brightness(0) invert(1);
 }
 
+.dark main #users .selected-action {
+  background: #101a25 !important;
+}
+
 .dark main #users #users-table {
   color: #fff;
 }
