@@ -114,6 +114,10 @@
                     tr {
                         vertical-align: middle;
 
+                        th:first-child::after {
+                            content: "";
+                        }
+
                         th {
                             cursor: pointer;
 
