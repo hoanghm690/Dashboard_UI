@@ -871,7 +871,7 @@ h4 {
 }
 
 .main-content header .search-wrapper .menu-wrapper__mobile:hover {
-  background: #f4f6f8;
+  background: rgba(145, 158, 171, 0.06);
 }
 
 .main-content header .search-wrapper .toolbar-wrapper {
