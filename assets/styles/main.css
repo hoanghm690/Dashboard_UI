@@ -1044,6 +1044,7 @@ h4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 999;
 }
 
 .main-content header .user-wrapper__notification--menu .header button i {
