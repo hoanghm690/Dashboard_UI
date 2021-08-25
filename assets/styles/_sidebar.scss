@@ -15,7 +15,6 @@
             rgb(22, 28, 36) 100%
         );
         width: 100vh;
-        height: 100vh;
         z-index: 1201;
         opacity: 0;
         visibility: hidden;
@@ -61,6 +60,8 @@
     }
 
     &__menu {
+        position: relative;
+
         ul {
             margin: 0;
             padding: 0;
@@ -132,7 +133,7 @@
     &__darkmode {
         .toggleWrapper {
             position: absolute;
-            bottom: 5%;
+            bottom: -30%;
             left: 50%;
             overflow: hidden;
             padding: 0 200px;
@@ -347,6 +348,8 @@
         opacity: 0;
         transform: translateX(-280px);
         transition: all 0.3s ease;
+        overflow-y: auto;
+        overflow-x: hidden;
 
         &.show {
             visibility: visible;

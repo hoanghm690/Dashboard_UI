@@ -90,7 +90,7 @@
                     top: unset;
 
                     .card-created {
-                        color: $textColor;
+                        color: #a4b9cb;
                         font-size: 0.75rem;
                         font-weight: weight(bold);
                     }
@@ -101,12 +101,20 @@
                         line-height: $lineHeight;
                         font-weight: weight(bold);
                         font-size: 1.2rem;
+
+                        @include mobile {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-line-clamp: 2;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                        }
                     }
 
                     .card-actions {
                         @include flexCenter;
                         justify-content: flex-end;
-                        color: $textColor;
+                        color: #a4b9cb;
                         font-size: 0.75rem;
                         font-weight: weight(medium);
                     }

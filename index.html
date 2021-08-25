@@ -51,23 +51,23 @@
                 </div>
                 <div class="sidebar__menu">
                     <ul></ul>
-                </div>
-                <div class="sidebar__darkmode">
-                    <div class="toggleWrapper">
-                        <input type="checkbox" class="dn" id="dn" />
-                        <label for="dn" class="toggle">
-                            <span class="toggle__handler">
-                                <span class="crater crater--1"></span>
-                                <span class="crater crater--2"></span>
-                                <span class="crater crater--3"></span>
-                            </span>
-                            <span class="star star--1"></span>
-                            <span class="star star--2"></span>
-                            <span class="star star--3"></span>
-                            <span class="star star--4"></span>
-                            <span class="star star--5"></span>
-                            <span class="star star--6"></span>
-                        </label>
+                    <div class="sidebar__darkmode">
+                        <div class="toggleWrapper">
+                            <input type="checkbox" class="dn" id="dn" />
+                            <label for="dn" class="toggle">
+                                <span class="toggle__handler">
+                                    <span class="crater crater--1"></span>
+                                    <span class="crater crater--2"></span>
+                                    <span class="crater crater--3"></span>
+                                </span>
+                                <span class="star star--1"></span>
+                                <span class="star star--2"></span>
+                                <span class="star star--3"></span>
+                                <span class="star star--4"></span>
+                                <span class="star star--5"></span>
+                                <span class="star star--6"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -359,67 +359,69 @@
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </div>
-                                    <table
-                                        class="table js-sort-table mt-5"
-                                        id="users-table"
-                                    >
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">
-                                                    <button>
-                                                        <input
-                                                            type="checkbox"
-                                                            class="
-                                                                form-check-input
-                                                            "
-                                                            id="input-checkboxAll"
-                                                        />
-                                                    </button>
-                                                </th>
-                                                <th
-                                                    data-field="name"
-                                                    scope="col"
-                                                >
-                                                    Name
-                                                </th>
-                                                <th
-                                                    data-field="company"
-                                                    scope="col"
-                                                >
-                                                    Company
-                                                </th>
-                                                <th
-                                                    data-field="role"
-                                                    scope="col"
-                                                >
-                                                    Role
-                                                </th>
-                                                <th
-                                                    data-field="verified"
-                                                    scope="col"
-                                                >
-                                                    Verified
-                                                </th>
-                                                <th
-                                                    data-field="status"
-                                                    scope="col"
-                                                >
-                                                    Status
-                                                </th>
-                                                <th scope="col"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
+                                    <div class="table-responsive">
+                                        <table
+                                            class="table js-sort-table mt-5"
+                                            id="users-table"
+                                        >
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">
+                                                        <button>
+                                                            <input
+                                                                type="checkbox"
+                                                                class="
+                                                                    form-check-input
+                                                                "
+                                                                id="input-checkboxAll"
+                                                            />
+                                                        </button>
+                                                    </th>
+                                                    <th
+                                                        data-field="name"
+                                                        scope="col"
+                                                    >
+                                                        Name
+                                                    </th>
+                                                    <th
+                                                        data-field="company"
+                                                        scope="col"
+                                                    >
+                                                        Company
+                                                    </th>
+                                                    <th
+                                                        data-field="role"
+                                                        scope="col"
+                                                    >
+                                                        Role
+                                                    </th>
+                                                    <th
+                                                        data-field="verified"
+                                                        scope="col"
+                                                    >
+                                                        Verified
+                                                    </th>
+                                                    <th
+                                                        data-field="status"
+                                                        scope="col"
+                                                    >
+                                                        Status
+                                                    </th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
                                     <ul class="pagination">
                                         <li class="pagination-arrow arrow-left">
                                             <i class="fas fa-angle-left"></i>
                                         </li>
-                                        <li class="pagination-number">1</li>
-                                        <li class="pagination-number">2</li>
                                         <li class="pagination-number active">
-                                            3
+                                            1
                                         </li>
+                                        <li class="pagination-number">2</li>
+                                        <li class="pagination-number">3</li>
                                         <li class="pagination-number">4</li>
                                         <li class="pagination-number">5</li>
                                         <li

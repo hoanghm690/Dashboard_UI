@@ -336,7 +336,6 @@ h4 {
   z-index: 1200;
   background: linear-gradient(75deg, rgba(22, 28, 36, 0.48) 0%, #161c24 100%);
   width: 100vh;
-  height: 100vh;
   z-index: 1201;
   opacity: 0;
   visibility: hidden;
@@ -389,6 +388,10 @@ h4 {
 .sidebar__user .profile .name {
   color: #212b36;
   margin-left: 16px;
+}
+
+.sidebar__menu {
+  position: relative;
 }
 
 .sidebar__menu ul {
@@ -476,7 +479,7 @@ h4 {
 
 .sidebar__darkmode .toggleWrapper {
   position: absolute;
-  bottom: 5%;
+  bottom: -30%;
   left: 50%;
   overflow: hidden;
   padding: 0 200px;
@@ -708,6 +711,8 @@ h4 {
             transform: translateX(-280px);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .sidebar.show {
     visibility: visible;
@@ -1657,6 +1662,8 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table thead tr th button input {
+  width: 1.2em;
+  height: 1.2em;
   border-radius: 0.15rem;
   border: 2px solid #637381;
 }
@@ -1716,6 +1723,8 @@ h4 {
 }
 
 .main-content main #users .users .card-body .table tbody tr td button input {
+  width: 1.2em;
+  height: 1.2em;
   border-radius: 0.15rem;
   border: 2px solid #637381;
   cursor: pointer;
@@ -2268,7 +2277,7 @@ h4 {
 }
 
 .main-content main #blogs .blogs-list .card-img-overlay .card-created {
-  color: #637381;
+  color: #a4b9cb;
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -2281,6 +2290,16 @@ h4 {
   font-size: 1.2rem;
 }
 
+@media (max-width: 768px) {
+  .main-content main #blogs .blogs-list .card-img-overlay .card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}
+
 .main-content main #blogs .blogs-list .card-img-overlay .card-actions {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2291,7 +2310,7 @@ h4 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  color: #637381;
+  color: #a4b9cb;
   font-size: 0.75rem;
   font-weight: 500;
 }
